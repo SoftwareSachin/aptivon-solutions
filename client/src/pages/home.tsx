@@ -232,7 +232,7 @@ export default function Home() {
       {seoContent}
 
       {/* Enhanced Live Status Bar */}
-      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-3 px-6 border-b border-slate-700/50">
+      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-3 px-6 border-b border-slate-700/50 pt-40">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
