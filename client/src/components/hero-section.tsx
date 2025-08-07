@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { ChevronRight } from "lucide-react"
+import { useState, useEffect } from "react"
 
 interface HeroSectionProps {
   className?: string
@@ -11,10 +12,6 @@ interface HeroSectionProps {
   description?: string
   ctaText?: string
   ctaHref?: string
-  bottomImage?: {
-    light: string
-    dark: string
-  }
   gridOptions?: {
     angle?: number
     cellSize?: number
@@ -65,13 +62,42 @@ export default function HeroSection({
   description = "Aptivon Solutions delivers enterprise-grade AI automation, cloud infrastructure, and digital transformation services that scale your operations and accelerate growth.",
   ctaText = "Explore Solutions",
   ctaHref = "#services",
-  bottomImage = {
-    light: "/attached_assets/image_1754595691191.png",
-    dark: "/attached_assets/image_1754595691191.png",
-  },
   gridOptions,
   ...props
 }: HeroSectionProps) {
+  const [typewriterText, setTypewriterText] = useState("");
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  const typewriterWords = ["AI Solutions", "Cloud Infrastructure", "Digital Transformation", "Automation Services"];
+  
+  useEffect(() => {
+    const currentWord = typewriterWords[currentWordIndex];
+    const shouldDelete = isDeleting;
+    
+    const timeout = setTimeout(() => {
+      if (!shouldDelete) {
+        // Typing
+        if (typewriterText.length < currentWord.length) {
+          setTypewriterText(currentWord.slice(0, typewriterText.length + 1));
+        } else {
+          // Finished typing, start deleting after a pause
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        // Deleting
+        if (typewriterText.length > 0) {
+          setTypewriterText(typewriterText.slice(0, -1));
+        } else {
+          // Finished deleting, move to next word
+          setIsDeleting(false);
+          setCurrentWordIndex((prevIndex) => (prevIndex + 1) % typewriterWords.length);
+        }
+      }
+    }, shouldDelete ? 100 : 150);
+    
+    return () => clearTimeout(timeout);
+  }, [typewriterText, currentWordIndex, isDeleting, typewriterWords]);
   return (
     <div className={cn("relative", className)} {...props}>
       <div className="absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 dark:bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
@@ -86,7 +112,8 @@ export default function HeroSection({
             <h2 className="text-4xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto md:text-6xl bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
               {subtitle.regular}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-orange-200">
-                {subtitle.gradient}
+                {typewriterText}
+                <span className="animate-pulse text-purple-500 dark:text-purple-300 ml-1">|</span>
               </span>
             </h2>
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
@@ -106,20 +133,6 @@ export default function HeroSection({
               </span>
             </div>
           </div>
-          {bottomImage && (
-            <div className="mt-32 mx-10 relative z-10">
-              <img
-                src={bottomImage.light}
-                className="w-full shadow-lg rounded-lg border border-gray-200 dark:hidden"
-                alt="Dashboard preview"
-              />
-              <img
-                src={bottomImage.dark}
-                className="hidden w-full shadow-lg rounded-lg border border-gray-800 dark:block"
-                alt="Dashboard preview"
-              />
-            </div>
-          )}
         </div>
       </section>
     </div>
