@@ -314,37 +314,6 @@ export default function Home() {
             ]} />
           </div>
 
-          {/* Technology Categories */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg"></div>
-              </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">Frontend</h3>
-              <p className="text-slate-600 text-sm">React, Next.js, Vue, Angular, TypeScript</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <div className="w-8 h-8 bg-emerald-600 rounded-lg"></div>
-              </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">Backend</h3>
-              <p className="text-slate-600 text-sm">Node.js, Python, Express, Django, Flask</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <div className="w-8 h-8 bg-purple-600 rounded-lg"></div>
-              </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">Cloud</h3>
-              <p className="text-slate-600 text-sm">AWS, Azure, Google Cloud, Docker, Kubernetes</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <div className="w-8 h-8 bg-amber-600 rounded-lg"></div>
-              </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">AI/ML</h3>
-              <p className="text-slate-600 text-sm">TensorFlow, PyTorch, Machine Learning</p>
-            </div>
-          </div>
         </div>
       </section>
 
