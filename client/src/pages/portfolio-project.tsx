@@ -134,8 +134,10 @@ export default function PortfolioProject() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-white mt-96">
+      <div className="min-h-screen bg-white ">
         <Navigation />
+      {/* Navigation Spacer */}
+      <div className="h-48"></div>
         <div className="pt-32 pb-20">
           <div className="max-w-4xl mx-auto px-6">
             <div className="animate-pulse">
@@ -152,8 +154,10 @@ export default function PortfolioProject() {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-white mt-96">
+      <div className="min-h-screen bg-white ">
         <Navigation />
+      {/* Navigation Spacer */}
+      <div className="h-48"></div>
         <div className="pt-32 pb-20">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h1 className="text-3xl font-bold text-slate-900 mb-4">Project Not Found</h1>
@@ -169,8 +173,10 @@ export default function PortfolioProject() {
   }
 
   return (
-    <div className="min-h-screen bg-white mt-96">
+    <div className="min-h-screen bg-white ">
       <Navigation />
+      {/* Navigation Spacer */}
+      <div className="h-48"></div>
       
       <div className="pt-32 pb-20">
         <div className="max-w-4xl mx-auto px-6">

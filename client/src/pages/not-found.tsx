@@ -5,8 +5,10 @@ import { AlertCircle, Home } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-white mt-96">
+    <div className="min-h-screen bg-white ">
       <Navigation />
+      {/* Navigation Spacer */}
+      <div className="h-48"></div>
       
       <div className="pt-32 pb-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">

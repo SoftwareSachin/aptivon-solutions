@@ -98,8 +98,10 @@ export default function Blog() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-white mt-96">
+      <div className="min-h-screen bg-white ">
         <Navigation />
+      {/* Navigation Spacer */}
+      <div className="h-48"></div>
         <div className="pt-32 pb-20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="animate-pulse">
@@ -118,8 +120,10 @@ export default function Blog() {
   }
 
   return (
-    <div className="min-h-screen bg-white mt-96">
+    <div className="min-h-screen bg-white ">
       <Navigation />
+      {/* Navigation Spacer */}
+      <div className="h-48"></div>
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-slate-50">

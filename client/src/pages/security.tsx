@@ -20,7 +20,7 @@ import {
 
 export default function Security() {
   return (
-    <div className="min-h-screen bg-white mt-96">
+    <div className="min-h-screen bg-white ">
       {/* Header */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-6">

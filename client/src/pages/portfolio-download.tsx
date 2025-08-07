@@ -1005,6 +1005,8 @@ export default function PortfolioDownload() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       <Navigation />
+      {/* Navigation Spacer */}
+      <div className="h-48"></div>
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-slate-900 to-slate-800">
