@@ -231,58 +231,6 @@ export default function Home() {
       {/* SEO Content for Crawlers */}
       {seoContent}
 
-      {/* Enhanced Live Status Bar */}
-      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-3 px-6 border-b border-slate-700/50 pt-40">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center gap-8">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></div>
-              <span className="font-medium">Live Support Available</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-blue-400" />
-              <span>
-                {currentTime.toLocaleTimeString("en-IN", {
-                  timeZone: "Asia/Kolkata",
-                })}{" "}
-                IST
-              </span>
-            </div>
-            <div className="hidden md:flex items-center gap-2 text-emerald-400">
-              <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-              <span className="text-xs">All Systems Operational</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-blue-400" />
-              <span className="font-medium">+91 7852099010</span>
-            </div>
-            <Button
-              size="sm"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg transform hover:scale-105 transition-all duration-300"
-              onClick={() => {
-                if (
-                  navigator.userAgent.match(
-                    /Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i,
-                  )
-                ) {
-                  window.location.href = "tel:+917852099010";
-                } else {
-                  window.open("tel:+917852099010", "_blank");
-                }
-                toast({
-                  title: "Calling Aptivon Solutions",
-                  description:
-                    "Phone: +91 7852099010 - Available 9 AM to 6 PM IST",
-                });
-              }}
-            >
-              Call Now
-            </Button>
-          </div>
-        </div>
-      </div>
 
       <HeroSection />
 
