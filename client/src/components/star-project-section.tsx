@@ -124,9 +124,6 @@ export default function StarProjectSection() {
               />
               <CardContent className="relative z-10 p-0">
                 <div className="inline-flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-lg">S</span>
-                  </div>
                   <div className="text-left">
                     <div className="text-white font-bold text-lg">Built by Sachin</div>
                     <div className="text-blue-200 text-sm">Innovation Engineer</div>
