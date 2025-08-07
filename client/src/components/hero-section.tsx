@@ -66,8 +66,8 @@ export default function HeroSection({
   ctaText = "Explore Solutions",
   ctaHref = "#services",
   bottomImage = {
-    light: "https://farmui.vercel.app/dashboard-light.png",
-    dark: "https://farmui.vercel.app/dashboard.png",
+    light: "/attached_assets/image_1754595691191.png",
+    dark: "/attached_assets/image_1754595691191.png",
   },
   gridOptions,
   ...props
