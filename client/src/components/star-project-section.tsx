@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { RainbowButton } from "@/components/rainbow-button";
 import { Card, CardContent } from "@/components/ui/card";
+import { GlowEffect } from "@/components/glow-effect";
 import { Star, Play, ExternalLink, Shield, Smartphone, Globe, Zap, Maximize2, Award, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { PinContainer } from "@/components/3d-pin";
@@ -73,55 +74,95 @@ export default function StarProjectSection() {
       <div className="relative max-w-7xl mx-auto px-6 z-10">
         {/* Enhanced Section Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-400/30 rounded-full mb-8 border border-yellow-300/50">
-            <Star className="w-7 h-7 text-yellow-300 fill-current" />
-            <span className="text-xl font-bold text-yellow-100 tracking-wide">STAR PROJECT</span>
-            <Star className="w-7 h-7 text-yellow-300 fill-current" />
-          </div>
+          <Card className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 mb-8">
+            <GlowEffect 
+              mode="breathe" 
+              colors={["#FFD700", "#FF6B35", "#F7931E"]} 
+              blur="medium" 
+              duration={4}
+            />
+            <CardContent className="relative z-10 p-0">
+              <div className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-400/30 rounded-full mb-8 border border-yellow-300/50">
+                <Star className="w-7 h-7 text-yellow-300 fill-current" />
+                <span className="text-xl font-bold text-yellow-100 tracking-wide">STAR PROJECT</span>
+                <Star className="w-7 h-7 text-yellow-300 fill-current" />
+              </div>
+              
+              <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent">
+                  OPPB
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  Offline Payment Solution
+                </span>
+              </h2>
+            </CardContent>
+          </Card>
           
-          <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent">
-              OPPB
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-              Offline Payment Solution
-            </span>
-          </h2>
-          
-          <p className="text-2xl text-blue-100 max-w-4xl mx-auto mb-10 leading-relaxed font-light">
-            Revolutionary payment technology that works anywhere, anytime - even without internet connection
-          </p>
+          <Card className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 mb-10">
+            <GlowEffect 
+              mode="pulse" 
+              colors={["#60A5FA", "#34D399", "#A78BFA"]} 
+              blur="soft" 
+              duration={3}
+            />
+            <CardContent className="relative z-10 p-0">
+              <p className="text-2xl text-blue-100 leading-relaxed font-light">
+                Revolutionary payment technology that works anywhere, anytime - even without internet connection
+              </p>
+            </CardContent>
+          </Card>
 
           {/* Creator Attribution with Enhanced Design */}
           <div className="flex flex-col items-center gap-6">
-            <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/10 rounded-full border border-white/20">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
-              <div className="text-left">
-                <div className="text-white font-bold text-lg">Built by Sachin</div>
-                <div className="text-blue-200 text-sm">Innovation Engineer</div>
-              </div>
-              <Award className="w-6 h-6 text-yellow-400" />
-            </div>
+            <Card className="relative overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 rounded-full p-6">
+              <GlowEffect 
+                mode="colorShift" 
+                colors={["#3B82F6", "#8B5CF6", "#10B981"]} 
+                blur="softest" 
+                duration={6}
+              />
+              <CardContent className="relative z-10 p-0">
+                <div className="inline-flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white font-bold text-lg">S</span>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-white font-bold text-lg">Built by Sachin</div>
+                    <div className="text-blue-200 text-sm">Innovation Engineer</div>
+                  </div>
+                  <Award className="w-6 h-6 text-yellow-400" />
+                </div>
+              </CardContent>
+            </Card>
 
             {/* NPCI & BHIM Pay Integration Badge */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 px-8 py-4 bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-lg rounded-2xl border border-green-400/30 shadow-xl">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
-                  <Shield className="w-5 h-5 text-white" />
+            <Card className="relative overflow-hidden bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-lg border border-green-400/30 rounded-2xl p-8">
+              <GlowEffect 
+                mode="rotate" 
+                colors={["#10B981", "#3B82F6", "#06B6D4"]} 
+                blur="medium" 
+                duration={8}
+              />
+              <CardContent className="relative z-10 p-0">
+                <div className="flex flex-col sm:flex-row items-center gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
+                      <Shield className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="text-center sm:text-left">
+                      <div className="text-white font-bold text-lg">Built for NPCI & BHIM Pay</div>
+                      <div className="text-green-200 text-sm">Official Digital Payment Infrastructure</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    <span className="text-green-300 text-sm font-medium">Certified Integration</span>
+                  </div>
                 </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-white font-bold text-lg">Built for NPCI & BHIM Pay</div>
-                  <div className="text-green-200 text-sm">Official Digital Payment Infrastructure</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span className="text-green-300 text-sm font-medium">Certified Integration</span>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
@@ -223,33 +264,69 @@ export default function StarProjectSection() {
           {/* Enhanced Project Description */}
           <div className="order-1 lg:order-2">
             <div className="space-y-10">
-              <div>
-                <h3 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                  Your go‑anywhere, 
-                  <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent block">
-                    offline payment solution
-                  </span>
-                </h3>
+              <Card className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8">
+                <GlowEffect 
+                  mode="flowHorizontal" 
+                  colors={["#FFD700", "#FF6B35"]} 
+                  blur="soft" 
+                  duration={5}
+                />
+                <CardContent className="relative z-10 p-0">
+                  <h3 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                    Your go‑anywhere, 
+                    <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent block">
+                      offline payment solution
+                    </span>
+                  </h3>
+                </CardContent>
+              </Card>
                 
-                <div className="prose prose-xl text-blue-100 leading-relaxed space-y-6">
-                  <p className="text-xl">
+              <Card className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8">
+                <GlowEffect 
+                  mode="breathe" 
+                  colors={["#10B981", "#34D399"]} 
+                  blur="medium" 
+                  duration={4}
+                />
+                <CardContent className="relative z-10 p-0">
+                  <p className="text-xl text-blue-100 leading-relaxed">
                     Built specifically for <span className="text-green-300 font-semibold">NPCI and BHIM Pay infrastructure</span>, 
                     OPPB enables instant "Send & Receive" transactions without UPI or internet, 
                     leverages device‑to‑device mesh and SMS fallback, and secures every payment with a 
                     cryptographically signed local ledger.
                   </p>
+                </CardContent>
+              </Card>
                   
-                  <p className="text-xl">
+              <Card className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8">
+                <GlowEffect 
+                  mode="pulse" 
+                  colors={["#3B82F6", "#60A5FA"]} 
+                  blur="medium" 
+                  duration={3}
+                />
+                <CardContent className="relative z-10 p-0">
+                  <p className="text-xl text-blue-100 leading-relaxed">
                     Integrated with <span className="text-blue-300 font-semibold">India's official digital payment ecosystem</span>, 
                     learn how dual‑factor authentication and a multilingual, icon‑driven interface deliver 
                     seamless, 24×7 payment reliability from cities to villages.
                   </p>
+                </CardContent>
+              </Card>
                   
-                  <p className="text-yellow-300 font-bold text-2xl">
+              <Card className="relative overflow-hidden bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-xl border border-yellow-400/30 rounded-3xl p-8">
+                <GlowEffect 
+                  mode="colorShift" 
+                  colors={["#FFD700", "#FF6B35", "#F59E0B"]} 
+                  blur="strong" 
+                  duration={6}
+                />
+                <CardContent className="relative z-10 p-0">
+                  <p className="text-yellow-300 font-bold text-2xl leading-relaxed">
                     Don't let network outages slow you down—experience NPCI-powered OPPB today.
                   </p>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
 
               {/* Enhanced Key Features Grid with 3D Pins */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -281,24 +358,32 @@ export default function StarProjectSection() {
                 containerClassName="w-full h-[250px]"
                 className="w-full"
               >
-                <div className="w-[500px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                      <Shield className="w-6 h-6 text-white" />
+                <Card className="relative overflow-hidden w-[500px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8">
+                  <GlowEffect 
+                    mode="rotate" 
+                    colors={["#10B981", "#3B82F6", "#8B5CF6", "#F59E0B"]} 
+                    blur="medium" 
+                    duration={10}
+                  />
+                  <CardContent className="relative z-10 p-0">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                        <Shield className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className="text-xl font-bold text-white">NPCI Certified Innovation</h4>
+                      <Sparkles className="w-6 h-6 text-green-400" />
                     </div>
-                    <h4 className="text-xl font-bold text-white">NPCI Certified Innovation</h4>
-                    <Sparkles className="w-6 h-6 text-green-400" />
-                  </div>
-                  <p className="text-blue-100 text-base leading-relaxed mb-4">
-                    OPPB represents a breakthrough in financial technology, built specifically for NPCI and BHIM Pay 
-                    infrastructure, solving real-world connectivity challenges with innovative mesh networking and 
-                    cryptographic security.
-                  </p>
-                  <div className="flex items-center gap-2 text-green-300 font-semibold">
-                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <span className="text-sm">Officially integrated with India's digital payment ecosystem</span>
-                  </div>
-                </div>
+                    <p className="text-blue-100 text-base leading-relaxed mb-4">
+                      OPPB represents a breakthrough in financial technology, built specifically for NPCI and BHIM Pay 
+                      infrastructure, solving real-world connectivity challenges with innovative mesh networking and 
+                      cryptographic security.
+                    </p>
+                    <div className="flex items-center gap-2 text-green-300 font-semibold">
+                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                      <span className="text-sm">Officially integrated with India's digital payment ecosystem</span>
+                    </div>
+                  </CardContent>
+                </Card>
               </PinContainer>
             </div>
           </div>
