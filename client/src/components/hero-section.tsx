@@ -105,10 +105,15 @@ export default function HeroSection({
         <RetroGrid {...gridOptions} />
         <div className="max-w-screen-xl z-10 mx-auto px-4 py-28 gap-12 md:px-8">
           <div className="space-y-5 max-w-3xl leading-0 lg:leading-5 mx-auto text-center">
-            <h1 className="text-sm text-gray-600 dark:text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/20 via-gray-400/20 to-transparent dark:from-zinc-300/5 dark:via-gray-400/5 border-[2px] border-black/5 dark:border-white/5 rounded-3xl w-fit">
-              {title}
-              <ChevronRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-            </h1>
+            <div className="relative group mx-auto w-fit">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+              <h1 className="relative text-sm font-semibold group mx-auto px-6 py-3 bg-gradient-to-r from-white/90 via-gray-50/95 to-white/90 dark:from-gray-900/90 dark:via-gray-800/95 dark:to-gray-900/90 border border-gray-200/60 dark:border-gray-700/60 rounded-full w-fit shadow-lg shadow-gray-200/30 dark:shadow-gray-900/50 backdrop-blur-sm hover:shadow-xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105 text-gray-800 dark:text-gray-200">
+                <span className="bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
+                  {title}
+                </span>
+                <ChevronRight className="inline w-4 h-4 ml-2 text-purple-500 dark:text-purple-400 group-hover:translate-x-1 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all duration-300" />
+              </h1>
+            </div>
             <h2 className="text-4xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto md:text-6xl bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
               {subtitle.regular}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-orange-200">
