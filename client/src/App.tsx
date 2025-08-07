@@ -8,6 +8,7 @@ import { initGA } from "../lib/analytics";
 import { useAnalytics } from "../hooks/use-analytics";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
+import TetrisLoading from "@/components/tetris-loader";
 
 // Lazy load pages to reduce initial bundle size
 const About = lazy(() => import("@/pages/about"));
@@ -36,10 +37,14 @@ const Security = lazy(() => import("@/pages/security"));
 // Loading component
 function Loading() {
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="text-center">
-        <div className="w-8 h-8 border-4 border-slate-300 border-t-slate-900 rounded-full animate-spin mx-auto mb-4"></div>
-        <p className="text-slate-600">Loading...</p>
+    <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
+        <TetrisLoading 
+          size="md"
+          speed="normal"
+          showLoadingText={true}
+          loadingText="Loading page..."
+        />
       </div>
     </div>
   );
