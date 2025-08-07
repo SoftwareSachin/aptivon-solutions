@@ -108,21 +108,20 @@ export default function HeroSection() {
           </p>
           
           {/* Professional CTA buttons */}
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-6 pt-8">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8">
             <Button
               onClick={() => scrollToSection("services")}
-              className="group relative px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/30 text-lg"
+              className="group relative px-10 py-5 bg-gradient-to-r from-cyan-400 to-teal-500 hover:from-cyan-500 hover:to-teal-600 text-white font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/40 text-lg shadow-lg"
             >
               <span className="relative z-10">Explore Solutions</span>
               <ArrowRight className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-2" />
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-300 to-teal-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
             </Button>
             <Button
               onClick={() => scrollToSection("contact")}
-              variant="outline"
-              className="group px-10 py-5 border-2 border-slate-600 hover:border-cyan-400 text-slate-300 hover:text-white hover:bg-slate-800/80 font-semibold rounded-2xl transition-all duration-300 backdrop-blur-xl text-lg hover:shadow-xl hover:shadow-slate-900/50"
+              className="group px-10 py-5 bg-white/95 hover:bg-white text-slate-800 hover:text-slate-900 font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-white/30 text-lg"
             >
-              <Shield className="mr-3 w-6 h-6 group-hover:text-cyan-400 transition-colors" />
+              <Shield className="mr-3 w-6 h-6 text-slate-700 group-hover:text-slate-800 transition-colors" />
               Get Consultation
             </Button>
           </div>
