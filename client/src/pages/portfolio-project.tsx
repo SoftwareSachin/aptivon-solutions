@@ -134,7 +134,7 @@ export default function PortfolioProject() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-white pt-80">
+      <div className="min-h-screen bg-white mt-96">
         <Navigation />
         <div className="pt-32 pb-20">
           <div className="max-w-4xl mx-auto px-6">
@@ -152,7 +152,7 @@ export default function PortfolioProject() {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-white pt-80">
+      <div className="min-h-screen bg-white mt-96">
         <Navigation />
         <div className="pt-32 pb-20">
           <div className="max-w-4xl mx-auto px-6 text-center">
@@ -169,7 +169,7 @@ export default function PortfolioProject() {
   }
 
   return (
-    <div className="min-h-screen bg-white pt-80">
+    <div className="min-h-screen bg-white mt-96">
       <Navigation />
       
       <div className="pt-32 pb-20">

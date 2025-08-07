@@ -1699,7 +1699,7 @@ export default function PortfolioDownload() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-80">
+    <div className="min-h-screen bg-white mt-96">
       <Navigation />
       
       {/* Hero Section */}

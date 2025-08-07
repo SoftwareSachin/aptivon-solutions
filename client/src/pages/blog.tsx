@@ -98,7 +98,7 @@ export default function Blog() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-white pt-80">
+      <div className="min-h-screen bg-white mt-96">
         <Navigation />
         <div className="pt-32 pb-20">
           <div className="max-w-7xl mx-auto px-6">
@@ -118,7 +118,7 @@ export default function Blog() {
   }
 
   return (
-    <div className="min-h-screen bg-white pt-80">
+    <div className="min-h-screen bg-white mt-96">
       <Navigation />
       
       {/* Hero Section */}

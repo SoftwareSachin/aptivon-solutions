@@ -81,7 +81,7 @@ export default function CollegeProjects() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-white pt-80">
+      <div className="min-h-screen bg-white mt-96">
         <Navigation />
         <div className="flex items-center justify-center py-20">
           <div className="text-center">
@@ -102,7 +102,7 @@ export default function CollegeProjects() {
   const technologies = [...new Set(filteredProjects?.flatMap(p => p.technologies) || [])];
 
   return (
-    <div className="min-h-screen bg-white pt-80">
+    <div className="min-h-screen bg-white mt-96">
       <Navigation />
       
       {/* Hero Section */}

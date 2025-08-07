@@ -225,7 +225,7 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-background pt-80">
+    <div className="min-h-screen bg-background mt-96">
       <Navigation />
 
       {/* SEO Content for Crawlers */}
