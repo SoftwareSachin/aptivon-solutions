@@ -3,6 +3,7 @@ import { RainbowButton } from "@/components/rainbow-button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GlowEffect } from "@/components/glow-effect";
 import { Star, Play, ExternalLink, Shield, Smartphone, Globe, Zap, Maximize2, Award, Sparkles } from "lucide-react";
+import npciLogo from "@/assets/npci-bhim-logo.png";
 import { useState } from "react";
 import { PinContainer } from "@/components/3d-pin";
 import { Squares } from "@/components/squares-background";
@@ -146,8 +147,8 @@ export default function StarProjectSection() {
               <CardContent className="relative z-10 p-0">
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
-                      <Shield className="w-5 h-5 text-white" />
+                    <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-lg p-1">
+                      <img src={npciLogo} alt="NPCI BHIM Pay Logo" className="w-full h-full object-contain" />
                     </div>
                     <div className="text-center sm:text-left">
                       <div className="text-white font-bold text-lg">Built for NPCI & BHIM Pay</div>
