@@ -35,15 +35,15 @@ export default function SKITStudentsAd({ isVisible = true }: SKITStudentsAdProps
   };
 
   return (
-    <section className="py-16 bg-gradient-to-r from-emerald-50 to-blue-50">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="mobile-padding bg-gradient-to-r from-emerald-50 to-blue-50 safe-area-padding overflow-hidden">
+      <div className="max-w-6xl mx-auto mobile-container">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 rounded-full mb-4">
-            <GraduationCap className="w-5 h-5 text-emerald-600" />
-            <span className="text-emerald-800 font-semibold">SKIT STUDENTS EXCLUSIVE</span>
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-emerald-100 rounded-full mb-3 sm:mb-4 flex-wrap justify-center">
+            <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 flex-shrink-0" />
+            <span className="text-emerald-800 font-semibold text-sm sm:text-base text-center">SKIT STUDENTS EXCLUSIVE</span>
           </div>
           
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
+          <h2 className="mobile-text-4xl font-bold text-gray-900 mb-4 leading-tight px-2">
             Special SKIT Student Discount
           </h2>
           
@@ -52,8 +52,8 @@ export default function SKITStudentsAd({ isVisible = true }: SKITStudentsAdProps
           </p>
         </div>
 
-        <Card className="max-w-4xl mx-auto p-8 shadow-lg">
-          <div className="grid md:grid-cols-2 gap-8">
+        <Card className="max-w-4xl mx-auto mobile-card-padding shadow-lg">
+          <div className="grid md:grid-cols-2 mobile-gap">
             {/* Left side - Discount & Pricing */}
             <div className="space-y-6">
               <div className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white p-6 rounded-xl text-center">

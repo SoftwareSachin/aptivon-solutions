@@ -20,20 +20,20 @@ export default function ReferralCommissionAd() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 py-20">
+    <section className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 mobile-padding-lg safe-area-padding overflow-hidden">
       
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto mobile-container">
         <div className="text-center">
           {/* Enhanced Badge */}
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-emerald-400/30 rounded-full mb-8 border border-emerald-300/50">
-            <Gift className="w-6 h-6 text-emerald-200" />
-            <span className="text-base font-bold text-emerald-100 tracking-wide">EARN MONEY BY REFERRING</span>
-            <TrendingUp className="w-6 h-6 text-emerald-200" />
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-2 sm:py-3 bg-emerald-400/30 rounded-full mb-6 sm:mb-8 border border-emerald-300/50 flex-wrap justify-center">
+            <Gift className="w-4 h-4 sm:w-6 sm:h-6 text-emerald-200 flex-shrink-0" />
+            <span className="text-sm sm:text-base font-bold text-emerald-100 tracking-wide text-center">EARN MONEY BY REFERRING</span>
+            <TrendingUp className="w-4 h-4 sm:w-6 sm:h-6 text-emerald-200 flex-shrink-0" />
           </div>
           
           {/* Main Title with Dynamic Earnings */}
           <div className="mb-6">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight leading-tight">
+            <h2 className="mobile-text-5xl font-bold text-white mb-4 tracking-tight leading-tight px-2">
               Refer a client and earn a{" "}
               <span className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent">
                 10% commission

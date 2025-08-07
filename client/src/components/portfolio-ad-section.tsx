@@ -43,25 +43,25 @@ export default function PortfolioAdSection({ isVisible = true }: PortfolioAdSect
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
+    <section className="mobile-padding bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 safe-area-padding overflow-hidden">
       
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto mobile-container">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-blue-500/30 rounded-full mb-6 border border-blue-400/40">
-            <Code className="w-5 h-5 text-blue-300" />
-            <span className="text-base font-bold text-blue-100 tracking-wide">PROFESSIONAL PORTFOLIO SERVICE</span>
-            <Globe className="w-5 h-5 text-purple-300" />
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-2 sm:py-3 bg-blue-500/30 rounded-full mb-4 sm:mb-6 border border-blue-400/40 flex-wrap justify-center">
+            <Code className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 flex-shrink-0" />
+            <span className="text-sm sm:text-base font-bold text-blue-100 tracking-wide text-center">PROFESSIONAL PORTFOLIO SERVICE</span>
+            <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-purple-300 flex-shrink-0" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+          <h2 className="mobile-text-5xl font-bold text-white mb-4 tracking-tight leading-tight px-2">
             Build Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Dream Portfolio</span>
           </h2>
         </div>
 
         <Card 
-          className="max-w-5xl mx-auto bg-white border-0 shadow-lg rounded-3xl overflow-hidden cursor-pointer"
+          className="max-w-5xl mx-auto bg-white border-0 shadow-lg rounded-3xl overflow-hidden cursor-pointer touch-target"
           onClick={handleContactClick}
         >
-          <div className="grid md:grid-cols-2 gap-6 p-8">
+          <div className="grid md:grid-cols-2 mobile-gap mobile-card-padding">
             {/* Left side - Image */}
             <div className="relative">
               <img 

@@ -36,16 +36,16 @@ export default function AcademicProjectsAd({ isVisible = true }: AcademicProject
   ];
 
   return (
-    <section className="py-16 bg-blue-50">
+    <section className="mobile-padding bg-blue-50 safe-area-padding overflow-hidden">
       
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto mobile-container">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-blue-100 rounded-full mb-6 border border-blue-300/50">
-            <BookOpen className="w-5 h-5 text-blue-600" />
-            <span className="text-base font-bold text-blue-800 tracking-wide">ACADEMIC PROJECT SERVICES</span>
-            <Code className="w-5 h-5 text-purple-600" />
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-2 sm:py-3 bg-blue-100 rounded-full mb-4 sm:mb-6 border border-blue-300/50 flex-wrap justify-center">
+            <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
+            <span className="text-sm sm:text-base font-bold text-blue-800 tracking-wide text-center">ACADEMIC PROJECT SERVICES</span>
+            <Code className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-4 tracking-tight">
+          <h2 className="mobile-text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight px-2">
             Academic <span className="text-blue-600">Excellence</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
