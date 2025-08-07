@@ -82,7 +82,7 @@ export function AIAssistantInterface() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
       {/* Flickering Grid Background */}
       <div className="absolute inset-0 opacity-40">
         <FlickeringGrid
@@ -102,31 +102,31 @@ export function AIAssistantInterface() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
       </div>
       
-      <div className="relative max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-xl rounded-full mb-8 border border-slate-200/60 shadow-lg">
             <Sparkles className="w-5 h-5 text-blue-600" />
             <span className="text-sm font-semibold text-slate-700">
               AI Assistant
             </span>
           </div>
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-slate-900 via-blue-600 to-purple-600 bg-clip-text text-transparent">
               Try Our AI Assistant
             </span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Experience intelligent assistance with advanced search, deep research, and reasoning capabilities
           </p>
         </div>
         
         {/* Main AI Assistant Card */}
         <div className="w-full max-w-4xl mx-auto">
-          <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 overflow-hidden">
-            <div className="p-8 lg:p-12">
+          <div className="bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 overflow-hidden">
+            <div className="p-4 sm:p-6 md:p-8 lg:p-12">
               <div className="flex flex-col items-center">
                 {/* Logo with animated gradient */}
-                <div className="mb-10 w-24 h-24 relative">
+                <div className="mb-6 sm:mb-8 lg:mb-10 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -239,39 +239,39 @@ export function AIAssistantInterface() {
                 </div>
 
                 {/* Welcome message */}
-                <div className="mb-10 text-center">
+                <div className="mb-6 sm:mb-8 lg:mb-10 text-center">
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
                     className="flex flex-col items-center"
                   >
-                    <h3 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-400 mb-4">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-400 mb-3 sm:mb-4">
                       Ready to assist you
                     </h3>
-                    <p className="text-gray-600 max-w-lg text-lg leading-relaxed">
+                    <p className="text-gray-600 max-w-lg text-base sm:text-lg leading-relaxed px-4 sm:px-0">
                       Ask me anything or try one of the suggestions below
                     </p>
                   </motion.div>
                 </div>
 
                 {/* Input area with integrated functions and file upload */}
-                <div className="w-full bg-gradient-to-r from-white to-blue-50/30 border border-slate-200/60 rounded-2xl shadow-xl overflow-hidden mb-8 hover:shadow-2xl transition-all duration-300">
-                  <div className="p-6">
+                <div className="w-full bg-gradient-to-r from-white to-blue-50/30 border border-slate-200/60 rounded-xl sm:rounded-2xl shadow-xl overflow-hidden mb-6 sm:mb-8 hover:shadow-2xl transition-all duration-300">
+                  <div className="p-4 sm:p-6">
                     <input
                       ref={inputRef}
                       type="text"
                       placeholder="Ask me anything..."
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
-                      className="w-full text-gray-700 text-lg outline-none placeholder:text-gray-500 bg-transparent font-medium"
+                      className="w-full text-gray-700 text-base sm:text-lg outline-none placeholder:text-gray-500 bg-transparent font-medium"
                       data-testid="input-ai-assistant"
                     />
                   </div>
 
                   {/* Uploaded files */}
                   {uploadedFiles.length > 0 && (
-                    <div className="px-6 pb-4">
+                    <div className="px-4 sm:px-6 pb-4">
                       <div className="flex flex-wrap gap-3">
                         {uploadedFiles.map((file, index) => (
                           <div
@@ -311,11 +311,11 @@ export function AIAssistantInterface() {
                   )}
 
                   {/* Search, Deep Research, Reason functions and actions */}
-                  <div className="px-6 py-4 flex items-center justify-between bg-slate-50/50">
-                    <div className="flex items-center gap-3">
+                  <div className="px-4 sm:px-6 py-3 sm:py-4 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-0 sm:justify-between bg-slate-50/50">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto">
                       <button
                         onClick={() => setSearchEnabled(!searchEnabled)}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                        className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
                           searchEnabled
                             ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg transform scale-105"
                             : "bg-white text-gray-600 hover:bg-slate-50 border border-slate-200 shadow-sm hover:shadow-md"
@@ -327,7 +327,7 @@ export function AIAssistantInterface() {
                       </button>
                       <button
                         onClick={() => setDeepResearchEnabled(!deepResearchEnabled)}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                        className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
                           deepResearchEnabled
                             ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg transform scale-105"
                             : "bg-white text-gray-600 hover:bg-slate-50 border border-slate-200 shadow-sm hover:shadow-md"
@@ -355,7 +355,7 @@ export function AIAssistantInterface() {
                       </button>
                       <button
                         onClick={() => setReasonEnabled(!reasonEnabled)}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                        className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
                           reasonEnabled
                             ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg transform scale-105"
                             : "bg-white text-gray-600 hover:bg-slate-50 border border-slate-200 shadow-sm hover:shadow-md"
@@ -366,14 +366,14 @@ export function AIAssistantInterface() {
                         <span>Reason</span>
                       </button>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <button className="p-3 text-gray-500 hover:text-gray-700 hover:bg-white rounded-xl transition-all duration-200 border border-transparent hover:border-slate-200 hover:shadow-sm" data-testid="button-microphone">
+                    <div className="flex items-center gap-2 sm:gap-3 justify-end w-full sm:w-auto">
+                      <button className="p-2 sm:p-3 text-gray-500 hover:text-gray-700 hover:bg-white rounded-lg sm:rounded-xl transition-all duration-200 border border-transparent hover:border-slate-200 hover:shadow-sm" data-testid="button-microphone">
                         <Mic className="w-5 h-5" />
                       </button>
                       <button
                         onClick={handleSendMessage}
                         disabled={!inputValue.trim()}
-                        className={`w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-200 ${
+                        className={`w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg sm:rounded-xl transition-all duration-200 ${
                           inputValue.trim()
                             ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl transform hover:scale-105"
                             : "bg-gray-100 text-gray-400 cursor-not-allowed"
@@ -386,10 +386,10 @@ export function AIAssistantInterface() {
                   </div>
 
                   {/* Upload files */}
-                  <div className="px-6 py-4 border-t border-slate-200/60 bg-slate-50/30">
+                  <div className="px-4 sm:px-6 py-3 sm:py-4 border-t border-slate-200/60 bg-slate-50/30">
                     <button
                       onClick={handleUploadFile}
-                      className="flex items-center gap-3 text-gray-700 text-sm hover:text-gray-900 transition-all duration-200 font-medium hover:bg-white px-4 py-2 rounded-xl"
+                      className="flex items-center gap-2 sm:gap-3 text-gray-700 text-sm hover:text-gray-900 transition-all duration-200 font-medium hover:bg-white px-3 sm:px-4 py-2 rounded-lg sm:rounded-xl"
                       data-testid="button-upload-file"
                     >
                       {showUploadAnimation ? (
@@ -435,7 +435,7 @@ export function AIAssistantInterface() {
                 </div>
 
                 {/* Command categories */}
-                <div className="w-full grid grid-cols-3 gap-6 mb-8">
+                <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
                   <CommandButton
                     icon={<BookOpen className="w-6 h-6" />}
                     label="Learn"
@@ -477,9 +477,9 @@ export function AIAssistantInterface() {
                       exit={{ opacity: 0, height: 0 }}
                       className="w-full mb-6 overflow-hidden"
                     >
-                      <div className="bg-white/90 backdrop-blur-xl rounded-2xl border border-slate-200/60 shadow-xl overflow-hidden">
-                        <div className="p-6 border-b border-slate-200/60 bg-gradient-to-r from-slate-50 to-blue-50/30">
-                          <h3 className="text-lg font-semibold text-gray-800">
+                      <div className="bg-white/90 backdrop-blur-xl rounded-xl sm:rounded-2xl border border-slate-200/60 shadow-xl overflow-hidden">
+                        <div className="p-4 sm:p-6 border-b border-slate-200/60 bg-gradient-to-r from-slate-50 to-blue-50/30">
+                          <h3 className="text-base sm:text-lg font-semibold text-gray-800">
                             {activeCommandCategory === "learn"
                               ? "Learning suggestions"
                               : activeCommandCategory === "code"
@@ -497,20 +497,20 @@ export function AIAssistantInterface() {
                               animate={{ opacity: 1 }}
                               transition={{ delay: index * 0.03 }}
                               onClick={() => handleCommandSelect(suggestion)}
-                              className="p-4 hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-purple-50/30 cursor-pointer transition-all duration-200 group"
+                              className="p-3 sm:p-4 hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-purple-50/30 cursor-pointer transition-all duration-200 group"
                               data-testid={`suggestion-${activeCommandCategory}-${index}`}
                             >
-                              <div className="flex items-center gap-4">
-                                <div className="p-2 rounded-xl bg-blue-100 group-hover:bg-blue-200 transition-colors duration-200">
+                              <div className="flex items-center gap-3 sm:gap-4">
+                                <div className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-blue-100 group-hover:bg-blue-200 transition-colors duration-200">
                                   {activeCommandCategory === "learn" ? (
-                                    <BookOpen className="w-5 h-5 text-blue-600" />
+                                    <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                                   ) : activeCommandCategory === "code" ? (
-                                    <Code className="w-5 h-5 text-blue-600" />
+                                    <Code className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                                   ) : (
-                                    <PenTool className="w-5 h-5 text-blue-600" />
+                                    <PenTool className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                                   )}
                                 </div>
-                                <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900 transition-colors duration-200">
+                                <span className="text-xs sm:text-sm font-medium text-gray-700 group-hover:text-gray-900 transition-colors duration-200 leading-relaxed">
                                   {suggestion}
                                 </span>
                               </div>

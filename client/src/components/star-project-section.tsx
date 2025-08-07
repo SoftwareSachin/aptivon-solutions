@@ -56,7 +56,7 @@ export default function StarProjectSection() {
   ];
 
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-32 relative overflow-hidden">
       {/* Squares Background */}
       <div className="absolute inset-0 w-full h-full">
         <Squares 
@@ -72,10 +72,10 @@ export default function StarProjectSection() {
       {/* Light gradient overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-blue-900/30 to-purple-900/20"></div>
       
-      <div className="relative max-w-7xl mx-auto px-6 z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
         {/* Enhanced Section Header */}
-        <div className="text-center mb-20">
-          <Card className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 mb-8">
+        <div className="text-center mb-10 sm:mb-16 lg:mb-20">
+          <Card className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
             <GlowEffect 
               mode="breathe" 
               colors={["#FFD700", "#FF6B35", "#F7931E"]} 
@@ -83,11 +83,11 @@ export default function StarProjectSection() {
               duration={4}
             />
             <CardContent className="relative z-10 p-0">
-              <div className="inline-flex items-center gap-3 px-8 py-4 bg-blue-500/30 rounded-full mb-8 border border-blue-400/50">
-                <span className="text-xl font-bold text-blue-100 tracking-wide">FEATURED PROJECT</span>
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 bg-blue-500/30 rounded-full mb-6 sm:mb-8 border border-blue-400/50">
+                <span className="text-lg sm:text-xl font-bold text-blue-100 tracking-wide">FEATURED PROJECT</span>
               </div>
               
-              <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent">
                   OPPB
                 </span>
@@ -99,7 +99,7 @@ export default function StarProjectSection() {
             </CardContent>
           </Card>
           
-          <Card className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 mb-10">
+          <Card className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 lg:mb-10">
             <GlowEffect 
               mode="pulse" 
               colors={["#60A5FA", "#34D399", "#A78BFA"]} 
@@ -107,7 +107,7 @@ export default function StarProjectSection() {
               duration={3}
             />
             <CardContent className="relative z-10 p-0">
-              <p className="text-2xl text-blue-100 leading-relaxed font-light">
+              <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 leading-relaxed font-light px-2 sm:px-0">
                 Revolutionary payment technology that works anywhere, anytime - even without internet connection
               </p>
             </CardContent>
@@ -115,7 +115,7 @@ export default function StarProjectSection() {
 
           {/* Creator Attribution with Enhanced Design */}
           <div className="flex flex-col items-center gap-6">
-            <Card className="relative overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 rounded-full p-6">
+            <Card className="relative overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 rounded-full p-4 sm:p-6">
               <GlowEffect 
                 mode="colorShift" 
                 colors={["#3B82F6", "#8B5CF6", "#10B981"]} 
@@ -123,10 +123,10 @@ export default function StarProjectSection() {
                 duration={6}
               />
               <CardContent className="relative z-10 p-0">
-                <div className="inline-flex items-center gap-4">
+                <div className="inline-flex items-center gap-2 sm:gap-4">
                   <div className="text-left">
-                    <div className="text-white font-bold text-lg">Built by Sachin</div>
-                    <div className="text-blue-200 text-sm">Innovation Engineer</div>
+                    <div className="text-white font-bold text-base sm:text-lg">Built by Sachin</div>
+                    <div className="text-blue-200 text-xs sm:text-sm">Innovation Engineer</div>
                   </div>
                   <Award className="w-6 h-6 text-yellow-400" />
                 </div>
@@ -134,7 +134,7 @@ export default function StarProjectSection() {
             </Card>
 
             {/* NPCI & BHIM Pay Integration Badge */}
-            <Card className="relative overflow-hidden bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-lg border border-green-400/30 rounded-2xl p-8">
+            <Card className="relative overflow-hidden bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-lg border border-green-400/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8">
               <GlowEffect 
                 mode="rotate" 
                 colors={["#10B981", "#3B82F6", "#06B6D4"]} 
@@ -142,19 +142,19 @@ export default function StarProjectSection() {
                 duration={8}
               />
               <CardContent className="relative z-10 p-0">
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-lg p-1">
+                <div className="flex flex-col items-center gap-3 sm:gap-4">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center shadow-lg p-1">
                       <img src={npciLogo} alt="NPCI BHIM Pay Logo" className="w-full h-full object-contain" />
                     </div>
-                    <div className="text-center sm:text-left">
-                      <div className="text-white font-bold text-lg">Built for NPCI & BHIM Pay</div>
-                      <div className="text-green-200 text-sm">Official Digital Payment Infrastructure</div>
+                    <div className="text-center">
+                      <div className="text-white font-bold text-base sm:text-lg">Built for NPCI & BHIM Pay</div>
+                      <div className="text-green-200 text-xs sm:text-sm">Official Digital Payment Infrastructure</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    <span className="text-green-300 text-sm font-medium">Certified Integration</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2 mt-2 sm:mt-0">
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
+                    <span className="text-green-300 text-xs sm:text-sm font-medium">Certified Integration</span>
                   </div>
                 </div>
               </CardContent>
@@ -162,7 +162,7 @@ export default function StarProjectSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Enhanced Video Section with 3D Pin */}
           <div className="order-2 lg:order-1">
             <PinContainer
@@ -170,7 +170,7 @@ export default function StarProjectSection() {
               href="https://www.youtube.com/watch?v=l-z64oz_sa8&t=9s"
               containerClassName="w-full h-[500px]"
             >
-              <div className="relative w-[400px] h-[300px]">
+              <div className="relative w-full max-w-[400px] h-[250px] sm:h-[300px] mx-auto">
                 <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-2xl overflow-hidden">
                     {!showEmbedded ? (
                       <>
@@ -228,7 +228,7 @@ export default function StarProjectSection() {
             </PinContainer>
 
             {/* Enhanced Video Action Buttons */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="mt-6 sm:mt-8 flex flex-col gap-4 sm:gap-6 justify-center">
               {!showEmbedded ? (
                 <RainbowButton
                   onClick={handleWatchHere}
@@ -259,7 +259,7 @@ export default function StarProjectSection() {
 
           {/* Enhanced Project Description */}
           <div className="order-1 lg:order-2">
-            <div className="space-y-10">
+            <div className="space-y-6 sm:space-y-8 lg:space-y-10">
               <Card className="relative overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8">
                 <GlowEffect 
                   mode="flowHorizontal" 
@@ -325,7 +325,7 @@ export default function StarProjectSection() {
               </Card>
 
               {/* Enhanced Key Features Grid with 3D Pins */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
                 {features.map((feature, index) => (
                   <PinContainer
                     key={index}
@@ -333,14 +333,14 @@ export default function StarProjectSection() {
                     containerClassName="w-full h-[200px]"
                     className="w-full"
                   >
-                    <div className="w-[300px] p-6 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20">
-                      <div className="flex items-start gap-4">
-                        <div className={`w-14 h-14 ${feature.bgColor} rounded-xl flex items-center justify-center shadow-lg`}>
-                          <feature.icon className={`w-7 h-7 ${feature.iconColor}`} />
+                    <div className="w-full max-w-[300px] p-4 sm:p-6 bg-white/10 backdrop-blur-xl rounded-xl sm:rounded-2xl border border-white/20">
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className={`w-12 h-12 sm:w-14 sm:h-14 ${feature.bgColor} rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg`}>
+                          <feature.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${feature.iconColor}`} />
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-bold text-white text-lg mb-2">{feature.title}</h4>
-                          <p className="text-blue-200 leading-relaxed text-sm">{feature.description}</p>
+                          <h4 className="font-bold text-white text-base sm:text-lg mb-2">{feature.title}</h4>
+                          <p className="text-blue-200 leading-relaxed text-xs sm:text-sm">{feature.description}</p>
                         </div>
                       </div>
                     </div>
@@ -354,7 +354,7 @@ export default function StarProjectSection() {
                 containerClassName="w-full h-[250px]"
                 className="w-full"
               >
-                <Card className="relative overflow-hidden w-[500px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8">
+                <Card className="relative overflow-hidden w-full max-w-[500px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8">
                   <GlowEffect 
                     mode="rotate" 
                     colors={["#10B981", "#3B82F6", "#8B5CF6", "#F59E0B"]} 
@@ -362,21 +362,21 @@ export default function StarProjectSection() {
                     duration={10}
                   />
                   <CardContent className="relative z-10 p-0">
-                    <div className="flex items-center gap-4 mb-4">
+                    <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
                         <Shield className="w-6 h-6 text-white" />
                       </div>
-                      <h4 className="text-xl font-bold text-white">NPCI Certified Innovation</h4>
+                      <h4 className="text-lg sm:text-xl font-bold text-white">NPCI Certified Innovation</h4>
                       <Sparkles className="w-6 h-6 text-green-400" />
                     </div>
-                    <p className="text-blue-100 text-base leading-relaxed mb-4">
+                    <p className="text-blue-100 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">
                       OPPB represents a breakthrough in financial technology, built specifically for NPCI and BHIM Pay 
                       infrastructure, solving real-world connectivity challenges with innovative mesh networking and 
                       cryptographic security.
                     </p>
                     <div className="flex items-center gap-2 text-green-300 font-semibold">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span className="text-sm">Officially integrated with India's digital payment ecosystem</span>
+                      <span className="text-xs sm:text-sm">Officially integrated with India's digital payment ecosystem</span>
                     </div>
                   </CardContent>
                 </Card>

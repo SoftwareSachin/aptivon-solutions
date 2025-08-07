@@ -235,33 +235,33 @@ export default function Home() {
       <AIAssistantInterface />
 
       {/* Technology Stack Cloud */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
           <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full mb-6 border border-slate-200/60">
               <Sparkles className="w-4 h-4 text-blue-600" />
               <span className="text-sm font-medium text-slate-700">
                 Technology Excellence
               </span>
             </div>
-            <h2 className="text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
                 Our Technology Stack
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto px-4 sm:px-0">
               We leverage cutting-edge technologies to build scalable, secure, and innovative solutions for your business
             </p>
           </div>
 
           {/* Interactive Icon Cloud */}
-          <div className="relative h-[500px] w-full flex items-center justify-center">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full flex items-center justify-center">
             <IconCloud iconSlugs={[
               "react",
               "nodejs",
@@ -321,34 +321,34 @@ export default function Home() {
       <StarProjectSection />
 
       {/* Enhanced Interactive Dashboard Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
           <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full mb-6 border border-slate-200/60">
               <TrendingUp className="w-4 h-4 text-blue-600" />
               <span className="text-sm font-medium text-slate-700">
                 Real-Time Analytics
               </span>
             </div>
-            <h2 className="text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
                 Live Project Dashboard
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto px-4 sm:px-0">
               Experience transparency like never before with our comprehensive
               analytics dashboard
             </p>
           </div>
 
           {/* Enhanced Live Metrics Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
             <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="pb-2 relative z-10">
@@ -445,23 +445,23 @@ export default function Home() {
       </section>
 
       {/* Enhanced Quick Actions Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-full mb-6">
               <Zap className="w-4 h-4" />
               <span className="text-sm font-medium">Instant Actions</span>
             </div>
-            <h2 className="text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               <span className="text-slate-900">Quick Actions</span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto px-4 sm:px-0">
               Get started with Aptivon Solutions instantly with our
               comprehensive service offerings
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {quickActions.map((action, index) => (
               <Card
                 key={index}

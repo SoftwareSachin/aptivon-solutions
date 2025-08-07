@@ -99,38 +99,38 @@ export default function HeroSection({
     return () => clearTimeout(timeout);
   }, [typewriterText, currentWordIndex, isDeleting, typewriterWords]);
   return (
-    <div className={cn("relative pt-48 sm:pt-52", className)} {...props}>
+    <div className={cn("relative pt-32 sm:pt-40 md:pt-48 lg:pt-52", className)} {...props}>
       <div className="absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 dark:bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
       <section className="relative max-w-full mx-auto z-1">
         <RetroGrid {...gridOptions} />
-        <div className="max-w-screen-xl z-10 mx-auto px-4 py-16 gap-12 md:px-8">
-          <div className="space-y-5 max-w-3xl leading-0 lg:leading-5 mx-auto text-center">
+        <div className="max-w-screen-xl z-10 mx-auto px-4 py-8 sm:py-12 md:py-16 gap-8 sm:gap-12 md:px-8">
+          <div className="space-y-4 sm:space-y-5 max-w-3xl leading-0 lg:leading-5 mx-auto text-center">
             <div className="relative group mx-auto w-fit">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-              <h1 className="relative text-sm font-semibold group mx-auto px-6 py-3 bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-full w-fit shadow-lg shadow-black/10 dark:shadow-black/30 backdrop-blur-md hover:bg-white/15 dark:hover:bg-white/10 hover:border-white/30 dark:hover:border-white/20 hover:shadow-xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105 text-gray-800 dark:text-gray-200">
+              <h1 className="relative text-xs sm:text-sm font-semibold group mx-auto px-4 sm:px-6 py-2 sm:py-3 bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-full w-fit shadow-lg shadow-black/10 dark:shadow-black/30 backdrop-blur-md hover:bg-white/15 dark:hover:bg-white/10 hover:border-white/30 dark:hover:border-white/20 hover:shadow-xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105 text-gray-800 dark:text-gray-200">
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
                   {title}
                 </span>
-                <ChevronRight className="inline w-4 h-4 ml-2 text-purple-500 dark:text-purple-400 group-hover:translate-x-1 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all duration-300" />
+                <ChevronRight className="inline w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 text-purple-500 dark:text-purple-400 group-hover:translate-x-1 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all duration-300" />
               </h1>
             </div>
-            <h2 className="text-4xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto md:text-6xl bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-tight">
               {subtitle.regular}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-orange-200">
                 {typewriterText}
-                <span className="animate-pulse text-purple-500 dark:text-purple-300 ml-1">|</span>
+                <span className="animate-pulse text-purple-500 dark:text-purple-300 ml-0.5 sm:ml-1">|</span>
               </span>
             </h2>
-            <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+            <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-sm sm:text-base px-4 sm:px-0 leading-relaxed">
               {description}
             </p>
-            <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
+            <div className="items-center justify-center gap-x-2 sm:gap-x-3 space-y-3 sm:flex sm:space-y-0 px-4 sm:px-0">
               <span className="relative inline-block overflow-hidden rounded-full p-[1.5px]">
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
                 <div className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white dark:bg-gray-950 text-xs font-medium backdrop-blur-3xl">
                   <a
                     href={ctaHref}
-                    className="inline-flex rounded-full text-center group items-center w-full justify-center bg-gradient-to-tr from-zinc-300/20 via-purple-400/30 to-transparent dark:from-zinc-300/5 dark:via-purple-400/20 text-gray-900 dark:text-white border-input border-[1px] hover:bg-gradient-to-tr hover:from-zinc-300/30 hover:via-purple-400/40 hover:to-transparent dark:hover:from-zinc-300/10 dark:hover:via-purple-400/30 transition-all sm:w-auto py-4 px-10"
+                    className="inline-flex rounded-full text-center group items-center w-full justify-center bg-gradient-to-tr from-zinc-300/20 via-purple-400/30 to-transparent dark:from-zinc-300/5 dark:via-purple-400/20 text-gray-900 dark:text-white border-input border-[1px] hover:bg-gradient-to-tr hover:from-zinc-300/30 hover:via-purple-400/40 hover:to-transparent dark:hover:from-zinc-300/10 dark:hover:via-purple-400/30 transition-all sm:w-auto py-3 sm:py-4 px-6 sm:px-10 text-sm sm:text-base"
                   >
                     {ctaText}
                   </a>
