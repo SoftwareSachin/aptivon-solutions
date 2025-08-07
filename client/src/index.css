@@ -154,12 +154,42 @@
 
   /* Retro grid animation */
   .animate-grid {
-    animation: grid 15s linear infinite;
+    animation: grid-move 20s linear infinite;
   }
 
-  @keyframes grid {
-    0% { transform: translateX(-50px); }
-    100% { transform: translateX(0); }
+  @keyframes grid-move {
+    0% { 
+      transform: translateX(-100px) translateY(-100px); 
+    }
+    25% { 
+      transform: translateX(0px) translateY(-50px); 
+    }
+    50% { 
+      transform: translateX(50px) translateY(0px); 
+    }
+    75% { 
+      transform: translateX(0px) translateY(50px); 
+    }
+    100% { 
+      transform: translateX(-100px) translateY(-100px); 
+    }
+  }
+
+  /* Additional smooth grid movement */
+  .grid-container {
+    animation: grid-float 30s ease-in-out infinite;
+  }
+
+  @keyframes grid-float {
+    0%, 100% { 
+      transform: perspective(200px) rotateX(65deg) translateZ(0px);
+    }
+    33% { 
+      transform: perspective(200px) rotateX(60deg) translateZ(10px);
+    }
+    66% { 
+      transform: perspective(200px) rotateX(70deg) translateZ(-5px);
+    }
   }
 
   .animate-pulse-slow {
