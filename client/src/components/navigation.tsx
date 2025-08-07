@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, Info, Settings, Briefcase, Code, BookOpen, FileText, Users, Phone, Folder } from "lucide-react";
+import { Menu, X, Home, Info, Settings, Briefcase, Code, BookOpen, FileText, Users, Phone, Folder, Building, GraduationCap, FileSearch, HelpCircle, UserCheck } from "lucide-react";
 import logoGif from "../assets/new-logo.gif";
 import { cn } from "@/lib/utils";
 
@@ -14,19 +14,16 @@ export default function Navigation() {
     { name: "Home", url: "/", icon: Home },
     { name: "About", url: "/about", icon: Info },
     { name: "Services", url: "/services", icon: Settings },
+    { name: "Solutions", url: "/solutions", icon: Building },
     { name: "Portfolio", url: "/portfolio", icon: Briefcase },
+    { name: "Industries", url: "/industries", icon: Building },
+    { name: "College Projects", url: "/college-projects", icon: GraduationCap },
+    { name: "Case Studies", url: "/case-studies", icon: FileSearch },
+    { name: "Resources", url: "/resources", icon: BookOpen },
     { name: "Blog", url: "/blog", icon: BookOpen },
+    { name: "Support", url: "/support", icon: HelpCircle },
+    { name: "Careers", url: "/careers", icon: UserCheck },
     { name: "Contact", url: "/contact", icon: Phone }
-  ];
-
-  const moreItems = [
-    { name: "Solutions", url: "/solutions" },
-    { name: "Industries", url: "/industries" },
-    { name: "College Projects", url: "/college-projects" },
-    { name: "Case Studies", url: "/case-studies" },
-    { name: "Resources", url: "/resources" },
-    { name: "Support", url: "/support" },
-    { name: "Careers", url: "/careers" }
   ];
 
   useEffect(() => {
@@ -69,8 +66,8 @@ export default function Navigation() {
         </div>
 
         {/* Main Navigation */}
-        <div className="flex justify-center mb-4">
-          <div className="flex items-center gap-3 bg-gray-50/80 border border-gray-200/60 py-2 px-2 rounded-full shadow-sm">
+        <div className="flex justify-center">
+          <div className="flex flex-wrap items-center justify-center gap-2 bg-gray-50/80 border border-gray-200/60 py-2 px-3 rounded-full shadow-sm max-w-6xl">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab === item.name;
@@ -81,15 +78,15 @@ export default function Navigation() {
                   href={item.url}
                   onClick={() => setActiveTab(item.name)}
                   className={cn(
-                    "relative cursor-pointer text-sm font-semibold px-4 py-2 rounded-full transition-colors",
+                    "relative cursor-pointer text-xs font-semibold px-3 py-2 rounded-full transition-colors whitespace-nowrap",
                     "text-gray-700 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400",
                     isActive && "text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20"
                   )}
-                  data-testid={`nav-${item.name.toLowerCase()}`}
+                  data-testid={`nav-${item.name.toLowerCase().replace(' ', '-')}`}
                 >
-                  <span className="hidden sm:inline">{item.name}</span>
-                  <span className="sm:hidden">
-                    <Icon size={18} strokeWidth={2.5} />
+                  <span className="hidden md:inline">{item.name}</span>
+                  <span className="md:hidden">
+                    <Icon size={16} strokeWidth={2.5} />
                   </span>
                   {isActive && (
                     <motion.div
@@ -101,31 +98,12 @@ export default function Navigation() {
                         stiffness: 300,
                         damping: 30,
                       }}
-                    >
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-purple-500 dark:bg-purple-400 rounded-t-full">
-                        <div className="absolute w-12 h-6 bg-purple-500/30 dark:bg-purple-400/30 rounded-full blur-sm -top-2 -left-2" />
-                        <div className="absolute w-8 h-6 bg-purple-500/30 dark:bg-purple-400/30 rounded-full blur-sm -top-1" />
-                      </div>
-                    </motion.div>
+                    />
                   )}
                 </a>
               );
             })}
           </div>
-        </div>
-
-        {/* Secondary Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
-          {moreItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.url}
-              className="text-sm text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 bg-white/70 border border-gray-200/50 px-3 py-1.5 rounded-full transition-all duration-300 hover:bg-white hover:border-gray-300"
-              data-testid={`nav-${item.name.toLowerCase().replace(' ', '-')}`}
-            >
-              {item.name}
-            </a>
-          ))}
         </div>
       </div>
     </div>

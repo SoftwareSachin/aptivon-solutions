@@ -270,7 +270,7 @@ export default function Support() {
     <div className="min-h-screen bg-white ">
       <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-48"></div>
+      <div className="h-32"></div>
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-slate-50">

@@ -227,7 +227,7 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-48"></div>
+      <div className="h-32"></div>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-slate-900 to-slate-800">
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -443,7 +443,7 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 gap-8">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="animate-pulse">
-                  <div className="h-48 bg-slate-200 rounded-lg mb-4"></div>
+                  <div className="h-32 bg-slate-200 rounded-lg mb-4"></div>
                   <div className="h-4 bg-slate-200 rounded mb-2"></div>
                   <div className="h-4 bg-slate-200 rounded mb-2"></div>
                   <div className="h-4 bg-slate-200 rounded w-2/3"></div>

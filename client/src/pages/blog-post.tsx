@@ -118,7 +118,7 @@ export default function BlogPostPage() {
       <div className="min-h-screen bg-white ">
         <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-48"></div>
+      <div className="h-32"></div>
         <div className="pt-32 pb-20">
           <div className="max-w-4xl mx-auto px-6">
             <div className="animate-pulse">
@@ -141,7 +141,7 @@ export default function BlogPostPage() {
       <div className="min-h-screen bg-white ">
         <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-48"></div>
+      <div className="h-32"></div>
         <div className="pt-32 pb-20">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h1 className="text-4xl font-bold text-slate-900 mb-4">Post Not Found</h1>
@@ -160,7 +160,7 @@ export default function BlogPostPage() {
     <div className="min-h-screen bg-white ">
       <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-48"></div>
+      <div className="h-32"></div>
       
       {/* Article Header */}
       <article className="pt-32 pb-20">

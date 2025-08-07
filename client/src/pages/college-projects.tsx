@@ -84,7 +84,7 @@ export default function CollegeProjects() {
       <div className="min-h-screen bg-white ">
         <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-48"></div>
+      <div className="h-32"></div>
         <div className="flex items-center justify-center py-20">
           <div className="text-center">
             <div className="w-8 h-8 border-4 border-slate-300 border-t-slate-900 rounded-full animate-spin mx-auto mb-4"></div>
@@ -107,7 +107,7 @@ export default function CollegeProjects() {
     <div className="min-h-screen bg-white ">
       <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-48"></div>
+      <div className="h-32"></div>
       
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
