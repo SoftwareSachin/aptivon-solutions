@@ -59,15 +59,15 @@ export default function StarProjectSection() {
         <Squares 
           direction="diagonal"
           speed={0.5}
-          borderColor="rgba(59, 130, 246, 0.2)"
-          squareSize={60}
-          hoverFillColor="rgba(59, 130, 246, 0.1)"
-          className="opacity-80"
+          borderColor="rgba(147, 197, 253, 0.3)"
+          squareSize={50}
+          hoverFillColor="rgba(147, 197, 253, 0.2)"
+          className="opacity-100"
         />
       </div>
       
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/80 to-purple-900/90"></div>
+      {/* Light gradient overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-blue-900/30 to-purple-900/20"></div>
       
       <div className="relative max-w-7xl mx-auto px-6 z-10">
         {/* Enhanced Section Header */}
