@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Star, Play, ExternalLink, Shield, Smartphone, Globe, Zap, Maximize2, Award, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { PinContainer } from "@/components/3d-pin";
+import { Squares } from "@/components/squares-background";
 
 export default function StarProjectSection() {
   const [showEmbedded, setShowEmbedded] = useState(false);
@@ -52,8 +53,23 @@ export default function StarProjectSection() {
   ];
 
   return (
-    <section className="py-32 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
-      <div className="relative max-w-7xl mx-auto px-6">
+    <section className="py-32 relative overflow-hidden">
+      {/* Squares Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <Squares 
+          direction="diagonal"
+          speed={0.5}
+          borderColor="rgba(59, 130, 246, 0.2)"
+          squareSize={60}
+          hoverFillColor="rgba(59, 130, 246, 0.1)"
+          className="opacity-80"
+        />
+      </div>
+      
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/80 to-purple-900/90"></div>
+      
+      <div className="relative max-w-7xl mx-auto px-6 z-10">
         {/* Enhanced Section Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-400/30 rounded-full mb-8 border border-yellow-300/50">
