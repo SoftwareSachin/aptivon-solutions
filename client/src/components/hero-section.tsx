@@ -24,23 +24,26 @@ export default function HeroSection() {
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let currentWord = "";
     
     const type = () => {
-      currentWord = typewriterWords[wordIndex];
+      const currentWord = typewriterWords[wordIndex];
       
       if (!isDeleting) {
-        setTypewriterText(currentWord.slice(0, charIndex + 1));
-        charIndex++;
+        if (charIndex <= currentWord.length) {
+          setTypewriterText(currentWord.slice(0, charIndex));
+          charIndex++;
+        }
         
-        if (charIndex === currentWord.length) {
+        if (charIndex > currentWord.length) {
           setTimeout(() => {
             isDeleting = true;
           }, 2000);
         }
       } else {
-        setTypewriterText(currentWord.slice(0, charIndex - 1));
-        charIndex--;
+        if (charIndex > 0) {
+          setTypewriterText(currentWord.slice(0, charIndex));
+          charIndex--;
+        }
         
         if (charIndex === 0) {
           isDeleting = false;
@@ -49,9 +52,9 @@ export default function HeroSection() {
       }
     };
     
-    const timer = setInterval(type, isDeleting ? 100 : 150);
+    const timer = setInterval(type, isDeleting ? 100 : 200);
     return () => clearInterval(timer);
-  }, [typewriterText]);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -61,7 +64,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full h-screen flex items-center overflow-hidden">
+    <section className="relative w-full h-screen flex items-center overflow-hidden pt-20">
       {/* Enhanced animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-800 to-blue-700 animate-gradient-x">
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 via-transparent to-purple-600/10"></div>
