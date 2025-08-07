@@ -10,6 +10,7 @@ import ApproachSection from "@/components/approach-section";
 import TeamSection from "@/components/team-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import { IconCloud } from "@/components/icon-cloud";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -233,6 +234,119 @@ export default function Home() {
       {/* AI Assistant Interface */}
       <AIAssistantInterface />
 
+      {/* Technology Stack Cloud */}
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-30">
+          <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full mb-6 border border-slate-200/60">
+              <Sparkles className="w-4 h-4 text-blue-600" />
+              <span className="text-sm font-medium text-slate-700">
+                Technology Excellence
+              </span>
+            </div>
+            <h2 className="text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
+                Our Technology Stack
+              </span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              We leverage cutting-edge technologies to build scalable, secure, and innovative solutions for your business
+            </p>
+          </div>
+
+          {/* Interactive Icon Cloud */}
+          <div className="relative h-[500px] w-full flex items-center justify-center">
+            <IconCloud iconSlugs={[
+              "react",
+              "nodejs",
+              "python",
+              "typescript",
+              "javascript",
+              "amazonwebservices",
+              "microsoftazure",
+              "googlecloud",
+              "docker",
+              "kubernetes",
+              "postgresql",
+              "mongodb",
+              "redis",
+              "nginx",
+              "git",
+              "github",
+              "vercel",
+              "tailwindcss",
+              "express",
+              "nextdotjs",
+              "vitejs",
+              "tensorflow",
+              "pytorch",
+              "django",
+              "flask",
+              "angular",
+              "vue",
+              "bootstrap",
+              "firebase",
+              "supabase",
+              "prisma",
+              "graphql",
+              "apollographql",
+              "jest",
+              "cypress",
+              "figma",
+              "adobexd",
+              "linux",
+              "ubuntu",
+              "debian",
+              "jenkins",
+              "githubactions",
+              "sonarqube",
+              "elasticsearch",
+              "logstash",
+              "kibana",
+              "prometheus",
+              "grafana"
+            ]} />
+          </div>
+
+          {/* Technology Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-8 h-8 bg-blue-600 rounded-lg"></div>
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">Frontend</h3>
+              <p className="text-slate-600 text-sm">React, Next.js, Vue, Angular, TypeScript</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-8 h-8 bg-emerald-600 rounded-lg"></div>
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">Backend</h3>
+              <p className="text-slate-600 text-sm">Node.js, Python, Express, Django, Flask</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-8 h-8 bg-purple-600 rounded-lg"></div>
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">Cloud</h3>
+              <p className="text-slate-600 text-sm">AWS, Azure, Google Cloud, Docker, Kubernetes</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-8 h-8 bg-amber-600 rounded-lg"></div>
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">AI/ML</h3>
+              <p className="text-slate-600 text-sm">TensorFlow, PyTorch, Machine Learning</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Star Project Section */}
       <StarProjectSection />
