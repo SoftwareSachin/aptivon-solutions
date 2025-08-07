@@ -107,7 +107,7 @@ export default function HeroSection({
           <div className="space-y-5 max-w-3xl leading-0 lg:leading-5 mx-auto text-center">
             <div className="relative group mx-auto w-fit">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-              <h1 className="relative text-sm font-semibold group mx-auto px-6 py-3 bg-gradient-to-r from-white/90 via-gray-50/95 to-white/90 dark:from-gray-900/90 dark:via-gray-800/95 dark:to-gray-900/90 border border-gray-200/60 dark:border-gray-700/60 rounded-full w-fit shadow-lg shadow-gray-200/30 dark:shadow-gray-900/50 backdrop-blur-sm hover:shadow-xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105 text-gray-800 dark:text-gray-200">
+              <h1 className="relative text-sm font-semibold group mx-auto px-6 py-3 bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-full w-fit shadow-lg shadow-black/10 dark:shadow-black/30 backdrop-blur-md hover:bg-white/15 dark:hover:bg-white/10 hover:border-white/30 dark:hover:border-white/20 hover:shadow-xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105 text-gray-800 dark:text-gray-200">
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
                   {title}
                 </span>
