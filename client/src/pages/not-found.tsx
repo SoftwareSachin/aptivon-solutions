@@ -8,12 +8,12 @@ export default function NotFound() {
     <div className="min-h-screen bg-white ">
       <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-32"></div>
+      <div className="h-20 sm:h-24 lg:h-32"></div>
       
       <div className="pt-32 pb-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center justify-center text-center">
-            <div className="w-32 h-32 bg-slate-100 rounded-full flex items-center justify-center mb-8">
+            <div className="w-32 h-20 sm:h-24 lg:h-32 bg-slate-100 rounded-full flex items-center justify-center mb-8">
               <AlertCircle className="h-16 w-16 text-slate-400" />
             </div>
             

@@ -101,7 +101,7 @@ export default function Blog() {
       <div className="min-h-screen bg-white ">
         <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-32"></div>
+      <div className="h-20 sm:h-24 lg:h-32"></div>
         <div className="pt-32 pb-20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="animate-pulse">
@@ -123,7 +123,7 @@ export default function Blog() {
     <div className="min-h-screen bg-white ">
       <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-32"></div>
+      <div className="h-20 sm:h-24 lg:h-32"></div>
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-slate-50">
@@ -171,7 +171,7 @@ export default function Blog() {
                   <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div className="bg-slate-100 flex items-center justify-center p-12">
                       <div className="text-center">
-                        <div className="w-32 h-32 bg-slate-300 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <div className="w-32 h-20 sm:h-24 lg:h-32 bg-slate-300 rounded-lg flex items-center justify-center mb-4 mx-auto">
                           <Tag className="w-12 h-12 text-slate-500" />
                         </div>
                         <Badge className="bg-slate-900 text-white">{featuredPost.category}</Badge>
@@ -269,7 +269,7 @@ export default function Blog() {
                 onClick={() => handleReadArticle(post.slug)}
               >
                 <CardContent className="p-0">
-                  <div className="bg-slate-100 h-32 flex items-center justify-center">
+                  <div className="bg-slate-100 h-20 sm:h-24 lg:h-32 flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-slate-300 rounded-lg flex items-center justify-center mb-2 mx-auto">
                         <Tag className="w-6 h-6 text-slate-500" />
