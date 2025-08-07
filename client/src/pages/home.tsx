@@ -19,18 +19,24 @@ import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { Input } from "@/components/ui/input";
-import { 
-  TrendingUp, 
-  Users, 
-  Trophy, 
-  Clock, 
-  Search, 
-  Filter, 
-  ArrowRight, 
+import {
+  TrendingUp,
+  Users,
+  Trophy,
+  Clock,
+  Search,
+  Filter,
+  ArrowRight,
   Star,
   Calendar,
   MapPin,
@@ -41,7 +47,7 @@ import {
   Download,
   ChevronDown,
   Zap,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -55,29 +61,57 @@ export default function Home() {
   // Add static content for SEO crawlers at the top of the page
   const seoContent = (
     <div className="sr-only">
-      <h2>Leading IT Consulting Firm with Cloud Migration, AI/ML Implementation, DevOps Automation</h2>
-      <p>Our comprehensive services include cloud infrastructure migration, artificial intelligence and machine learning implementation, DevOps pipeline automation, custom web and mobile application development, cybersecurity solutions, and data analytics. With over 5 successful projects delivered and a 98% client satisfaction rate, we have consistently delivered enterprise-grade solutions that drive business growth and operational efficiency.</p>
-      <p>We follow agile development methodologies with sprint-based development, continuous integration, and iterative delivery to ensure rapid time-to-market and flexible adaptation to changing requirements. Our quality assurance processes include comprehensive testing strategies such as unit testing, integration testing, performance testing, and security audits to ensure robust, scalable, and secure enterprise solutions.</p>
-      <p>Our technology stack excellence leverages modern technologies including React for frontend development, Node.js for backend services, Python for AI/ML applications, AWS and Azure for cloud infrastructure, Google Cloud Platform for scalable solutions, Docker for containerization, Kubernetes for orchestration, TensorFlow for machine learning, and PyTorch for deep learning applications.</p>
+      <h2>
+        Leading IT Consulting Firm with Cloud Migration, AI/ML Implementation,
+        DevOps Automation
+      </h2>
+      <p>
+        Our comprehensive services include cloud infrastructure migration,
+        artificial intelligence and machine learning implementation, DevOps
+        pipeline automation, custom web and mobile application development,
+        cybersecurity solutions, and data analytics. With over 5 successful
+        projects delivered and a 98% client satisfaction rate, we have
+        consistently delivered enterprise-grade solutions that drive business
+        growth and operational efficiency.
+      </p>
+      <p>
+        We follow agile development methodologies with sprint-based development,
+        continuous integration, and iterative delivery to ensure rapid
+        time-to-market and flexible adaptation to changing requirements. Our
+        quality assurance processes include comprehensive testing strategies
+        such as unit testing, integration testing, performance testing, and
+        security audits to ensure robust, scalable, and secure enterprise
+        solutions.
+      </p>
+      <p>
+        Our technology stack excellence leverages modern technologies including
+        React for frontend development, Node.js for backend services, Python for
+        AI/ML applications, AWS and Azure for cloud infrastructure, Google Cloud
+        Platform for scalable solutions, Docker for containerization, Kubernetes
+        for orchestration, TensorFlow for machine learning, and PyTorch for deep
+        learning applications.
+      </p>
     </div>
   );
-
 
   const [liveMetrics, setLiveMetrics] = useState({
     activeProjects: 5,
     clientsSatisfied: 3,
     teamMembers: 2,
-    completionRate: 98.5
+    completionRate: 98.5,
   });
 
   // Simulate live metric updates every 30 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setLiveMetrics(prev => ({
+      setLiveMetrics((prev) => ({
         ...prev,
         // Small random fluctuations to simulate real-time data
-        activeProjects: Math.max(3, prev.activeProjects + Math.floor(Math.random() * 3) - 1),
-        clientsSatisfied: prev.clientsSatisfied + (Math.random() > 0.9 ? 1 : 0)
+        activeProjects: Math.max(
+          3,
+          prev.activeProjects + Math.floor(Math.random() * 3) - 1,
+        ),
+        clientsSatisfied: prev.clientsSatisfied + (Math.random() > 0.9 ? 1 : 0),
       }));
     }, 30000);
     return () => clearInterval(interval);
@@ -90,29 +124,37 @@ export default function Home() {
       icon: Phone,
       action: () => {
         // Try to make actual phone call on mobile, otherwise show contact options
-        if (navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i)) {
+        if (
+          navigator.userAgent.match(
+            /Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i,
+          )
+        ) {
           window.location.href = "tel:+917852099010";
         } else {
           // Show contact options for desktop users
           const contactOptions = confirm(
             "Free Consultation Available!\n\n" +
-            "Choose your preferred contact method:\n" +
-            "• Phone: +91 7852099010 (Click OK)\n" +
-            "• Email: singhal3.sachin7@gmail.com (Click Cancel)\n\n" +
-            "Available: 9 AM to 6 PM IST, Monday to Saturday"
+              "Choose your preferred contact method:\n" +
+              "• Phone: +91 7852099010 (Click OK)\n" +
+              "• Email: singhal3.sachin7@gmail.com (Click Cancel)\n\n" +
+              "Available: 9 AM to 6 PM IST, Monday to Saturday",
           );
-          
+
           if (contactOptions) {
-            window.open("tel:+917852099010", '_blank');
+            window.open("tel:+917852099010", "_blank");
           } else {
-            window.open("mailto:singhal3.sachin7@gmail.com?subject=Free Consultation Request&body=Hello Aptivon Solutions,%0D%0A%0D%0AI would like to schedule a free consultation to discuss my project requirements.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0AThank you!", '_blank');
+            window.open(
+              "mailto:singhal3.sachin7@gmail.com?subject=Free Consultation Request&body=Hello Aptivon Solutions,%0D%0A%0D%0AI would like to schedule a free consultation to discuss my project requirements.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0AThank you!",
+              "_blank",
+            );
           }
         }
         toast({
           title: "Free Consultation",
-          description: "Connecting you with our experts for personalized advice",
+          description:
+            "Connecting you with our experts for personalized advice",
         });
-      }
+      },
     },
     {
       title: "Download Portfolio",
@@ -120,20 +162,23 @@ export default function Home() {
       icon: Download,
       action: () => {
         setLocation("/portfolio-download");
-      }
+      },
     },
     {
       title: "Schedule Meeting",
       description: "Book a meeting with our experts",
       icon: Calendar,
       action: () => {
-        window.open(`mailto:singhal3.sachin7@gmail.com?subject=Meeting Request&body=I would like to schedule a meeting to discuss my project requirements.`, '_blank');
+        window.open(
+          `mailto:singhal3.sachin7@gmail.com?subject=Meeting Request&body=I would like to schedule a meeting to discuss my project requirements.`,
+          "_blank",
+        );
         toast({
           title: "Meeting Request",
           description: "Opening email to schedule your meeting",
         });
-      }
-    }
+      },
+    },
   ]);
 
   const [featuredProjects] = useState([
@@ -143,7 +188,7 @@ export default function Home() {
       duration: "6 months",
       technology: "React, Node.js, PostgreSQL",
       status: "Completed",
-      rating: 5
+      rating: 5,
     },
     {
       title: "Healthcare Management System",
@@ -151,7 +196,7 @@ export default function Home() {
       duration: "4 months",
       technology: "Angular, .NET, SQL Server",
       status: "In Progress",
-      rating: 5
+      rating: 5,
     },
     {
       title: "Financial Analytics Dashboard",
@@ -159,8 +204,8 @@ export default function Home() {
       duration: "8 months",
       technology: "Python, React, MongoDB",
       status: "Completed",
-      rating: 5
-    }
+      rating: 5,
+    },
   ]);
 
   useEffect(() => {
@@ -170,20 +215,22 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
-  const filteredProjects = featuredProjects.filter(project => {
-    const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         project.client.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesFilter = activeFilter === "all" || project.status.toLowerCase() === activeFilter;
+  const filteredProjects = featuredProjects.filter((project) => {
+    const matchesSearch =
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.client.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesFilter =
+      activeFilter === "all" || project.status.toLowerCase() === activeFilter;
     return matchesSearch && matchesFilter;
   });
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* SEO Content for Crawlers */}
       {seoContent}
-      
+
       {/* Enhanced Live Status Bar */}
       <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-3 px-6 border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
@@ -194,7 +241,12 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-blue-400" />
-              <span>{currentTime.toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata' })} IST</span>
+              <span>
+                {currentTime.toLocaleTimeString("en-IN", {
+                  timeZone: "Asia/Kolkata",
+                })}{" "}
+                IST
+              </span>
             </div>
             <div className="hidden md:flex items-center gap-2 text-emerald-400">
               <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
@@ -206,18 +258,23 @@ export default function Home() {
               <Phone className="w-4 h-4 text-blue-400" />
               <span className="font-medium">+91 7852099010</span>
             </div>
-            <Button 
-              size="sm" 
+            <Button
+              size="sm"
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg transform hover:scale-105 transition-all duration-300"
               onClick={() => {
-                if (navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i)) {
+                if (
+                  navigator.userAgent.match(
+                    /Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i,
+                  )
+                ) {
                   window.location.href = "tel:+917852099010";
                 } else {
-                  window.open("tel:+917852099010", '_blank');
+                  window.open("tel:+917852099010", "_blank");
                 }
                 toast({
                   title: "Calling Aptivon Solutions",
-                  description: "Phone: +91 7852099010 - Available 9 AM to 6 PM IST",
+                  description:
+                    "Phone: +91 7852099010 - Available 9 AM to 6 PM IST",
                 });
               }}
             >
@@ -254,12 +311,14 @@ export default function Home() {
           <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full mb-6 border border-slate-200/60">
               <TrendingUp className="w-4 h-4 text-blue-600" />
-              <span className="text-sm font-medium text-slate-700">Real-Time Analytics</span>
+              <span className="text-sm font-medium text-slate-700">
+                Real-Time Analytics
+              </span>
             </div>
             <h2 className="text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
@@ -267,7 +326,8 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Experience transparency like never before with our comprehensive analytics dashboard
+              Experience transparency like never before with our comprehensive
+              analytics dashboard
             </p>
           </div>
 
@@ -277,71 +337,87 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="pb-2 relative z-10">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-slate-600">Active Projects</CardTitle>
+                  <CardTitle className="text-sm font-medium text-slate-600">
+                    Active Projects
+                  </CardTitle>
                   <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
                     <TrendingUp className="w-4 h-4 text-blue-600" />
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="relative z-10">
-                <div className="text-3xl font-bold text-slate-900 mb-2">{liveMetrics.activeProjects}</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">
+                  {liveMetrics.activeProjects}
+                </div>
                 <div className="flex items-center text-emerald-600 text-sm font-medium">
                   <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></div>
                   +3 this month
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="pb-2 relative z-10">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-slate-600">Satisfied Clients</CardTitle>
+                  <CardTitle className="text-sm font-medium text-slate-600">
+                    Satisfied Clients
+                  </CardTitle>
                   <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
                     <Users className="w-4 h-4 text-emerald-600" />
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="relative z-10">
-                <div className="text-3xl font-bold text-slate-900 mb-2">{liveMetrics.clientsSatisfied}+</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">
+                  {liveMetrics.clientsSatisfied}+
+                </div>
                 <div className="flex items-center text-emerald-600 text-sm font-medium">
                   <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></div>
                   Growing daily
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-pink-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="pb-2 relative z-10">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-slate-600">Team Members</CardTitle>
+                  <CardTitle className="text-sm font-medium text-slate-600">
+                    Team Members
+                  </CardTitle>
                   <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
                     <Trophy className="w-4 h-4 text-purple-600" />
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="relative z-10">
-                <div className="text-3xl font-bold text-slate-900 mb-2">{liveMetrics.teamMembers}</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">
+                  {liveMetrics.teamMembers}
+                </div>
                 <div className="flex items-center text-purple-600 text-sm font-medium">
                   <div className="w-2 h-2 bg-purple-400 rounded-full mr-2 animate-pulse"></div>
                   Expert professionals
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-amber-600/5 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="pb-2 relative z-10">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-slate-600">Success Rate</CardTitle>
+                  <CardTitle className="text-sm font-medium text-slate-600">
+                    Success Rate
+                  </CardTitle>
                   <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
                     <Star className="w-4 h-4 text-amber-600" />
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="relative z-10">
-                <div className="text-3xl font-bold text-slate-900 mb-2">{liveMetrics.completionRate}%</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">
+                  {liveMetrics.completionRate}%
+                </div>
                 <div className="flex items-center text-amber-600 text-sm font-medium">
                   <div className="w-2 h-2 bg-amber-400 rounded-full mr-2 animate-pulse"></div>
                   Industry leading
@@ -349,8 +425,6 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-
-
         </div>
       </section>
 
@@ -363,28 +437,34 @@ export default function Home() {
               <span className="text-sm font-medium">Instant Actions</span>
             </div>
             <h2 className="text-5xl font-bold mb-6">
-              <span className="text-slate-900">
-                Quick Actions
-              </span>
+              <span className="text-slate-900">Quick Actions</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Get started with Aptivon Solutions instantly with our comprehensive service offerings
+              Get started with Aptivon Solutions instantly with our
+              comprehensive service offerings
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {quickActions.map((action, index) => (
-              <Card key={index} className="group relative overflow-hidden bg-white border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer">
+              <Card
+                key={index}
+                className="group relative overflow-hidden bg-white border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer"
+              >
                 <div className="absolute inset-0 bg-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <CardHeader className="relative z-10 text-center pb-4">
                   <div className="w-20 h-20 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-300 group-hover:bg-slate-800">
                     <action.icon className="w-10 h-10 text-white" />
                   </div>
-                  <CardTitle className="text-2xl font-bold text-slate-900 mb-2">{action.title}</CardTitle>
-                  <CardDescription className="text-slate-600 text-lg">{action.description}</CardDescription>
+                  <CardTitle className="text-2xl font-bold text-slate-900 mb-2">
+                    {action.title}
+                  </CardTitle>
+                  <CardDescription className="text-slate-600 text-lg">
+                    {action.description}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="relative z-10 text-center">
-                  <Button 
+                  <Button
                     onClick={(e) => {
                       e.stopPropagation();
                       action.action();
@@ -407,12 +487,14 @@ export default function Home() {
           <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full mb-6 border border-slate-200/60">
               <Trophy className="w-4 h-4 text-emerald-600" />
-              <span className="text-sm font-medium text-slate-700">Success Stories</span>
+              <span className="text-sm font-medium text-slate-700">
+                Success Stories
+              </span>
             </div>
             <h2 className="text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-slate-900 to-emerald-600 bg-clip-text text-transparent">
@@ -420,7 +502,8 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Explore our recent successes and innovative solutions across various industries
+              Explore our recent successes and innovative solutions across
+              various industries
             </p>
           </div>
 
@@ -440,8 +523,8 @@ export default function Home() {
                 variant={activeFilter === "all" ? "default" : "outline"}
                 onClick={() => setActiveFilter("all")}
                 className={`px-6 py-4 text-lg font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 ${
-                  activeFilter === "all" 
-                    ? "bg-gradient-to-r from-slate-900 to-slate-800 text-white" 
+                  activeFilter === "all"
+                    ? "bg-gradient-to-r from-slate-900 to-slate-800 text-white"
                     : "bg-white/80 backdrop-blur-sm border-slate-200/60 text-slate-700 hover:bg-slate-50"
                 }`}
               >
@@ -451,23 +534,33 @@ export default function Home() {
                 variant={activeFilter === "completed" ? "default" : "outline"}
                 onClick={() => setActiveFilter("completed")}
                 className={`px-6 py-4 text-lg font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 ${
-                  activeFilter === "completed" 
-                    ? "bg-gradient-to-r from-emerald-600 to-emerald-700 text-white" 
+                  activeFilter === "completed"
+                    ? "bg-gradient-to-r from-emerald-600 to-emerald-700 text-white"
                     : "bg-white/80 backdrop-blur-sm border-slate-200/60 text-slate-700 hover:bg-slate-50"
                 }`}
               >
-                Completed ({featuredProjects.filter(p => p.status === "Completed").length})
+                Completed (
+                {
+                  featuredProjects.filter((p) => p.status === "Completed")
+                    .length
+                }
+                )
               </Button>
               <Button
                 variant={activeFilter === "in progress" ? "default" : "outline"}
                 onClick={() => setActiveFilter("in progress")}
                 className={`px-6 py-4 text-lg font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 ${
-                  activeFilter === "in progress" 
-                    ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white" 
+                  activeFilter === "in progress"
+                    ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white"
                     : "bg-white/80 backdrop-blur-sm border-slate-200/60 text-slate-700 hover:bg-slate-50"
                 }`}
               >
-                In Progress ({featuredProjects.filter(p => p.status === "In Progress").length})
+                In Progress (
+                {
+                  featuredProjects.filter((p) => p.status === "In Progress")
+                    .length
+                }
+                )
               </Button>
             </div>
           </div>
@@ -479,9 +572,13 @@ export default function Home() {
                 <div className="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Search className="w-12 h-12 text-slate-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">No Projects Found</h3>
-                <p className="text-slate-600 mb-6">Try adjusting your search terms or filter options.</p>
-                <Button 
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  No Projects Found
+                </h3>
+                <p className="text-slate-600 mb-6">
+                  Try adjusting your search terms or filter options.
+                </p>
+                <Button
                   onClick={() => {
                     setSearchTerm("");
                     setActiveFilter("all");
@@ -493,15 +590,22 @@ export default function Home() {
               </div>
             ) : (
               filteredProjects.map((project, index) => (
-                <Card key={index} className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer">
+                <Card
+                  key={index}
+                  className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer"
+                >
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <CardHeader className="relative z-10">
                     <div className="flex justify-between items-start mb-3">
-                      <Badge 
-                        variant={project.status === "Completed" ? "default" : "secondary"}
+                      <Badge
+                        variant={
+                          project.status === "Completed"
+                            ? "default"
+                            : "secondary"
+                        }
                         className={`text-sm px-3 py-1 font-semibold ${
-                          project.status === "Completed" 
-                            ? "bg-gradient-to-r from-emerald-500 to-green-500 text-white" 
+                          project.status === "Completed"
+                            ? "bg-gradient-to-r from-emerald-500 to-green-500 text-white"
                             : "bg-gradient-to-r from-blue-500 to-purple-500 text-white"
                         }`}
                       >
@@ -509,7 +613,10 @@ export default function Home() {
                       </Badge>
                       <div className="flex items-center bg-amber-50 px-2 py-1 rounded-lg">
                         {[...Array(project.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-amber-400 text-amber-400"
+                          />
                         ))}
                       </div>
                     </div>
@@ -524,21 +631,33 @@ export default function Home() {
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 gap-4 text-sm">
                         <div className="bg-slate-50 rounded-lg p-3">
-                          <span className="text-slate-500 text-xs uppercase tracking-wide">Duration</span>
-                          <div className="font-bold text-slate-900 mt-1">{project.duration}</div>
+                          <span className="text-slate-500 text-xs uppercase tracking-wide">
+                            Duration
+                          </span>
+                          <div className="font-bold text-slate-900 mt-1">
+                            {project.duration}
+                          </div>
                         </div>
                         <div className="bg-slate-50 rounded-lg p-3">
-                          <span className="text-slate-500 text-xs uppercase tracking-wide">Tech Stack</span>
-                          <div className="font-bold text-slate-900 mt-1 text-xs">{project.technology}</div>
+                          <span className="text-slate-500 text-xs uppercase tracking-wide">
+                            Tech Stack
+                          </span>
+                          <div className="font-bold text-slate-900 mt-1 text-xs">
+                            {project.technology}
+                          </div>
                         </div>
                       </div>
-                      
-                      <Button 
+
+                      <Button
                         className="w-full py-3 text-lg font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white"
                         onClick={(e) => {
                           e.stopPropagation();
                           // Open beautifully styled project details window
-                          const newWindow = window.open('', '_blank', 'width=700,height=600,scrollbars=yes,resizable=yes');
+                          const newWindow = window.open(
+                            "",
+                            "_blank",
+                            "width=700,height=600,scrollbars=yes,resizable=yes",
+                          );
                           if (newWindow) {
                             newWindow.document.write(`
                               <!DOCTYPE html>
@@ -727,7 +846,7 @@ export default function Home() {
                             `);
                             newWindow.document.close();
                           }
-                          
+
                           toast({
                             title: "Project Details Opened",
                             description: `Viewing comprehensive details for ${project.title}`,
@@ -752,7 +871,7 @@ export default function Home() {
       <AdvancedCapabilities />
       <ApproachSection />
       <TeamSection />
-      
+
       <div id="contact">
         <ContactSection />
       </div>
