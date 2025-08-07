@@ -25,6 +25,7 @@ export default function Navigation() {
     { name: "College Projects", url: "/college-projects" },
     { name: "Case Studies", url: "/case-studies" },
     { name: "Resources", url: "/resources" },
+    { name: "Support", url: "/support" },
     { name: "Careers", url: "/careers" }
   ];
 
@@ -49,7 +50,7 @@ export default function Navigation() {
 
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200/50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 py-4">
         {/* Top Row - Logo and Company Name */}
         <div className="flex justify-center items-center mb-6">
@@ -70,7 +71,7 @@ export default function Navigation() {
 
         {/* Main Navigation */}
         <div className="flex justify-center mb-4">
-          <div className="flex items-center gap-3 py-2 px-2">
+          <div className="flex items-center gap-3 bg-gray-50/80 border border-gray-200/60 py-2 px-2 rounded-full shadow-sm">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab === item.name;
@@ -120,7 +121,7 @@ export default function Navigation() {
             <a
               key={item.name}
               href={item.url}
-              className="text-sm text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 px-3 py-1.5 transition-all duration-300"
+              className="text-sm text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 bg-white/70 border border-gray-200/50 px-3 py-1.5 rounded-full transition-all duration-300 hover:bg-white hover:border-gray-300"
               data-testid={`nav-${item.name.toLowerCase().replace(' ', '-')}`}
             >
               {item.name}
