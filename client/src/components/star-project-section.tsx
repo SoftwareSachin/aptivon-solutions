@@ -82,10 +82,8 @@ export default function StarProjectSection() {
               duration={4}
             />
             <CardContent className="relative z-10 p-0">
-              <div className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-400/30 rounded-full mb-8 border border-yellow-300/50">
-                <Star className="w-7 h-7 text-yellow-300 fill-current" />
-                <span className="text-xl font-bold text-yellow-100 tracking-wide">STAR PROJECT</span>
-                <Star className="w-7 h-7 text-yellow-300 fill-current" />
+              <div className="inline-flex items-center gap-3 px-8 py-4 bg-blue-500/30 rounded-full mb-8 border border-blue-400/50">
+                <span className="text-xl font-bold text-blue-100 tracking-wide">FEATURED PROJECT</span>
               </div>
               
               <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
