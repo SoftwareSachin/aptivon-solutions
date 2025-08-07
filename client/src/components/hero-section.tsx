@@ -99,11 +99,11 @@ export default function HeroSection({
     return () => clearTimeout(timeout);
   }, [typewriterText, currentWordIndex, isDeleting, typewriterWords]);
   return (
-    <div className={cn("relative", className)} {...props}>
+    <div className={cn("relative pt-40 sm:pt-48", className)} {...props}>
       <div className="absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 dark:bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
       <section className="relative max-w-full mx-auto z-1">
         <RetroGrid {...gridOptions} />
-        <div className="max-w-screen-xl z-10 mx-auto px-4 py-28 gap-12 md:px-8">
+        <div className="max-w-screen-xl z-10 mx-auto px-4 py-16 gap-12 md:px-8">
           <div className="space-y-5 max-w-3xl leading-0 lg:leading-5 mx-auto text-center">
             <div className="relative group mx-auto w-fit">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>

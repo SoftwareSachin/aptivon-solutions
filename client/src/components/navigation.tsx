@@ -79,7 +79,7 @@ export default function Navigation() {
       </div>
 
       {/* Tubelight Navigation Bar */}
-      <div className="fixed top-20 sm:top-24 left-1/2 -translate-x-1/2 z-50">
+      <div className="fixed top-16 sm:top-20 left-1/2 -translate-x-1/2 z-50">
         <div className="flex items-center gap-2 bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -126,8 +126,8 @@ export default function Navigation() {
       </div>
 
       {/* Additional Navigation for More Items */}
-      <div className="fixed top-32 sm:top-36 left-1/2 -translate-x-1/2 z-40">
-        <div className="flex flex-wrap justify-center gap-2 max-w-4xl">
+      <div className="fixed top-28 sm:top-32 left-1/2 -translate-x-1/2 z-40">
+        <div className="flex flex-wrap justify-center gap-2 max-w-4xl px-4">
           {moreItems.map((item) => (
             <a
               key={item.name}
