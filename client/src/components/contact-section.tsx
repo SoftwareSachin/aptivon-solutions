@@ -52,53 +52,53 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="contact" className="mobile-padding-lg bg-slate-50">
+      <div className="max-w-7xl mx-auto mobile-container">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-full mb-6">
             <Send className="w-4 h-4" />
             <span className="font-medium text-sm">Contact Us</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+          <h2 className="mobile-text-5xl font-bold text-slate-900 mb-6 leading-tight">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="mobile-text-xl text-slate-600 max-w-3xl mx-auto">
             Connect with our team to discuss your technology requirements and explore how we can help accelerate your business growth.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 mobile-gap">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Get in Touch</h3>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-slate-700" />
+              <h3 className="mobile-text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Get in Touch</h3>
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700" />
                   </div>
-                  <div>
-                    <p className="text-slate-900 font-medium">Email</p>
-                    <p className="text-slate-600">singhal3.sachin7@gmail.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-slate-700" />
-                  </div>
-                  <div>
-                    <p className="text-slate-900 font-medium">Phone</p>
-                    <p className="text-slate-600">+917852099010</p>
+                  <div className="min-w-0">
+                    <p className="text-slate-900 font-medium text-sm sm:text-base">Email</p>
+                    <p className="text-slate-600 text-sm sm:text-base break-all">singhal3.sachin7@gmail.com</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-slate-700" />
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700" />
                   </div>
-                  <div>
-                    <p className="text-slate-900 font-medium">Location</p>
-                    <p className="text-slate-600">India & Global Operations</p>
+                  <div className="min-w-0">
+                    <p className="text-slate-900 font-medium text-sm sm:text-base">Phone</p>
+                    <p className="text-slate-600 text-sm sm:text-base">+917852099010</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-slate-900 font-medium text-sm sm:text-base">Location</p>
+                    <p className="text-slate-600 text-sm sm:text-base">India & Global Operations</p>
                   </div>
                 </div>
               </div>
@@ -106,8 +106,8 @@ export default function ContactSection() {
 
             {/* Why Choose Us */}
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Why Choose Aptivon?</h3>
-              <div className="space-y-4">
+              <h3 className="mobile-text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Why Choose Aptivon?</h3>
+              <div className="space-y-3 sm:space-y-4">
                 {[
                   "Enterprise-grade solutions",
                   "24/7 dedicated support", 
@@ -116,8 +116,8 @@ export default function ContactSection() {
                   "Cost-effective delivery"
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-slate-900 rounded-full"></div>
-                    <span className="text-slate-600">{item}</span>
+                    <div className="w-2 h-2 bg-slate-900 rounded-full flex-shrink-0"></div>
+                    <span className="text-slate-600 text-sm sm:text-base">{item}</span>
                   </div>
                 ))}
               </div>
@@ -126,63 +126,64 @@ export default function ContactSection() {
 
           {/* Contact Form */}
           <Card className="bg-white border border-slate-200 shadow-lg">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Send us a Message</h3>
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <CardContent className="mobile-card-padding">
+              <h3 className="mobile-text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Send us a Message</h3>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 mobile-gap">
                   <div>
-                    <Label htmlFor="firstName" className="text-slate-700 mb-2 block font-medium">First Name *</Label>
+                    <Label htmlFor="firstName" className="text-slate-700 mb-2 block font-medium text-sm">First Name *</Label>
                     <Input
                       id="firstName"
                       {...register("firstName")}
-                      className="border-slate-300 focus:border-slate-500 focus:ring-slate-500"
+                      className="mobile-input border-slate-300 focus:border-slate-500 focus:ring-slate-500 touch-target"
                       placeholder="Enter your first name"
                     />
                     {errors.firstName && (
-                      <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>
+                      <p className="text-red-500 text-sm mt-1">{String(errors.firstName.message)}</p>
                     )}
                   </div>
                   <div>
-                    <Label htmlFor="lastName" className="text-slate-700 mb-2 block font-medium">Last Name *</Label>
+                    <Label htmlFor="lastName" className="text-slate-700 mb-2 block font-medium text-sm">Last Name *</Label>
                     <Input
                       id="lastName"
                       {...register("lastName")}
-                      className="border-slate-300 focus:border-slate-500 focus:ring-slate-500"
+                      className="mobile-input border-slate-300 focus:border-slate-500 focus:ring-slate-500 touch-target"
                       placeholder="Enter your last name"
                     />
                     {errors.lastName && (
-                      <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>
+                      <p className="text-red-500 text-sm mt-1">{String(errors.lastName.message)}</p>
                     )}
                   </div>
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-slate-700 mb-2 block font-medium">Email *</Label>
+                  <Label htmlFor="email" className="text-slate-700 mb-2 block font-medium text-sm">Email *</Label>
                   <Input
                     id="email"
                     type="email"
                     {...register("email")}
-                    className="border-slate-300 focus:border-slate-500 focus:ring-slate-500"
+                    className="mobile-input border-slate-300 focus:border-slate-500 focus:ring-slate-500 touch-target"
                     placeholder="your@company.com"
                   />
                   {errors.email && (
-                    <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                    <p className="text-red-500 text-sm mt-1">{String(errors.email.message)}</p>
                   )}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 mobile-gap">
                   <div>
-                    <Label htmlFor="company" className="text-slate-700 mb-2 block font-medium">Company</Label>
+                    <Label htmlFor="company" className="text-slate-700 mb-2 block font-medium text-sm">Company</Label>
                     <Input
                       id="company"
                       {...register("company")}
-                      className="border-slate-300 focus:border-slate-500 focus:ring-slate-500"
+                      className="mobile-input border-slate-300 focus:border-slate-500 focus:ring-slate-500 touch-target"
                       placeholder="Your company name"
                     />
                   </div>
                   <div>
+                    <Label className="text-slate-700 mb-2 block font-medium text-sm">Service Interest</Label>
                     <Select value={selectedService} onValueChange={setSelectedService}>
-                      <SelectTrigger className="border-slate-300 focus:border-slate-500 focus:ring-slate-500">
+                      <SelectTrigger className="mobile-input border-slate-300 focus:border-slate-500 focus:ring-slate-500 touch-target">
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent>
@@ -197,26 +198,26 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <Label htmlFor="message" className="text-slate-700 mb-2 block font-medium">Message *</Label>
+                  <Label htmlFor="message" className="text-slate-700 mb-2 block font-medium text-sm">Message *</Label>
                   <Textarea
                     id="message"
                     {...register("message")}
                     rows={4}
-                    className="border-slate-300 focus:border-slate-500 focus:ring-slate-500"
+                    className="mobile-input border-slate-300 focus:border-slate-500 focus:ring-slate-500 resize-none"
                     placeholder="Tell us about your project requirements and objectives..."
                   />
                   {errors.message && (
-                    <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+                    <p className="text-red-500 text-sm mt-1">{String(errors.message.message)}</p>
                   )}
                 </div>
 
                 <Button
                   type="submit"
                   disabled={contactMutation.isPending}
-                  className="w-full bg-slate-900 hover:bg-slate-800 text-white py-4 text-lg font-semibold transition-all duration-300 shadow-lg"
+                  className="mobile-button w-full bg-slate-900 hover:bg-slate-800 text-white py-4 text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg touch-target"
                 >
                   {contactMutation.isPending ? "Sending..." : "Send Message"}
-                  <Send className="ml-2 w-5 h-5" />
+                  <Send className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
               </form>
             </CardContent>

@@ -54,42 +54,42 @@ export default function Footer() {
       </div>
 
       {/* CTA Section with Advanced Design */}
-      <section className="relative py-24 bg-slate-800 border-b border-slate-700/50">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 rounded-full border border-blue-500/40 mb-8">
+      <section className="relative mobile-padding-lg bg-slate-800 border-b border-slate-700/50">
+        <div className="max-w-7xl mx-auto mobile-container text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 rounded-full border border-blue-500/40 mb-6 sm:mb-8">
             <TrendingUp className="w-4 h-4 text-blue-400" />
-            <span className="text-sm font-medium text-blue-300">Ready to Transform Your Business?</span>
+            <span className="text-xs sm:text-sm font-medium text-blue-300">Ready to Transform Your Business?</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent" style={{lineHeight: '1.4'}}>
-            Let's Build Something Amazing<br />Together
+          <h2 className="mobile-text-5xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-relaxed">
+            Let's Build Something Amazing Together
           </h2>
-          <p className="text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="mobile-text-xl text-slate-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
             Join industry leaders who trust us to deliver cutting-edge solutions that drive real business results and competitive advantage.
           </p>
           
           {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+          <div className="grid mobile-grid-4 mobile-gap mb-8 sm:mb-12 max-w-4xl mx-auto">
             {quickStats.map((stat) => (
-              <div key={stat.label} className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                <stat.icon className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white">{stat.value}</div>
-                <div className="text-sm text-slate-400">{stat.label}</div>
+              <div key={stat.label} className="bg-white/5 rounded-2xl mobile-card-padding border border-white/10">
+                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 mx-auto mb-2" />
+                <div className="mobile-text-2xl font-bold text-white">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-slate-400">{stat.label}</div>
               </div>
             ))}
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex mobile-flex-col mobile-gap justify-center">
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white border-0"
+              className="mobile-button bg-blue-600 hover:bg-blue-700 text-white border-0 touch-target"
               onClick={() => window.location.href = '/contact'}
             >
               Start Your Project
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <button 
-              className="h-11 px-8 rounded-lg border-2 border-white/20 text-white bg-white/5 hover:bg-white hover:text-slate-900 font-medium text-sm"
+              className="mobile-button h-11 rounded-lg border-2 border-white/20 text-white bg-white/5 hover:bg-white hover:text-slate-900 font-medium text-sm touch-target"
               onClick={() => window.location.href = '/contact'}
             >
               Schedule a Consultation
@@ -99,28 +99,28 @@ export default function Footer() {
       </section>
       
       {/* Main Footer Content */}
-      <div className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="relative mobile-padding-lg">
+        <div className="max-w-7xl mx-auto mobile-container">
+          <div className="grid grid-cols-1 lg:grid-cols-12 mobile-gap">
             {/* Company Info - Enhanced */}
             <div className="lg:col-span-5">
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="relative">
+              <div className="flex items-center space-x-3 sm:space-x-4 mb-6 sm:mb-8">
+                <div className="relative flex-shrink-0">
                   <img 
                     src={logoGif} 
                     alt="Aptivon Solutions" 
-                    className="h-12 w-auto rounded-lg shadow-lg"
+                    className="h-10 sm:h-12 w-auto rounded-lg shadow-lg"
                   />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                <div className="min-w-0">
+                  <h3 className="mobile-text-2xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     Aptivon Solutions
                   </h3>
-                  <p className="text-sm text-blue-400 font-medium">Enterprise Technology Partner</p>
+                  <p className="text-xs sm:text-sm text-blue-400 font-medium">Enterprise Technology Partner</p>
                 </div>
               </div>
               
-              <p className="text-slate-300 mb-8 leading-relaxed text-lg">
+              <p className="text-slate-300 mb-6 sm:mb-8 leading-relaxed mobile-text-lg">
                 Pioneering enterprise technology solutions with a focus on innovation, reliability, and scalable growth. We transform businesses through cutting-edge cloud infrastructure, AI-driven analytics, and automated deployment strategies.
               </p>
               

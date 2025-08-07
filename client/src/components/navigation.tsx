@@ -26,24 +26,29 @@ export default function Navigation() {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-white border-b border-slate-200 shadow-lg py-3' 
-        : 'bg-white py-4'
+        ? 'bg-white border-b border-slate-200 shadow-lg py-2 sm:py-3' 
+        : 'bg-white py-3 sm:py-4'
     }`}>
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto mobile-container">
         <div className="flex justify-between items-center">
-          <a href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity cursor-pointer">
+          <a href="/" className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity cursor-pointer">
             <img 
               src={logoGif} 
               alt="Aptivon Solutions" 
               className={`w-auto transition-all duration-300 ${
-                isScrolled ? 'h-8' : 'h-10'
+                isScrolled ? 'h-6 sm:h-8' : 'h-8 sm:h-10'
               }`}
             />
-            <div>
-              <div className="text-xl font-bold text-slate-900 tracking-tight">
+            <div className="hidden sm:block">
+              <div className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
                 Aptivon Solutions
               </div>
-              <p className="text-xs text-slate-500 font-medium">Enterprise Technology</p>
+              <p className="text-xs text-slate-500 font-medium mobile-hide">Enterprise Technology</p>
+            </div>
+            <div className="block sm:hidden">
+              <div className="text-base font-bold text-slate-900 tracking-tight">
+                Aptivon
+              </div>
             </div>
           </a>
           
@@ -84,35 +89,36 @@ export default function Navigation() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="xl:hidden">
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="touch-target"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="xl:hidden bg-white border-t border-slate-200 shadow-lg">
-            <div className="px-6 py-4 space-y-2">
-              <a href="/about" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>About</a>
-              <a href="/services" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>Services</a>
-              <a href="/solutions" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>Solutions</a>
-              <a href="/industries" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>Industries</a>
-              <a href="/portfolio" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>Portfolio</a>
-              <a href="/college-projects" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>College Projects</a>
-              <a href="/blog" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>Blog</a>
-              <a href="/case-studies" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>Case Studies</a>
-              <a href="/resources" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>Resources</a>
-              <a href="/support" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>Support</a>
-              <a href="/careers" className="block py-2 text-slate-700 hover:text-slate-900 font-medium" onClick={() => setIsMenuOpen(false)}>Careers</a>
+          <div className="lg:hidden bg-white border-t border-slate-200 shadow-lg absolute left-0 right-0 top-full">
+            <div className="mobile-container py-4 space-y-1 max-h-[80vh] overflow-y-auto">
+              <a href="/about" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>About</a>
+              <a href="/services" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>Services</a>
+              <a href="/solutions" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>Solutions</a>
+              <a href="/industries" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>Industries</a>
+              <a href="/portfolio" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>Portfolio</a>
+              <a href="/college-projects" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>College Projects</a>
+              <a href="/blog" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>Blog</a>
+              <a href="/case-studies" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>Case Studies</a>
+              <a href="/resources" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>Resources</a>
+              <a href="/support" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>Support</a>
+              <a href="/careers" className="block py-3 text-slate-700 hover:text-slate-900 font-medium touch-target border-b border-slate-100" onClick={() => setIsMenuOpen(false)}>Careers</a>
               <a
                 href="/contact"
-                className="block w-full mt-4 bg-slate-900 hover:bg-slate-800 text-white py-3 font-medium text-center rounded-lg"
+                className="block w-full mt-4 bg-slate-900 hover:bg-slate-800 text-white py-4 font-medium text-center rounded-lg touch-target"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact Us

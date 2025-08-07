@@ -31,39 +31,39 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-24">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-16 sm:pt-20 lg:pt-24">
       {/* Modern gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 via-transparent to-purple-600/5"></div>
-        {/* Static background elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/10 rounded-full"></div>
-        <div className="absolute top-40 right-20 w-32 h-32 bg-purple-500/10 rounded-full"></div>
-        <div className="absolute bottom-40 left-1/4 w-16 h-16 bg-green-500/10 rounded-full"></div>
+        {/* Static background elements - responsive positioning */}
+        <div className="absolute top-20 left-4 sm:left-10 w-12 h-12 sm:w-20 sm:h-20 bg-blue-500/10 rounded-full"></div>
+        <div className="absolute top-32 sm:top-40 right-4 sm:right-20 w-20 h-20 sm:w-32 sm:h-32 bg-purple-500/10 rounded-full"></div>
+        <div className="absolute bottom-40 left-1/4 w-12 h-12 sm:w-16 sm:h-16 bg-green-500/10 rounded-full"></div>
       </div>
       
-      <div className="relative max-w-7xl mx-auto px-6 z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto mobile-container z-10">
+        <div className="grid lg:grid-cols-2 mobile-gap items-center">
           {/* Content */}
           <div className="text-left">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white rounded-full mb-8 border border-slate-200">
+            <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white rounded-full mb-6 sm:mb-8 border border-slate-200">
               <Sparkles className="w-4 h-4 text-blue-600" />
-              <span className="text-slate-700 text-sm font-medium">Next-Gen Enterprise Solutions</span>
+              <span className="text-slate-700 text-xs sm:text-sm font-medium">Next-Gen Enterprise Solutions</span>
             </div>
             
-            <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
+            <h1 className="mobile-text-6xl font-bold mb-6 sm:mb-8 leading-tight">
               <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                 Enterprise IT Services & Technology Consulting
               </span>
             </h1>
             
-            <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-lg">
+            <p className="mobile-text-xl text-slate-600 mb-8 sm:mb-10 leading-relaxed max-w-lg">
               <strong>Aptivon Solutions</strong> is a leading enterprise technology consulting firm specializing in <strong>cloud migration</strong>, <strong>AI/ML implementation</strong>, <strong>DevOps automation</strong>, and <strong>custom software development</strong>. We deliver proven technology solutions that transform operations and drive business growth.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex mobile-flex-col mobile-gap mb-8 sm:mb-12">
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 text-lg font-semibold rounded-xl"
+                className="mobile-button bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg font-semibold rounded-xl touch-target"
               >
                 Start Your Journey
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -71,34 +71,34 @@ export default function HeroSection() {
               <Button
                 onClick={() => scrollToSection("services")}
                 variant="outline"
-                className="border-2 border-slate-300 text-slate-700 hover:bg-slate-100 hover:border-slate-400 px-10 py-4 text-lg font-semibold rounded-xl"
+                className="mobile-button border-2 border-slate-300 text-slate-700 hover:bg-slate-100 hover:border-slate-400 text-base sm:text-lg font-semibold rounded-xl touch-target"
               >
                 Explore Services
               </Button>
             </div>
             
             {/* Animated Stats */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid mobile-grid-3 mobile-gap">
               {stats.map((stat, index) => {
                 const IconComponent = stat.icon;
                 return (
                   <div 
                     key={index}
-                    className={`text-center p-4 rounded-xl transition-all duration-500 ${
+                    className={`text-center mobile-card-padding rounded-xl transition-all duration-500 ${
                       currentStat === index 
                         ? 'bg-white/80 backdrop-blur-sm border border-blue-200/60 shadow-lg transform scale-105' 
                         : 'bg-white/40 backdrop-blur-sm'
                     }`}
                   >
-                    <IconComponent className={`w-6 h-6 mx-auto mb-2 ${
+                    <IconComponent className={`w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2 ${
                       currentStat === index ? 'text-blue-600' : 'text-slate-500'
                     }`} />
-                    <div className={`text-2xl font-bold mb-1 ${
+                    <div className={`mobile-text-2xl font-bold mb-1 ${
                       currentStat === index ? 'text-blue-600' : 'text-slate-900'
                     }`}>
                       {stat.value}
                     </div>
-                    <div className="text-slate-600 text-sm">{stat.label}</div>
+                    <div className="text-slate-600 text-xs sm:text-sm">{stat.label}</div>
                   </div>
                 );
               })}
@@ -106,13 +106,13 @@ export default function HeroSection() {
           </div>
           
           {/* Enhanced Visual Content */}
-          <div className="relative lg:block">
+          <div className="relative hidden lg:block">
             <div className="relative">
               {/* Background glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl"></div>
               
-              <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20">
-                <div className="grid grid-cols-2 gap-6 mb-6">
+              <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl mobile-card-padding shadow-2xl border border-white/20">
+                <div className="grid mobile-grid-2 mobile-gap mb-6">
                   <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
                     <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-md">
                       <img 

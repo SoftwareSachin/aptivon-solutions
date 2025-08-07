@@ -34,58 +34,58 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="services" className="mobile-padding-lg bg-white">
+      <div className="max-w-7xl mx-auto mobile-container">
+        <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full mb-6">
-            <span className="text-slate-700 font-medium">Enterprise Services</span>
+            <span className="text-slate-700 font-medium text-sm">Enterprise Services</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+          <h2 className="mobile-text-5xl font-bold text-slate-900 mb-6 leading-tight">
             Technology Solutions That Drive Results
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+          <p className="mobile-text-xl text-slate-600 max-w-3xl mx-auto mb-8">
             Comprehensive enterprise technology services designed to accelerate growth and optimize operations. Our expert team delivers cloud migration, AI/ML implementation, DevOps automation, and custom software development solutions that transform businesses and drive measurable results.
           </p>
           
           {/* Internal Navigation Links */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <a href="/about" className="text-blue-600 hover:text-blue-800 font-medium">About Us</a>
-            <span className="text-slate-300">|</span>
-            <a href="/services" className="text-blue-600 hover:text-blue-800 font-medium">Our Services</a>
-            <span className="text-slate-300">|</span>
-            <a href="/portfolio" className="text-blue-600 hover:text-blue-800 font-medium">Portfolio</a>
-            <span className="text-slate-300">|</span>
-            <a href="/contact" className="text-blue-600 hover:text-blue-800 font-medium">Contact</a>
-            <span className="text-slate-300">|</span>
-            <a href="/careers" className="text-blue-600 hover:text-blue-800 font-medium">Careers</a>
-            <span className="text-slate-300">|</span>
-            <a href="/blog" className="text-blue-600 hover:text-blue-800 font-medium">Blog</a>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 text-sm">
+            <a href="/about" className="text-blue-600 hover:text-blue-800 font-medium touch-target px-2 py-1">About Us</a>
+            <span className="text-slate-300 mobile-hide">|</span>
+            <a href="/services" className="text-blue-600 hover:text-blue-800 font-medium touch-target px-2 py-1">Our Services</a>
+            <span className="text-slate-300 mobile-hide">|</span>
+            <a href="/portfolio" className="text-blue-600 hover:text-blue-800 font-medium touch-target px-2 py-1">Portfolio</a>
+            <span className="text-slate-300 mobile-hide">|</span>
+            <a href="/contact" className="text-blue-600 hover:text-blue-800 font-medium touch-target px-2 py-1">Contact</a>
+            <span className="text-slate-300 mobile-hide">|</span>
+            <a href="/careers" className="text-blue-600 hover:text-blue-800 font-medium touch-target px-2 py-1">Careers</a>
+            <span className="text-slate-300 mobile-hide">|</span>
+            <a href="/blog" className="text-blue-600 hover:text-blue-800 font-medium touch-target px-2 py-1">Blog</a>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid mobile-grid-2 mobile-gap">
           {services.map((service, index) => (
             <Card key={service.title} className="bg-white border border-slate-200 hover:border-slate-300 transition-all duration-300 group">
-              <CardContent className="p-8">
-                <div className="flex items-start space-x-4">
+              <CardContent className="mobile-card-padding">
+                <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center">
-                      <service.icon className="text-white w-6 h-6" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-900 rounded-lg flex items-center justify-center">
+                      <service.icon className="text-white w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-xl font-bold text-slate-900">{service.title}</h3>
-                      <span className="text-sm font-medium text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
+                      <h3 className="mobile-text-xl font-bold text-slate-900">{service.title}</h3>
+                      <span className="text-xs sm:text-sm font-medium text-slate-600 bg-slate-100 px-2 sm:px-3 py-1 rounded-full self-start">
                         {service.metrics}
                       </span>
                     </div>
-                    <p className="text-slate-600 mb-4 leading-relaxed">{service.description}</p>
+                    <p className="text-slate-600 mb-4 leading-relaxed text-sm sm:text-base">{service.description}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-slate-600">
-                          <ArrowRight className="w-4 h-4 text-slate-400 mr-2 flex-shrink-0" />
-                          {feature}
+                        <li key={idx} className="flex items-center text-xs sm:text-sm text-slate-600">
+                          <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-slate-400 mr-2 flex-shrink-0" />
+                          <span className="break-words">{feature}</span>
                         </li>
                       ))}
                     </ul>

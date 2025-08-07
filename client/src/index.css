@@ -195,4 +195,90 @@
   .font-inter {
     font-family: 'Inter', sans-serif;
   }
+
+  /* Mobile-first responsive utilities */
+  .mobile-container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .mobile-text-lg {
+    @apply text-base sm:text-lg;
+  }
+
+  .mobile-text-xl {
+    @apply text-lg sm:text-xl;
+  }
+
+  .mobile-text-2xl {
+    @apply text-xl sm:text-2xl;
+  }
+
+  .mobile-text-3xl {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  .mobile-text-4xl {
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+  }
+
+  .mobile-text-5xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl;
+  }
+
+  .mobile-text-6xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl;
+  }
+
+  .mobile-padding {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+
+  .mobile-padding-lg {
+    @apply py-12 sm:py-16 lg:py-24;
+  }
+
+  .mobile-gap {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .mobile-grid-2 {
+    @apply grid-cols-1 sm:grid-cols-2;
+  }
+
+  .mobile-grid-3 {
+    @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .mobile-grid-4 {
+    @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  .mobile-flex-col {
+    @apply flex-col sm:flex-row;
+  }
+
+  .mobile-button {
+    @apply w-full sm:w-auto px-6 py-3 text-base;
+  }
+
+  .mobile-card-padding {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+
+  .mobile-hide {
+    @apply hidden sm:block;
+  }
+
+  .mobile-show {
+    @apply block sm:hidden;
+  }
+
+  /* Touch-friendly sizing */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  .mobile-input {
+    @apply text-base; /* Prevents zoom on iOS */
+  }
 }
