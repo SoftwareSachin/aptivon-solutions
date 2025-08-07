@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
+import { AIAssistantInterface } from "@/components/ai-assistant-interface";
 import StarProjectSection from "@/components/star-project-section";
 import ServicesSection from "@/components/services-section";
 import TechnologySection from "@/components/technology-section";
@@ -228,6 +229,9 @@ export default function Home() {
       {seoContent}
 
       <HeroSection />
+
+      {/* AI Assistant Interface */}
+      <AIAssistantInterface />
 
 
       {/* Star Project Section */}
