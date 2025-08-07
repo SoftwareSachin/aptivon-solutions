@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, Info, Settings, Briefcase, Code, BookOpen, FileText, Users, Phone, Folder, Building, GraduationCap, FileSearch, HelpCircle, UserCheck } from "lucide-react";
 import logoGif from "../assets/new-logo.gif";
@@ -87,6 +88,18 @@ export default function Navigation() {
                   <span className="md:hidden">
                     <Icon size={16} strokeWidth={2.5} />
                   </span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="lamp"
+                      className="absolute inset-0 w-full bg-purple-100/50 dark:bg-purple-900/30 rounded-full -z-10"
+                      initial={false}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                      }}
+                    />
+                  )}
                 </a>
               );
             })}
