@@ -1,11 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
-import AdSection from "@/components/ad-section";
-import ReferralCommissionAd from "@/components/referral-commission-ad";
 import StarProjectSection from "@/components/star-project-section";
-import PortfolioAdSection from "@/components/portfolio-ad-section";
-import AcademicProjectsAd from "@/components/academic-projects-ad";
-import SKITStudentsAd from "@/components/skit-students-ad";
 import ServicesSection from "@/components/services-section";
 import TechnologySection from "@/components/technology-section";
 import IndustriesSection from "@/components/industries-section";
@@ -14,7 +9,6 @@ import ApproachSection from "@/components/approach-section";
 import TeamSection from "@/components/team-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
-import { currentAd } from "@/config/ad-config";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -235,20 +229,6 @@ export default function Home() {
 
       <HeroSection />
 
-      {/* Promotional Ad Section */}
-      <AdSection {...currentAd} />
-
-      {/* Referral Commission Ad */}
-      <ReferralCommissionAd />
-
-      {/* Portfolio Service Ad */}
-      <PortfolioAdSection />
-
-      {/* Academic Projects Ad */}
-      <AcademicProjectsAd />
-
-      {/* SKIT Students Special Discount Ad */}
-      <SKITStudentsAd />
 
       {/* Star Project Section */}
       <StarProjectSection />
