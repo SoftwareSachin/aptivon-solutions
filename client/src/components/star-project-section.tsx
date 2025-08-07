@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Play, ExternalLink, Shield, Smartphone, Globe, Zap, Maximize2, Award, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { PinContainer } from "@/components/3d-pin";
 
 export default function StarProjectSection() {
   const [showEmbedded, setShowEmbedded] = useState(false);
@@ -108,15 +109,15 @@ export default function StarProjectSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Enhanced Video Section */}
+          {/* Enhanced Video Section with 3D Pin */}
           <div className="order-2 lg:order-1">
-            <div className="relative">
-              {/* Glowing background effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl"></div>
-              
-              <Card className="group relative overflow-hidden bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl hover:shadow-blue-500/20 transition-all duration-700 transform hover:scale-[1.02] rounded-3xl">
-                <CardContent className="p-2">
-                  <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-2xl overflow-hidden">
+            <PinContainer
+              title="OPPB Demo Video"
+              href="https://www.youtube.com/watch?v=l-z64oz_sa8&t=9s"
+              containerClassName="w-full h-[500px]"
+            >
+              <div className="relative w-[400px] h-[300px]">
+                <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-2xl overflow-hidden">
                     {!showEmbedded ? (
                       <>
                         {/* Enhanced Video thumbnail overlay */}
@@ -168,10 +169,9 @@ export default function StarProjectSection() {
                         allowFullScreen
                       />
                     )}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                </div>
+              </div>
+            </PinContainer>
 
             {/* Enhanced Video Action Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-6 justify-center">
@@ -238,56 +238,55 @@ export default function StarProjectSection() {
                 </div>
               </div>
 
-              {/* Enhanced Key Features Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* Enhanced Key Features Grid with 3D Pins */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {features.map((feature, index) => (
-                  <div
+                  <PinContainer
                     key={index}
-                    className="group relative p-6 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 hover:border-white/40 hover:bg-white/15 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl"
-                    style={{animationDelay: `${index * 0.1}s`}}
+                    title={feature.title}
+                    containerClassName="w-full h-[200px]"
+                    className="w-full"
                   >
-                    {/* Gradient background overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`}></div>
-                    
-                    <div className="relative">
+                    <div className="w-[300px] p-6 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20">
                       <div className="flex items-start gap-4">
-                        <div className={`w-14 h-14 ${feature.bgColor} group-hover:scale-110 rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg`}>
+                        <div className={`w-14 h-14 ${feature.bgColor} rounded-xl flex items-center justify-center shadow-lg`}>
                           <feature.icon className={`w-7 h-7 ${feature.iconColor}`} />
                         </div>
                         <div className="flex-1">
                           <h4 className="font-bold text-white text-lg mb-2">{feature.title}</h4>
-                          <p className="text-blue-200 leading-relaxed">{feature.description}</p>
+                          <p className="text-blue-200 leading-relaxed text-sm">{feature.description}</p>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </PinContainer>
                 ))}
               </div>
 
-              {/* Enhanced Innovation Badge */}
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-                {/* Glowing border effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-green-400/20 to-blue-400/20 rounded-3xl blur-xl"></div>
-                
-                <div className="relative">
+              {/* Enhanced Innovation Badge with 3D Pin */}
+              <PinContainer
+                title="NPCI Certified Innovation"
+                containerClassName="w-full h-[250px]"
+                className="w-full"
+              >
+                <div className="w-[500px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
                       <Shield className="w-6 h-6 text-white" />
                     </div>
-                    <h4 className="text-2xl font-bold text-white">NPCI Certified Innovation</h4>
+                    <h4 className="text-xl font-bold text-white">NPCI Certified Innovation</h4>
                     <Sparkles className="w-6 h-6 text-green-400" />
                   </div>
-                  <p className="text-blue-100 text-lg leading-relaxed mb-4">
+                  <p className="text-blue-100 text-base leading-relaxed mb-4">
                     OPPB represents a breakthrough in financial technology, built specifically for NPCI and BHIM Pay 
                     infrastructure, solving real-world connectivity challenges with innovative mesh networking and 
                     cryptographic security.
                   </p>
                   <div className="flex items-center gap-2 text-green-300 font-semibold">
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <span>Officially integrated with India's digital payment ecosystem</span>
+                    <span className="text-sm">Officially integrated with India's digital payment ecosystem</span>
                   </div>
                 </div>
-              </div>
+              </PinContainer>
             </div>
           </div>
         </div>
