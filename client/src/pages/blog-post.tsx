@@ -115,7 +115,7 @@ export default function BlogPostPage() {
 
   if (postLoading) {
     return (
-      <div className="min-h-screen bg-white pt-48">
+      <div className="min-h-screen bg-white pt-80">
         <Navigation />
         <div className="pt-32 pb-20">
           <div className="max-w-4xl mx-auto px-6">
@@ -136,7 +136,7 @@ export default function BlogPostPage() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-white pt-48">
+      <div className="min-h-screen bg-white pt-80">
         <Navigation />
         <div className="pt-32 pb-20">
           <div className="max-w-4xl mx-auto px-6 text-center">
@@ -153,7 +153,7 @@ export default function BlogPostPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white pt-48">
+    <div className="min-h-screen bg-white pt-80">
       <Navigation />
       
       {/* Article Header */}

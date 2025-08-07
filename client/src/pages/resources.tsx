@@ -562,7 +562,7 @@ export default function Resources() {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-48">
+    <div className="min-h-screen bg-white pt-80">
       <Navigation />
       
       {/* Hero Section */}

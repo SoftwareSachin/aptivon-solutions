@@ -274,7 +274,7 @@ export default function Solutions() {
   const categories = ["all", "Infrastructure", "Security", "Analytics", "Development", "AI/ML", "Transformation"];
 
   return (
-    <div className="min-h-screen bg-white pt-48">
+    <div className="min-h-screen bg-white pt-80">
       <Navigation />
       
       {/* Hero Section */}
