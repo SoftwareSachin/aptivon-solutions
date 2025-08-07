@@ -82,9 +82,9 @@ export default function HeroSection() {
         <div className="absolute top-1/2 right-20 w-1 h-1 bg-violet-300 rounded-full animate-pulse opacity-75"></div>
       </div>
       
-      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center h-full">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 flex flex-col items-center justify-center h-full text-center">
         {/* Enhanced Content Column */}
-        <div className="flex-1 text-center lg:text-left space-y-6">
+        <div className="space-y-8">
           {/* Professional enterprise badge */}
           <div className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900/90 backdrop-blur-xl rounded-2xl border border-cyan-400/40 shadow-2xl shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all duration-300">
             <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
@@ -128,85 +128,7 @@ export default function HeroSection() {
           </div>
         </div>
         
-        {/* Enhanced 3D Visual Column */}
-        <div className="flex-1 mt-12 lg:mt-0 flex justify-center lg:justify-end">
-          <div className="relative">
-            {/* Professional enterprise dashboard card */}
-            <div className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl p-10 space-y-8 max-w-lg border border-slate-700/50 animate-float shadow-2xl shadow-slate-950/50 hover:shadow-3xl hover:shadow-cyan-900/20 transition-all duration-500">
-              {/* Professional status indicator */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
-                  <span className="text-slate-300 text-sm font-medium tracking-wide">LIVE SYSTEM STATUS</span>
-                </div>
-                <div className="text-slate-400 text-xs font-mono">99.9% UPTIME</div>
-              </div>
-              
-              {/* Professional capability metrics */}
-              <div className="space-y-6">
-                <div className="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/30 hover:border-cyan-400/40 transition-all duration-300 group">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg shadow-cyan-500/30 group-hover:shadow-cyan-500/50 transition-all">
-                        <img 
-                          src={lightningFastGif} 
-                          alt="AI Automation" 
-                          className="w-10 h-10 object-contain"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-white text-lg">AI Automation</h3>
-                        <p className="text-slate-300 text-sm">Deploy enterprise solutions</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-cyan-400 font-bold text-2xl">95%</div>
-                      <div className="text-slate-400 text-xs">Efficiency Gain</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/30 hover:border-purple-400/40 transition-all duration-300 group">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/50 transition-all">
-                        <img 
-                          src={fortKnoxSecurityGif} 
-                          alt="Security" 
-                          className="w-10 h-10 object-contain"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-white text-lg">Enterprise Security</h3>
-                        <p className="text-slate-300 text-sm">Zero-trust architecture</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-purple-400 font-bold text-2xl">99.9%</div>
-                      <div className="text-slate-400 text-xs">Uptime SLA</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Professional metrics dashboard */}
-              <div className="border-t border-slate-700/50 pt-6">
-                <div className="grid grid-cols-2 gap-6">
-                  {stats.map((stat, index) => {
-                    const IconComponent = stat.icon;
-                    return (
-                      <div key={index} className="text-center bg-slate-800/40 rounded-xl p-4 hover:bg-slate-700/40 transition-all duration-300">
-                        <IconComponent className="w-8 h-8 mx-auto mb-3 text-cyan-400" />
-                        <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
-                        <div className="text-slate-400 text-xs font-medium tracking-wide uppercase">{stat.label}</div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
 
       {/* Cosmic Scroll Indicator */}
