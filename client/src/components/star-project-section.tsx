@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { RainbowButton } from "@/components/rainbow-button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Play, ExternalLink, Shield, Smartphone, Globe, Zap, Maximize2, Award, Sparkles } from "lucide-react";
 import { useState } from "react";
@@ -192,34 +193,30 @@ export default function StarProjectSection() {
             {/* Enhanced Video Action Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-6 justify-center">
               {!showEmbedded ? (
-                <Button
-                  size="lg"
+                <RainbowButton
                   onClick={handleWatchHere}
-                  className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-10 py-5 text-xl shadow-2xl hover:shadow-blue-500/30 transform hover:scale-110 transition-all duration-500 rounded-3xl border border-white/20 group relative overflow-hidden"
+                  className="px-10 py-5 text-xl shadow-2xl transform hover:scale-110 transition-all duration-500 rounded-3xl group relative overflow-hidden h-auto"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <Play className="w-6 h-6 mr-4 relative z-10" />
-                  <span className="relative z-10">Watch Here</span>
-                </Button>
+                  <Play className="w-6 h-6 mr-4" />
+                  <span>Watch Here</span>
+                </RainbowButton>
               ) : (
-                <Button
-                  size="lg"
+                <RainbowButton
                   onClick={handleOpenYouTube}
-                  className="bg-white/10 hover:bg-white/20 border-2 border-white/30 hover:border-white/50 text-white px-10 py-5 text-xl shadow-2xl hover:shadow-white/20 transform hover:scale-110 transition-all duration-500 rounded-3xl backdrop-blur-xl"
+                  className="px-10 py-5 text-xl shadow-2xl transform hover:scale-110 transition-all duration-500 rounded-3xl h-auto"
                 >
                   <Maximize2 className="w-6 h-6 mr-4" />
                   Watch on YouTube
-                </Button>
+                </RainbowButton>
               )}
               
-              <Button
-                size="lg"
+              <RainbowButton
                 onClick={handleOpenYouTube}
-                className="bg-white/10 hover:bg-white/20 border-2 border-white/20 hover:border-white/40 text-white px-10 py-5 text-xl shadow-2xl hover:shadow-white/10 transform hover:scale-110 transition-all duration-500 rounded-3xl backdrop-blur-xl"
+                className="px-10 py-5 text-xl shadow-2xl transform hover:scale-110 transition-all duration-500 rounded-3xl h-auto"
               >
                 <ExternalLink className="w-6 h-6 mr-4" />
                 Open in New Tab
-              </Button>
+              </RainbowButton>
             </div>
           </div>
 
