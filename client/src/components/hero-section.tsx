@@ -31,7 +31,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-16 sm:pt-20 lg:pt-24">
+    <section className="relative viewport-height flex items-center overflow-hidden pt-16 sm:pt-20 lg:pt-24 safe-area-padding">
       {/* Modern gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/5 via-transparent to-purple-600/5"></div>
@@ -42,7 +42,7 @@ export default function HeroSection() {
       </div>
       
       <div className="relative max-w-7xl mx-auto mobile-container z-10">
-        <div className="grid lg:grid-cols-2 mobile-gap items-center">
+        <div className="grid lg:grid-cols-2 mobile-gap items-center min-h-0">
           {/* Content */}
           <div className="text-left">
             <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white rounded-full mb-6 sm:mb-8 border border-slate-200">
@@ -105,47 +105,47 @@ export default function HeroSection() {
             </div>
           </div>
           
-          {/* Enhanced Visual Content */}
-          <div className="relative hidden lg:block">
+          {/* Enhanced Visual Content - Show on mobile too but simplified */}
+          <div className="relative lg:block mt-8 lg:mt-0">
             <div className="relative">
               {/* Background glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl"></div>
               
               <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl mobile-card-padding shadow-2xl border border-white/20">
                 <div className="grid mobile-grid-2 mobile-gap mb-6">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-md">
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mobile-card-padding shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-md flex-shrink-0">
                       <img 
                         src={lightningFastGif} 
                         alt="Lightning Fast" 
-                        className="w-10 h-10 object-contain"
+                        className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                       />
                     </div>
-                    <h3 className="font-bold text-slate-900 mb-2">Lightning Fast</h3>
-                    <p className="text-slate-600 text-sm">Deploy in minutes, not months with our automated solutions</p>
+                    <h3 className="font-bold text-slate-900 mb-2 text-sm sm:text-base">Lightning Fast</h3>
+                    <p className="text-slate-600 text-xs sm:text-sm">Deploy in minutes, not months with our automated solutions</p>
                   </div>
-                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-md">
+                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl mobile-card-padding shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-md flex-shrink-0">
                       <img 
                         src={fortKnoxSecurityGif} 
                         alt="Fort Knox Security" 
-                        className="w-10 h-10 object-contain"
+                        className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                       />
                     </div>
-                    <h3 className="font-bold text-slate-900 mb-2">Fort Knox Security</h3>
-                    <p className="text-slate-600 text-sm">Enterprise-grade security with zero-trust architecture</p>
+                    <h3 className="font-bold text-slate-900 mb-2 text-sm sm:text-base">Fort Knox Security</h3>
+                    <p className="text-slate-600 text-xs sm:text-sm">Enterprise-grade security with zero-trust architecture</p>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-md">
+                <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl mobile-card-padding shadow-lg transform hover:scale-105 transition-all duration-300">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-md flex-shrink-0">
                     <img 
                       src={globalReachGif} 
                       alt="Global Reach" 
-                      className="w-10 h-10 object-contain"
+                      className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                     />
                   </div>
-                  <h3 className="font-bold text-slate-900 mb-2">Global Reach</h3>
-                  <p className="text-slate-600 text-sm">Scalable infrastructure spanning multiple regions worldwide</p>
+                  <h3 className="font-bold text-slate-900 mb-2 text-sm sm:text-base">Global Reach</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm">Scalable infrastructure spanning multiple regions worldwide</p>
                 </div>
               </div>
             </div>

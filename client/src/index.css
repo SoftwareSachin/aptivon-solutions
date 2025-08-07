@@ -281,4 +281,66 @@
   .mobile-input {
     @apply text-base; /* Prevents zoom on iOS */
   }
+
+  /* Additional device compatibility utilities */
+  .viewport-height {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  }
+
+  .safe-area-padding {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Global mobile optimizations */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Enhanced touch interactions */
+button, [role="button"], .touch-target {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Responsive media elements */
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent text overflow on small screens */
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Mobile form improvements */
+input, select, textarea, button {
+  font-size: 16px; /* Prevents zoom on iOS */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0; /* Reset iOS styling */
+}
+
+@media (min-width: 768px) {
+  input, select, textarea, button {
+    font-size: 14px;
+  }
 }
