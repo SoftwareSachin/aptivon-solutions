@@ -50,78 +50,85 @@ export default function Navigation() {
 
 
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-4">
-      {/* Logo */}
-      <div className="flex items-center space-x-2">
-        <img 
-          src={logoGif} 
-          alt="Aptivon Solutions" 
-          className="w-auto h-8 sm:h-10"
-        />
-        <div className="hidden sm:block">
-          <div className="text-lg font-bold text-gray-900 dark:text-white tracking-tight">
-            Aptivon Solutions
-          </div>
-          <p className="text-xs text-gray-600 dark:text-gray-400 font-medium">Enterprise Technology</p>
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white/10 dark:bg-white/5 backdrop-blur-md border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        {/* Top Row - Logo and Company Name */}
+        <div className="flex justify-center items-center mb-6">
+          <a href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity" data-testid="link-home">
+            <img 
+              src={logoGif} 
+              alt="Aptivon Solutions" 
+              className="w-auto h-10"
+            />
+            <div>
+              <div className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">
+                Aptivon Solutions
+              </div>
+              <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Enterprise Technology</p>
+            </div>
+          </a>
         </div>
-      </div>
 
-      {/* Main Navigation */}
-      <div className="flex items-center gap-2 bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
-        {navItems.map((item) => {
-          const Icon = item.icon;
-          const isActive = activeTab === item.name;
+        {/* Main Navigation */}
+        <div className="flex justify-center mb-4">
+          <div className="flex items-center gap-3 bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = activeTab === item.name;
 
-          return (
+              return (
+                <a
+                  key={item.name}
+                  href={item.url}
+                  onClick={() => setActiveTab(item.name)}
+                  className={cn(
+                    "relative cursor-pointer text-sm font-semibold px-4 py-2 rounded-full transition-colors",
+                    "text-gray-800 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400",
+                    isActive && "text-purple-600 dark:text-purple-400"
+                  )}
+                  data-testid={`nav-${item.name.toLowerCase()}`}
+                >
+                  <span className="hidden sm:inline">{item.name}</span>
+                  <span className="sm:hidden">
+                    <Icon size={18} strokeWidth={2.5} />
+                  </span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="lamp"
+                      className="absolute inset-0 w-full bg-purple-500/10 dark:bg-purple-400/10 rounded-full -z-10"
+                      initial={false}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                      }}
+                    >
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-purple-500 dark:bg-purple-400 rounded-t-full">
+                        <div className="absolute w-12 h-6 bg-purple-500/20 dark:bg-purple-400/20 rounded-full blur-md -top-2 -left-2" />
+                        <div className="absolute w-8 h-6 bg-purple-500/20 dark:bg-purple-400/20 rounded-full blur-md -top-1" />
+                        <div className="absolute w-4 h-4 bg-purple-500/20 dark:bg-purple-400/20 rounded-full blur-sm top-0 left-2" />
+                      </div>
+                    </motion.div>
+                  )}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Secondary Navigation */}
+        <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+          {moreItems.map((item) => (
             <a
               key={item.name}
               href={item.url}
-              onClick={() => setActiveTab(item.name)}
-              className={cn(
-                "relative cursor-pointer text-sm font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors",
-                "text-gray-800 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400",
-                isActive && "text-purple-600 dark:text-purple-400"
-              )}
-              data-testid={`nav-${item.name.toLowerCase()}`}
+              className="text-sm text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 bg-white/5 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20"
+              data-testid={`nav-${item.name.toLowerCase().replace(' ', '-')}`}
             >
-              <span className="hidden lg:inline">{item.name}</span>
-              <span className="lg:hidden">
-                <Icon size={16} strokeWidth={2.5} />
-              </span>
-              {isActive && (
-                <motion.div
-                  layoutId="lamp"
-                  className="absolute inset-0 w-full bg-purple-500/10 dark:bg-purple-400/10 rounded-full -z-10"
-                  initial={false}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 30,
-                  }}
-                >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-6 h-1 bg-purple-500 dark:bg-purple-400 rounded-t-full">
-                    <div className="absolute w-8 h-4 bg-purple-500/20 dark:bg-purple-400/20 rounded-full blur-md -top-1 -left-1" />
-                    <div className="absolute w-6 h-4 bg-purple-500/20 dark:bg-purple-400/20 rounded-full blur-md -top-0.5" />
-                  </div>
-                </motion.div>
-              )}
+              {item.name}
             </a>
-          );
-        })}
-      </div>
-
-      {/* Secondary Navigation */}
-      <div className="flex flex-wrap justify-center gap-1.5 max-w-3xl">
-        {moreItems.map((item) => (
-          <a
-            key={item.name}
-            href={item.url}
-            className="text-xs text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 bg-white/5 backdrop-blur-sm border border-white/10 px-2.5 py-1 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/20"
-            data-testid={`nav-${item.name.toLowerCase().replace(' ', '-')}`}
-          >
-            {item.name}
-          </a>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
