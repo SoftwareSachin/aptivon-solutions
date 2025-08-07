@@ -16,6 +16,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FlickeringGrid } from "./flickering-grid";
 
 export function AIAssistantInterface() {
   const [inputValue, setInputValue] = useState("");
@@ -82,6 +83,18 @@ export function AIAssistantInterface() {
 
   return (
     <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+      {/* Flickering Grid Background */}
+      <div className="absolute inset-0 opacity-40">
+        <FlickeringGrid
+          squareSize={4}
+          gridGap={6}
+          flickerChance={0.3}
+          color="rgb(59, 130, 246)"
+          maxOpacity={0.2}
+          className="w-full h-full"
+        />
+      </div>
+      
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full opacity-30">
         <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
