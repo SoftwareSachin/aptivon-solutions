@@ -124,7 +124,7 @@ export function Connect() {
                     <div className="flex flex-col items-center">
                       <h3 className="mt-6   pb-1 font-bold ">
                         <span className="text-2xl md:text-4xl">
-                          Any questions about Design?
+                          Get started with Aptivon Solutions instantly with our comprehensive service offerings
                         </span>
                       </h3>
                     </div>
