@@ -33,16 +33,18 @@ const DatabaseWithRestApi = ({
   return (
     <div
       className={cn(
-        "relative flex h-[350px] w-full max-w-[500px] flex-col items-center",
+        "relative flex h-[280px] xs:h-[300px] sm:h-[330px] md:h-[360px] lg:h-[400px] w-full max-w-[260px] xs:max-w-[300px] sm:max-w-[380px] md:max-w-[420px] lg:max-w-[500px] flex-col items-center mx-auto",
         className
       )}
     >
       {/* SVG Paths  */}
       <svg
-        className="h-full sm:w-full text-muted"
+        className="h-full w-full text-muted"
         width="100%"
         height="100%"
         viewBox="0 0 200 100"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ minWidth: '260px' }}
       >
         <g
           stroke="currentColor"
@@ -106,92 +108,100 @@ const DatabaseWithRestApi = ({
         </g>
         {/* Buttons */}
         <g stroke="currentColor" fill="none" strokeWidth="0.4">
-          {/* First Button */}
-          <g>
+          {/* First Button - GET */}
+          <g className="api-method-button">
             <rect
-              fill="#18181B"
+              fill="#059669"
               x="14"
               y="5"
-              width="34"
-              height="10"
-              rx="5"
+              width="30"
+              height="8"
+              rx="4"
+              className="button-bg"
             ></rect>
-            <DatabaseIcon x="18" y="7.5"></DatabaseIcon>
             <text
-              x="28"
-              y="12"
+              x="29"
+              y="10.5"
               fill="white"
               stroke="none"
-              fontSize="6"
+              fontSize="4"
               fontWeight="600"
+              textAnchor="middle"
+              className="method-text"
             >
-              {badgeTexts?.first || "GET"}
+              GET
             </text>
           </g>
-          {/* Second Button */}
-          <g>
+          {/* Second Button - POST */}
+          <g className="api-method-button">
             <rect
-              fill="#18181B"
-              x="60"
+              fill="#DC2626"
+              x="50"
               y="5"
-              width="34"
-              height="10"
-              rx="5"
+              width="32"
+              height="8"
+              rx="4"
+              className="button-bg"
             ></rect>
-            <DatabaseIcon x="64" y="7.5"></DatabaseIcon>
             <text
-              x="74"
-              y="12"
+              x="66"
+              y="10.5"
               fill="white"
               stroke="none"
-              fontSize="6"
+              fontSize="4"
               fontWeight="600"
+              textAnchor="middle"
+              className="method-text"
             >
-              {badgeTexts?.second || "POST"}
+              POST
             </text>
           </g>
-          {/* Third Button */}
-          <g>
+          {/* Third Button - PUT */}
+          <g className="api-method-button">
             <rect
-              fill="#18181B"
-              x="108"
+              fill="#EA580C"
+              x="88"
               y="5"
-              width="34"
-              height="10"
-              rx="5"
+              width="28"
+              height="8"
+              rx="4"
+              className="button-bg"
             ></rect>
-            <DatabaseIcon x="112" y="7.5"></DatabaseIcon>
             <text
+              x="102"
+              y="10.5"
+              fill="white"
+              stroke="none"
+              fontSize="4"
+              fontWeight="600"
+              textAnchor="middle"
+              className="method-text"
+            >
+              PUT
+            </text>
+          </g>
+          {/* Fourth Button - DELETE */}
+          <g className="api-method-button">
+            <rect
+              fill="#B91C1C"
               x="122"
-              y="12"
-              fill="white"
-              stroke="none"
-              fontSize="6"
-              fontWeight="600"
-            >
-              {badgeTexts?.third || "PUT"}
-            </text>
-          </g>
-          {/* Fourth Button */}
-          <g>
-            <rect
-              fill="#18181B"
-              x="150"
               y="5"
-              width="40"
-              height="10"
-              rx="5"
+              width="36"
+              height="8"
+              rx="4"
+              className="button-bg"
             ></rect>
-            <DatabaseIcon x="154" y="7.5"></DatabaseIcon>
             <text
-              x="165"
-              y="12"
+              x="140"
+              y="10.5"
               fill="white"
               stroke="none"
-              fontSize="6"
+              fontSize="4"
               fontWeight="600"
+              textAnchor="middle"
+              className="method-text"
             >
-              {badgeTexts?.fourth || "DELETE"}
+              DELETE
             </text>
           </g>
         </g>
@@ -236,55 +246,57 @@ const DatabaseWithRestApi = ({
         </defs>
       </svg>
       {/* Main Box */}
-      <div className="absolute bottom-10 flex w-full flex-col items-center">
+      <div className="absolute bottom-6 xs:bottom-8 sm:bottom-10 flex w-full flex-col items-center">
         {/* bottom shadow */}
-        <div className="absolute -bottom-4 h-[100px] w-[62%] rounded-lg bg-accent/30" />
+        <div className="absolute -bottom-3 xs:-bottom-4 h-[80px] xs:h-[90px] sm:h-[100px] w-[70%] xs:w-[65%] sm:w-[62%] rounded-lg bg-accent/30" />
         {/* box title */}
-        <div className="absolute -top-3 z-20 flex items-center justify-center rounded-lg border bg-[#101112] px-3 py-2 sm:-top-4 sm:py-2">
-          <SparklesIcon className="size-4 text-white" />
-          <span className="ml-2 text-sm font-semibold text-white">
-            {title ? title : "Data exchange using a customized REST API"}
+        <div className="absolute -top-2 xs:-top-3 sm:-top-4 z-20 flex items-center justify-center rounded-lg border bg-[#101112] px-2 xs:px-3 py-1.5 xs:py-2">
+          <SparklesIcon className="size-3 xs:size-4 text-white" />
+          <span className="ml-1 xs:ml-2 text-xs xs:text-sm font-semibold text-white truncate max-w-[200px] xs:max-w-[250px] sm:max-w-none">
+            {title ? title : "Enterprise REST API Architecture"}
           </span>
         </div>
         {/* box outter circle */}
-        <div className="absolute -bottom-8 z-30 grid h-[60px] w-[60px] place-items-center rounded-full border-t bg-[#141516] font-bold text-lg text-white">
-          {circleText ? circleText : "SVG"}
+        <div className="absolute -bottom-6 xs:-bottom-7 sm:-bottom-8 z-30 grid h-[50px] xs:h-[55px] sm:h-[60px] w-[50px] xs:w-[55px] sm:w-[60px] place-items-center rounded-full border-t bg-[#141516] font-bold text-sm xs:text-base sm:text-lg text-white">
+          <span className="truncate px-1">
+            {circleText ? circleText : "API"}
+          </span>
         </div>
         {/* box content */}
-        <div className="relative z-10 flex h-[150px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background shadow-md">
+        <div className="relative z-10 flex h-[120px] xs:h-[135px] sm:h-[150px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background shadow-md">
           {/* Badges */}
-          <div className="absolute bottom-8 left-12 z-10 h-8 rounded-full bg-[#101112] px-4 text-sm border flex items-center gap-2 ">
-            <HeartHandshakeIcon className="size-4 text-blue-400" />
-            <span className="text-white font-medium">{buttonTexts?.first || "LegionDev"}</span>
+          <div className="absolute bottom-4 xs:bottom-6 sm:bottom-8 left-4 xs:left-8 sm:left-12 z-10 h-6 xs:h-7 sm:h-8 rounded-full bg-[#101112] px-2 xs:px-3 sm:px-4 text-xs xs:text-sm border flex items-center gap-1 xs:gap-2 max-w-[120px] xs:max-w-[140px] sm:max-w-none">
+            <HeartHandshakeIcon className="size-3 xs:size-4 text-blue-400 flex-shrink-0" />
+            <span className="text-white font-medium truncate">{buttonTexts?.first || "Aptivon"}</span>
           </div>
-          <div className="absolute right-16 z-10 hidden h-8 rounded-full bg-[#101112] px-4 text-sm sm:flex border items-center gap-2">
-            <Folder className="size-4 text-green-400" />
-            <span className="text-white font-medium">{buttonTexts?.second || "v2_updates"}</span>
+          <div className="absolute right-4 xs:right-8 sm:right-16 bottom-4 xs:bottom-6 sm:bottom-8 z-10 hidden xs:flex h-6 xs:h-7 sm:h-8 rounded-full bg-[#101112] px-2 xs:px-3 sm:px-4 text-xs xs:text-sm border items-center gap-1 xs:gap-2 max-w-[120px] xs:max-w-[140px] sm:max-w-none">
+            <Folder className="size-3 xs:size-4 text-green-400 flex-shrink-0" />
+            <span className="text-white font-medium truncate">{buttonTexts?.second || "v3_enterprise"}</span>
           </div>
-          {/* Circles */}
+          {/* Circles - Responsive Animation */}
           <motion.div
-            className="absolute -bottom-14 h-[100px] w-[100px] rounded-full border-t bg-accent/5"
+            className="absolute -bottom-10 xs:-bottom-12 sm:-bottom-14 h-[70px] xs:h-[85px] sm:h-[100px] w-[70px] xs:w-[85px] sm:w-[100px] rounded-full border-t bg-accent/5"
             animate={{
               scale: [0.98, 1.02, 0.98, 1, 1, 1, 1, 1, 1],
             }}
             transition={{ duration: 2, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-20 h-[145px] w-[145px] rounded-full border-t bg-accent/5"
+            className="absolute -bottom-14 xs:-bottom-16 sm:-bottom-20 h-[100px] xs:h-[120px] sm:h-[145px] w-[100px] xs:w-[120px] sm:w-[145px] rounded-full border-t bg-accent/5"
             animate={{
               scale: [1, 1, 1, 0.98, 1.02, 0.98, 1, 1, 1],
             }}
             transition={{ duration: 2, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-[100px] h-[190px] w-[190px] rounded-full border-t bg-accent/5"
+            className="absolute -bottom-[70px] xs:-bottom-[85px] sm:-bottom-[100px] h-[130px] xs:h-[160px] sm:h-[190px] w-[130px] xs:w-[160px] sm:w-[190px] rounded-full border-t bg-accent/5"
             animate={{
               scale: [1, 1, 1, 1, 1, 0.98, 1.02, 0.98, 1, 1],
             }}
             transition={{ duration: 2, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-[120px] h-[235px] w-[235px] rounded-full border-t bg-accent/5"
+            className="absolute -bottom-[90px] xs:-bottom-[105px] sm:-bottom-[120px] h-[160px] xs:h-[195px] sm:h-[235px] w-[160px] xs:w-[195px] sm:w-[235px] rounded-full border-t bg-accent/5"
             animate={{
               scale: [1, 1, 1, 1, 1, 1, 0.98, 1.02, 0.98, 1],
             }}
