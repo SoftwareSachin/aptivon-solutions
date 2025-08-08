@@ -100,15 +100,15 @@ export default function HeroSection({
     return () => clearTimeout(timeout);
   }, [typewriterText, currentWordIndex, isDeleting, typewriterWords]);
   return (
-    <div className={cn("relative pt-16 sm:pt-20 md:pt-24 lg:pt-28", className)} {...props}>
+    <div className={cn("relative pt-12 xs:pt-16 sm:pt-20 md:pt-24 lg:pt-28 min-h-[60vh] xs:min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] lg:min-h-screen", className)} {...props}>
       <div className="absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 dark:bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
       <section className="relative max-w-full mx-auto z-1">
         <RetroGrid {...gridOptions} />
-        <div className="max-w-screen-xl z-10 mx-auto px-4 py-8 sm:py-12 md:py-16 gap-8 sm:gap-12 md:px-8">
+        <div className="max-w-screen-xl z-10 mx-auto px-4 xs:px-6 sm:px-8 py-6 xs:py-8 sm:py-12 md:py-16 gap-6 xs:gap-8 sm:gap-12">
           <div className="space-y-4 sm:space-y-5 max-w-3xl leading-0 lg:leading-5 mx-auto text-center">
             <div className="relative group mx-auto w-fit">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-              <h1 className="relative text-xs sm:text-sm font-semibold group mx-auto px-4 sm:px-6 py-2 sm:py-3 bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-full w-fit shadow-lg shadow-black/10 dark:shadow-black/30 backdrop-blur-md hover:bg-white/15 dark:hover:bg-white/10 hover:border-white/30 dark:hover:border-white/20 hover:shadow-xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105 text-gray-800 dark:text-gray-200">
+              <h1 className="relative text-xs xs:text-sm sm:text-base font-semibold group mx-auto px-3 xs:px-4 sm:px-6 py-2 xs:py-2.5 sm:py-3 bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-full w-fit shadow-lg shadow-black/10 dark:shadow-black/30 backdrop-blur-md hover:bg-white/15 dark:hover:bg-white/10 hover:border-white/30 dark:hover:border-white/20 hover:shadow-xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105 text-gray-800 dark:text-gray-200">
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
                   {title}
                 </span>
@@ -117,30 +117,30 @@ export default function HeroSection({
             </div>
             
             {/* CPU Architecture Component */}
-            <div className="flex flex-col items-center justify-center mb-6 sm:mb-8">
-              <div className="p-2 xs:p-3 sm:p-4 rounded-xl bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 backdrop-blur-md w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[400px] md:max-w-[500px]">
+            <div className="flex flex-col items-center justify-center mb-4 xs:mb-6 sm:mb-8">
+              <div className="p-2 xs:p-3 sm:p-4 rounded-xl bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 backdrop-blur-md w-full max-w-[260px] xs:max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px]">
                 <CpuArchitecture 
                   text="AI"
                   showCpuConnections={true}
                   animateText={true}
                   animateLines={true}
                   animateMarkers={true}
-                  lineMarkerSize={18}
+                  lineMarkerSize={16}
                   width="100%"
-                  height="200px"
-                  className="xs:h-[250px] sm:h-[300px] md:h-[350px]"
+                  height="160px"
+                  className="xs:h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px]"
                 />
               </div>
             </div>
             
-            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-tight px-2 sm:px-4 lg:px-0">
-              <span className="block mb-1 sm:mb-2">{subtitle.regular}</span>
+            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-tight px-3 xs:px-4 sm:px-6 lg:px-0">
+              <span className="block mb-1 xs:mb-1.5 sm:mb-2">{subtitle.regular}</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-orange-200 min-h-[1.2em]">
                 {typewriterText}
                 <span className="animate-pulse text-purple-500 dark:text-purple-300 ml-0.5 sm:ml-1">|</span>
               </span>
             </h2>
-            <p className="max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-xs xs:text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-0 leading-relaxed">
+            <p className="max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-sm xs:text-base sm:text-lg md:text-xl px-4 xs:px-6 sm:px-8 lg:px-0 leading-relaxed">
               {description}
             </p>
             <div className="flex items-center justify-center gap-x-2 sm:gap-x-3 px-4 sm:px-0">

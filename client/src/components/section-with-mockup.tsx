@@ -76,38 +76,38 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
             {/* Light gradient overlay for text readability - Same as Star Project */}
             <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-blue-900/30 to-purple-900/20"></div>
 
-            <div className="container max-w-[1220px] w-full px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 relative z-10 mx-auto">
+            <div className="container max-w-[1220px] w-full px-4 xs:px-6 sm:px-8 md:px-10 lg:px-12 relative z-10 mx-auto">
                 <motion.div
-                     className={`grid grid-cols-1 gap-8 xs:gap-10 sm:gap-12 md:gap-16 lg:gap-8 w-full items-center ${layoutClasses}`}
+                     className={`grid grid-cols-1 gap-6 xs:gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 w-full items-center ${layoutClasses}`}
                      variants={containerVariants}
                      initial="hidden"
                      whileInView="visible"
-                     viewport={{ once: true, amount: 0.2 }}
+                     viewport={{ once: true, amount: 0.1 }}
                 >
                     {/* Text Content */}
                     <motion.div
-                        className={`flex flex-col items-start gap-3 xs:gap-4 mt-6 xs:mt-8 sm:mt-10 md:mt-0 max-w-[546px] mx-auto md:mx-0 px-2 xs:px-4 sm:px-0 ${textOrderClass}`}
+                        className={`flex flex-col items-start gap-4 xs:gap-5 sm:gap-6 mt-4 xs:mt-6 sm:mt-8 md:mt-0 max-w-full md:max-w-[546px] mx-auto md:mx-0 px-2 xs:px-0 ${textOrderClass}`}
                         variants={itemVariants}
                     >
-                         <div className="space-y-1.5 xs:space-y-2 md:space-y-1">
-                            <h2 className="text-white text-xl xs:text-2xl sm:text-3xl md:text-[40px] font-semibold leading-tight md:leading-[53px] text-center sm:text-left">
+                         <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+                            <h2 className="text-white text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-semibold leading-tight sm:leading-snug md:leading-tight lg:leading-[53px] text-center md:text-left">
                                 {title}
                             </h2>
                         </div>
 
-                        <p className="text-[#868f97] text-xs xs:text-sm md:text-[15px] leading-5 xs:leading-6 text-center sm:text-left">
+                        <p className="text-[#868f97] text-sm xs:text-base sm:text-lg md:text-[15px] leading-relaxed xs:leading-6 sm:leading-7 md:leading-6 text-center md:text-left max-w-lg mx-auto md:mx-0">
                             {description}
                         </p>
                     </motion.div>
 
                     {/* Video/Image Content */}
                     <motion.div
-                        className={`relative mt-6 xs:mt-8 sm:mt-10 md:mt-0 mx-auto ${imageOrderClass} w-full max-w-[320px] xs:max-w-[360px] sm:max-w-[400px] px-2 xs:px-4 sm:px-0`}
+                        className={`relative mt-6 xs:mt-8 sm:mt-10 md:mt-0 mx-auto ${imageOrderClass} w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] md:max-w-[400px] lg:max-w-[480px] px-2 xs:px-0`}
                         variants={itemVariants}
                     >
                         {showVideo && youtubeUrl ? (
-                            <div className="relative w-full h-[180px] xs:h-[200px] sm:h-[250px] md:h-[300px] mx-auto">
-                                <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-2xl overflow-hidden">
+                            <div className="relative w-full h-[200px] xs:h-[240px] sm:h-[280px] md:h-[320px] lg:h-[360px] mx-auto">
+                                <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
                                     {!showEmbedded ? (
                                         <>
                                             {/* Video thumbnail overlay */}
@@ -120,23 +120,23 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
                                                     <Button
                                                         size="lg"
                                                         onClick={handleWatchHere}
-                                                        className="relative bg-gradient-to-br from-white to-blue-50 hover:from-blue-50 hover:to-white text-slate-900 rounded-full w-24 h-24 p-0 shadow-2xl hover:shadow-blue-500/50 transform hover:scale-110 transition-all duration-500 group-hover:scale-125 z-10"
+                                                        className="relative bg-gradient-to-br from-white to-blue-50 hover:from-blue-50 hover:to-white text-slate-900 rounded-full w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 p-0 shadow-2xl hover:shadow-blue-500/50 transform hover:scale-110 transition-all duration-500 group-hover:scale-125 z-10"
                                                     >
-                                                        <Play className="w-10 h-10 ml-1 fill-current" />
+                                                        <Play className="w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10 ml-0.5 xs:ml-1 fill-current" />
                                                     </Button>
                                                 </div>
                                             </div>
                                             
                                             {/* Video info overlay */}
-                                            <div className="absolute bottom-6 left-6 right-6">
-                                                <div className="bg-black/70 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
-                                                    <h3 className="text-white font-bold text-2xl mb-3 flex items-center gap-3">
-                                                        <Sparkles className="w-6 h-6 text-yellow-400" />
-                                                        OPPB Demo Video
+                                            <div className="absolute bottom-2 xs:bottom-3 sm:bottom-4 md:bottom-6 left-2 xs:left-3 sm:left-4 md:left-6 right-2 xs:right-3 sm:right-4 md:right-6">
+                                                <div className="bg-black/70 backdrop-blur-xl rounded-lg xs:rounded-xl sm:rounded-2xl p-3 xs:p-4 sm:p-6 border border-white/10">
+                                                    <h3 className="text-white font-bold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl mb-1 xs:mb-2 sm:mb-3 flex items-center gap-2 xs:gap-3">
+                                                        <Sparkles className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-yellow-400 flex-shrink-0" />
+                                                        <span className="truncate">OPPB Demo Video</span>
                                                     </h3>
-                                                    <div className="flex items-center gap-3 text-white/90 text-lg">
-                                                        <Play className="w-5 h-5 text-blue-400" />
-                                                        <span>Watch the complete demonstration</span>
+                                                    <div className="flex items-center gap-2 xs:gap-3 text-white/90 text-xs xs:text-sm sm:text-base md:text-lg">
+                                                        <Play className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0" />
+                                                        <span className="truncate">Watch complete demonstration</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -163,21 +163,21 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
                                 </div>
 
                                 {/* Video Action Buttons */}
-                                <div className="mt-6 flex justify-center">
+                                <div className="mt-4 xs:mt-5 sm:mt-6 flex justify-center px-2">
                                     {!showEmbedded ? (
                                         <Button
                                             onClick={handleWatchHere}
-                                            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full shadow-2xl transform hover:scale-110 transition-all duration-500"
+                                            className="px-4 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full shadow-2xl transform hover:scale-105 sm:hover:scale-110 transition-all duration-500 text-sm xs:text-base w-full xs:w-auto max-w-xs"
                                         >
-                                            <Play className="w-5 h-5 mr-3" />
+                                            <Play className="w-4 h-4 xs:w-5 xs:h-5 mr-2 xs:mr-3" />
                                             Watch Here
                                         </Button>
                                     ) : (
                                         <Button
                                             onClick={handleOpenYouTube}
-                                            className="px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white rounded-full shadow-2xl transform hover:scale-110 transition-all duration-500"
+                                            className="px-4 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white rounded-full shadow-2xl transform hover:scale-105 sm:hover:scale-110 transition-all duration-500 text-sm xs:text-base w-full xs:w-auto max-w-xs"
                                         >
-                                            <Maximize2 className="w-5 h-5 mr-3" />
+                                            <Maximize2 className="w-4 h-4 xs:w-5 xs:h-5 mr-2 xs:mr-3" />
                                             Watch on YouTube
                                         </Button>
                                     )}

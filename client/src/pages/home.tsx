@@ -228,7 +228,7 @@ export default function Home() {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-16 xs:h-18 sm:h-20 md:h-24 lg:h-32"></div>
+      <div className="h-12 xs:h-14 sm:h-16 md:h-20 lg:h-24"></div>
 
       {/* SEO Content for Crawlers */}
       {seoContent}
@@ -239,33 +239,33 @@ export default function Home() {
       <AIAssistantInterface />
 
       {/* Technology Stack Cloud */}
-      <section className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+      <section className="py-6 xs:py-8 sm:py-10 md:py-14 lg:py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 dark:from-slate-900 dark:via-blue-900/10 dark:to-purple-900/10 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
-          <div className="absolute top-10 xs:top-16 sm:top-20 right-5 xs:right-10 sm:right-20 w-32 xs:w-48 sm:w-72 h-32 xs:h-48 sm:h-72 bg-blue-500/10 rounded-full blur-2xl xs:blur-3xl"></div>
-          <div className="absolute bottom-10 xs:bottom-16 sm:bottom-20 left-5 xs:left-10 sm:left-20 w-40 xs:w-64 sm:w-96 h-40 xs:h-64 sm:h-96 bg-purple-500/10 rounded-full blur-2xl xs:blur-3xl"></div>
+          <div className="absolute top-8 xs:top-12 sm:top-16 md:top-20 right-4 xs:right-8 sm:right-16 w-24 xs:w-32 sm:w-48 md:w-64 lg:w-72 h-24 xs:h-32 sm:h-48 md:h-64 lg:h-72 bg-blue-500/10 rounded-full blur-xl xs:blur-2xl sm:blur-3xl"></div>
+          <div className="absolute bottom-8 xs:bottom-12 sm:bottom-16 md:bottom-20 left-4 xs:left-8 sm:left-16 w-28 xs:w-40 sm:w-64 md:w-80 lg:w-96 h-28 xs:h-40 sm:h-64 md:h-80 lg:h-96 bg-purple-500/10 rounded-full blur-xl xs:blur-2xl sm:blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-3 xs:px-4 sm:px-6">
-          <div className="text-center mb-6 xs:mb-8 sm:mb-12 lg:mb-16">
-            <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/60 backdrop-blur-sm rounded-full mb-4 xs:mb-6 border border-slate-200/60">
-              <Sparkles className="w-3 xs:w-4 h-3 xs:h-4 text-blue-600" />
-              <span className="text-xs xs:text-sm font-medium text-slate-700">
+        <div className="relative max-w-7xl mx-auto px-4 xs:px-6 sm:px-8">
+          <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 xs:gap-2.5 px-4 xs:px-5 py-2 xs:py-2.5 bg-white/60 dark:bg-white/10 backdrop-blur-sm rounded-full mb-4 xs:mb-6 border border-slate-200/60 dark:border-slate-700/60">
+              <Sparkles className="w-4 xs:w-5 h-4 xs:h-5 text-blue-600 dark:text-blue-400" />
+              <span className="text-sm xs:text-base font-medium text-slate-700 dark:text-slate-300">
                 Technology Excellence
               </span>
             </div>
-            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 xs:mb-4 sm:mb-6 px-2 xs:px-4 sm:px-0">
-              <span className="bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent leading-tight">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 xs:mb-6 px-4 xs:px-6 sm:px-0">
+              <span className="bg-gradient-to-r from-slate-900 to-blue-600 dark:from-slate-100 dark:to-blue-400 bg-clip-text text-transparent leading-tight">
                 Our Technology Stack
               </span>
             </h2>
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-slate-600 max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-2xl mx-auto px-4 xs:px-6 sm:px-4 lg:px-0 leading-relaxed">
+            <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-sm xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl mx-auto px-4 xs:px-6 sm:px-8 lg:px-0 leading-relaxed">
               We leverage cutting-edge technologies to build scalable, secure, and innovative solutions for your business
             </p>
           </div>
 
           {/* Interactive Icon Cloud */}
-          <div className="relative h-[200px] xs:h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] w-full flex items-center justify-center px-2 xs:px-4 sm:px-0">
+          <div className="relative h-[240px] xs:h-[280px] sm:h-[320px] md:h-[400px] lg:h-[480px] xl:h-[500px] w-full flex items-center justify-center px-4 xs:px-6 sm:px-0">
             <IconCloud iconSlugs={[
               "react",
               "nodejs",
@@ -325,122 +325,122 @@ export default function Home() {
       <FeaturedOPPBProject />
 
       {/* Enhanced Interactive Dashboard Section */}
-      <section className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+      <section className="py-6 xs:py-8 sm:py-10 md:py-14 lg:py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 dark:from-slate-900 dark:via-blue-900/10 dark:to-purple-900/10 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
-          <div className="absolute top-10 xs:top-16 sm:top-20 right-5 xs:right-10 sm:right-20 w-32 xs:w-48 sm:w-72 h-32 xs:h-48 sm:h-72 bg-blue-500/10 rounded-full blur-2xl xs:blur-3xl"></div>
-          <div className="absolute bottom-10 xs:bottom-16 sm:bottom-20 left-5 xs:left-10 sm:left-20 w-40 xs:w-64 sm:w-96 h-40 xs:h-64 sm:h-96 bg-purple-500/10 rounded-full blur-2xl xs:blur-3xl"></div>
+          <div className="absolute top-8 xs:top-12 sm:top-16 md:top-20 right-4 xs:right-8 sm:right-16 w-24 xs:w-32 sm:w-48 md:w-64 lg:w-72 h-24 xs:h-32 sm:h-48 md:h-64 lg:h-72 bg-blue-500/10 rounded-full blur-xl xs:blur-2xl sm:blur-3xl"></div>
+          <div className="absolute bottom-8 xs:bottom-12 sm:bottom-16 md:bottom-20 left-4 xs:left-8 sm:left-16 w-28 xs:w-40 sm:w-64 md:w-80 lg:w-96 h-28 xs:h-40 sm:h-64 md:h-80 lg:h-96 bg-purple-500/10 rounded-full blur-xl xs:blur-2xl sm:blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-3 xs:px-4 sm:px-6">
-          <div className="text-center mb-6 xs:mb-8 sm:mb-12 lg:mb-16">
-            <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/60 backdrop-blur-sm rounded-full mb-4 xs:mb-6 border border-slate-200/60">
-              <TrendingUp className="w-3 xs:w-4 h-3 xs:h-4 text-blue-600" />
-              <span className="text-xs xs:text-sm font-medium text-slate-700">
+        <div className="relative max-w-7xl mx-auto px-4 xs:px-6 sm:px-8">
+          <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 xs:gap-2.5 px-4 xs:px-5 py-2 xs:py-2.5 bg-white/60 dark:bg-white/10 backdrop-blur-sm rounded-full mb-4 xs:mb-6 border border-slate-200/60 dark:border-slate-700/60">
+              <TrendingUp className="w-4 xs:w-5 h-4 xs:h-5 text-blue-600 dark:text-blue-400" />
+              <span className="text-sm xs:text-base font-medium text-slate-700 dark:text-slate-300">
                 Real-Time Analytics
               </span>
             </div>
-            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 xs:mb-4 sm:mb-6 px-2 xs:px-4 sm:px-0 leading-tight">
-              <span className="bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 xs:mb-6 px-4 xs:px-6 sm:px-0 leading-tight">
+              <span className="bg-gradient-to-r from-slate-900 to-blue-600 dark:from-slate-100 dark:to-blue-400 bg-clip-text text-transparent">
                 Live Project Dashboard
               </span>
             </h2>
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-slate-600 max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-2xl mx-auto px-4 xs:px-6 sm:px-4 lg:px-0 leading-relaxed">
+            <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-sm xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl mx-auto px-4 xs:px-6 sm:px-8 lg:px-0 leading-relaxed">
               Experience transparency like never before with our comprehensive
               analytics dashboard
             </p>
           </div>
 
           {/* Enhanced Live Metrics Cards */}
-          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6 lg:gap-8 mb-6 xs:mb-8 sm:mb-12 lg:mb-16 px-2 xs:px-0">
-            <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 xs:gap-5 sm:gap-6 lg:gap-8 mb-8 xs:mb-10 sm:mb-12 md:mb-16 lg:mb-20 px-2 xs:px-0">
+            <Card className="group relative overflow-hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <CardHeader className="pb-2 relative z-10">
+              <CardHeader className="pb-2 xs:pb-3 sm:pb-4 relative z-10 p-4 xs:p-5 sm:p-6">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-slate-600">
+                  <CardTitle className="text-xs xs:text-sm font-medium text-slate-600 dark:text-slate-300">
                     Active Projects
                   </CardTitle>
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <TrendingUp className="w-4 h-4 text-blue-600" />
+                  <div className="w-6 xs:w-7 sm:w-8 h-6 xs:h-7 sm:h-8 bg-blue-100 dark:bg-blue-900/50 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-3 xs:w-3.5 sm:w-4 h-3 xs:h-3.5 sm:h-4 text-blue-600 dark:text-blue-400" />
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="relative z-10">
-                <div className="text-3xl font-bold text-slate-900 mb-2">
+              <CardContent className="relative z-10 p-4 xs:p-5 sm:p-6 pt-0 xs:pt-1 sm:pt-2">
+                <div className="text-2xl xs:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
                   {liveMetrics.activeProjects}
                 </div>
-                <div className="flex items-center text-emerald-600 text-sm font-medium">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></div>
-                  +3 this month
+                <div className="flex items-center text-emerald-600 dark:text-emerald-400 text-xs xs:text-sm font-medium">
+                  <div className="w-1.5 xs:w-2 h-1.5 xs:h-2 bg-emerald-400 rounded-full mr-1.5 xs:mr-2 animate-pulse"></div>
+                  <span className="truncate">+3 this month</span>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+            <Card className="group relative overflow-hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <CardHeader className="pb-2 relative z-10">
+              <CardHeader className="pb-2 xs:pb-3 sm:pb-4 relative z-10 p-4 xs:p-5 sm:p-6">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-slate-600">
+                  <CardTitle className="text-xs xs:text-sm font-medium text-slate-600 dark:text-slate-300">
                     Satisfied Clients
                   </CardTitle>
-                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <Users className="w-4 h-4 text-emerald-600" />
+                  <div className="w-6 xs:w-7 sm:w-8 h-6 xs:h-7 sm:h-8 bg-emerald-100 dark:bg-emerald-900/50 rounded-lg flex items-center justify-center">
+                    <Users className="w-3 xs:w-3.5 sm:w-4 h-3 xs:h-3.5 sm:h-4 text-emerald-600 dark:text-emerald-400" />
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="relative z-10">
-                <div className="text-3xl font-bold text-slate-900 mb-2">
+              <CardContent className="relative z-10 p-4 xs:p-5 sm:p-6 pt-0 xs:pt-1 sm:pt-2">
+                <div className="text-2xl xs:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
                   {liveMetrics.clientsSatisfied}+
                 </div>
-                <div className="flex items-center text-emerald-600 text-sm font-medium">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></div>
-                  Growing daily
+                <div className="flex items-center text-emerald-600 dark:text-emerald-400 text-xs xs:text-sm font-medium">
+                  <div className="w-1.5 xs:w-2 h-1.5 xs:h-2 bg-emerald-400 rounded-full mr-1.5 xs:mr-2 animate-pulse"></div>
+                  <span className="truncate">Growing daily</span>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+            <Card className="group relative overflow-hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-pink-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <CardHeader className="pb-2 relative z-10">
+              <CardHeader className="pb-2 xs:pb-3 sm:pb-4 relative z-10 p-4 xs:p-5 sm:p-6">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-slate-600">
+                  <CardTitle className="text-xs xs:text-sm font-medium text-slate-600 dark:text-slate-300">
                     Team Members
                   </CardTitle>
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <Trophy className="w-4 h-4 text-purple-600" />
+                  <div className="w-6 xs:w-7 sm:w-8 h-6 xs:h-7 sm:h-8 bg-purple-100 dark:bg-purple-900/50 rounded-lg flex items-center justify-center">
+                    <Trophy className="w-3 xs:w-3.5 sm:w-4 h-3 xs:h-3.5 sm:h-4 text-purple-600 dark:text-purple-400" />
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="relative z-10">
-                <div className="text-3xl font-bold text-slate-900 mb-2">
+              <CardContent className="relative z-10 p-4 xs:p-5 sm:p-6 pt-0 xs:pt-1 sm:pt-2">
+                <div className="text-2xl xs:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
                   {liveMetrics.teamMembers}
                 </div>
-                <div className="flex items-center text-purple-600 text-sm font-medium">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full mr-2 animate-pulse"></div>
-                  Expert professionals
+                <div className="flex items-center text-purple-600 dark:text-purple-400 text-xs xs:text-sm font-medium">
+                  <div className="w-1.5 xs:w-2 h-1.5 xs:h-2 bg-purple-400 rounded-full mr-1.5 xs:mr-2 animate-pulse"></div>
+                  <span className="truncate">Expert professionals</span>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
+            <Card className="group relative overflow-hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-amber-600/5 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <CardHeader className="pb-2 relative z-10">
+              <CardHeader className="pb-2 xs:pb-3 sm:pb-4 relative z-10 p-4 xs:p-5 sm:p-6">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-slate-600">
+                  <CardTitle className="text-xs xs:text-sm font-medium text-slate-600 dark:text-slate-300">
                     Success Rate
                   </CardTitle>
-                  <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
-                    <Star className="w-4 h-4 text-amber-600" />
+                  <div className="w-6 xs:w-7 sm:w-8 h-6 xs:h-7 sm:h-8 bg-amber-100 dark:bg-amber-900/50 rounded-lg flex items-center justify-center">
+                    <Star className="w-3 xs:w-3.5 sm:w-4 h-3 xs:h-3.5 sm:h-4 text-amber-600 dark:text-amber-400" />
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="relative z-10">
-                <div className="text-3xl font-bold text-slate-900 mb-2">
+              <CardContent className="relative z-10 p-4 xs:p-5 sm:p-6 pt-0 xs:pt-1 sm:pt-2">
+                <div className="text-2xl xs:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
                   {liveMetrics.completionRate}%
                 </div>
-                <div className="flex items-center text-amber-600 text-sm font-medium">
-                  <div className="w-2 h-2 bg-amber-400 rounded-full mr-2 animate-pulse"></div>
-                  Industry leading
+                <div className="flex items-center text-amber-600 dark:text-amber-400 text-xs xs:text-sm font-medium">
+                  <div className="w-1.5 xs:w-2 h-1.5 xs:h-2 bg-amber-400 rounded-full mr-1.5 xs:mr-2 animate-pulse"></div>
+                  <span className="truncate">Industry leading</span>
                 </div>
               </CardContent>
             </Card>
@@ -452,23 +452,23 @@ export default function Home() {
       <Connect />
 
       {/* Enhanced Quick Actions Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-full mb-6">
-              <Zap className="w-4 h-4" />
-              <span className="text-sm font-medium">Instant Actions</span>
+      <section className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 bg-white dark:bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8">
+          <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 xs:gap-2.5 px-4 xs:px-5 py-2 xs:py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full mb-4 xs:mb-6">
+              <Zap className="w-3 xs:w-4 h-3 xs:h-4" />
+              <span className="text-xs xs:text-sm font-medium">Instant Actions</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-              <span className="text-slate-900">Quick Actions</span>
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 xs:mb-6 px-4 xs:px-6 sm:px-0">
+              <span className="text-slate-900 dark:text-slate-100">Quick Actions</span>
             </h2>
-            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto px-4 sm:px-0">
+            <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-sm xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl mx-auto px-4 xs:px-6 sm:px-8 lg:px-0">
               Get started with Aptivon Solutions instantly with our
               comprehensive service offerings
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-5 sm:gap-6 lg:gap-8 px-2 xs:px-0">
             {quickActions.map((action, index) => (
               <Card
                 key={index}
