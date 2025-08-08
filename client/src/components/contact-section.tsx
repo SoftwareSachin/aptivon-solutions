@@ -12,6 +12,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { MagnetLines } from "@/components/ui/magnet-lines";
 
 export default function ContactSection() {
   const { toast } = useToast();
@@ -52,8 +53,22 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="mobile-padding-lg bg-slate-50">
-      <div className="max-w-7xl mx-auto mobile-container">
+    <section id="contact" className="relative mobile-padding-lg bg-slate-50 overflow-hidden">
+      {/* MagnetLines Background */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <MagnetLines
+          rows={12}
+          columns={12}
+          containerSize="100%"
+          lineColor="#64748b"
+          lineWidth="2px"
+          lineHeight="20px"
+          baseAngle={-10}
+          className="w-full h-full"
+        />
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto mobile-container">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-full mb-6">
