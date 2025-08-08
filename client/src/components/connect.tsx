@@ -133,9 +133,13 @@ export function Connect() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <a
-                        href={"https://cal.com/aliimam/designali"}
+                        href="https://cal.com/aliimam/designali"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open("https://cal.com/aliimam/designali", "_blank");
+                        }}
                       >
                         <Button>Book a call</Button>
                       </a>
