@@ -1,7 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import { AIAssistantInterface } from "@/components/ai-assistant-interface";
-import StarProjectSection from "@/components/star-project-section";
 import FeaturedOPPBProject from "@/components/featured-oppb-project";
 import ServicesSection from "@/components/services-section";
 import TechnologySection from "@/components/technology-section";
@@ -321,9 +320,6 @@ export default function Home() {
 
         </div>
       </section>
-
-      {/* Star Project Section */}
-      <StarProjectSection />
 
       {/* Featured OPPB Project Section */}
       <FeaturedOPPBProject />
