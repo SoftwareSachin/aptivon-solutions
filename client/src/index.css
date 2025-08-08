@@ -415,3 +415,91 @@ input, select, textarea, button {
     font-size: 14px;
   }
 }
+
+/* Orbital Timeline Animation Styles */
+@keyframes orbital-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes orbital-ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-orbital-pulse {
+  animation: orbital-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-orbital-ping {
+  animation: orbital-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Custom backdrop blur for orbital timeline */
+.backdrop-blur-orbital {
+  backdrop-filter: blur(16px);
+}
+
+/* Custom gradients for orbital timeline */
+.bg-gradient-orbital {
+  background: linear-gradient(to bottom right, #6366f1, #3b82f6, #14b8a6);
+}
+
+/* Shadow effects for orbital timeline */
+.shadow-orbital {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Custom opacity values for orbital timeline */
+.opacity-orbital-70 {
+  opacity: 0.7;
+}
+
+.opacity-orbital-50 {
+  opacity: 0.5;
+}
+
+/* Custom border opacity for orbital timeline */
+.border-white\/orbital-10 {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.border-white\/orbital-20 {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.border-white\/orbital-30 {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.border-white\/orbital-40 {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Custom background opacity for orbital timeline */
+.bg-black\/orbital-90 {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.bg-white\/orbital-50 {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bg-white\/orbital-80 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Custom text opacity for orbital timeline */
+.text-white\/orbital-70 {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.text-white\/orbital-80 {
+  color: rgba(255, 255, 255, 0.8);
+}

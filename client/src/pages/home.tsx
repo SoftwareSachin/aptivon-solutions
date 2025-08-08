@@ -13,6 +13,7 @@ import Footer from "@/components/footer";
 import { Connect } from "@/components/connect";
 import { IconCloud } from "@/components/icon-cloud";
 import { CompareDemo } from "@/components/compare-demo";
+import OrbitalTimelineSection from "@/components/orbital-timeline-section";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -890,6 +891,7 @@ export default function Home() {
       <TechnologySection />
       <IndustriesSection />
       <AdvancedCapabilities />
+      <OrbitalTimelineSection />
       <ApproachSection />
       <TeamSection />
       
