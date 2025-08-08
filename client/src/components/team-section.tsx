@@ -19,6 +19,7 @@ import {
   Code
 } from "lucide-react";
 import sachinCtoImage from "@/assets/sachin-cto.gif";
+import FlickeringGrid from "@/components/ui/flickering-grid";
 
 const teamMembers = [
   {
@@ -43,8 +44,18 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="team" className="relative py-24 bg-slate-50 overflow-hidden">
+      {/* Flickering Grid Background */}
+      <FlickeringGrid
+        className="z-0"
+        squareSize={4}
+        gridGap={6}
+        color="rgb(99, 102, 241)"
+        maxOpacity={0.1}
+        flickerChance={0.1}
+      />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-full mb-6">
