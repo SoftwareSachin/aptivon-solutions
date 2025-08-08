@@ -271,7 +271,7 @@ export default function RadialOrbitalTimeline({
                           {item.date}
                         </span>
                       </div>
-                      <CardTitle className="text-sm mt-2 text-white">
+                      <CardTitle className="text-sm mt-2">
                         {item.title}
                       </CardTitle>
                     </CardHeader>
