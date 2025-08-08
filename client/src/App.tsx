@@ -9,6 +9,7 @@ import { useAnalytics } from "../hooks/use-analytics";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 import TetrisLoading from "@/components/tetris-loader";
+import CookieBanner from "@/components/cookie-banner";
 
 // Lazy load pages to reduce initial bundle size
 const About = lazy(() => import("@/pages/about"));
@@ -178,6 +179,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <CookieBanner />
       </TooltipProvider>
     </QueryClientProvider>
   );
