@@ -15,7 +15,6 @@ import { IconCloud } from "@/components/icon-cloud";
 import { CompareDemo } from "@/components/compare-demo";
 import OrbitalTimelineSection from "@/components/orbital-timeline-section";
 import DatabaseRestApiSection from "@/components/database-rest-api-section";
-import CpuArchitectureSection from "@/components/cpu-architecture-section";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -233,9 +232,6 @@ export default function Home() {
 
       {/* SEO Content for Crawlers */}
       {seoContent}
-
-      {/* CPU Architecture Section */}
-      <CpuArchitectureSection />
 
       <HeroSection />
 

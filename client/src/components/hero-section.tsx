@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
 import { ChevronRight } from "lucide-react"
 import { useState, useEffect } from "react"
+import { CpuArchitecture } from "@/components/ui/cpu-architecture"
 
 interface HeroSectionProps {
   className?: string
@@ -114,6 +115,23 @@ export default function HeroSection({
                 <ChevronRight className="inline w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 text-purple-500 dark:text-purple-400 group-hover:translate-x-1 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all duration-300" />
               </h1>
             </div>
+            
+            {/* CPU Architecture Component */}
+            <div className="flex flex-col items-center justify-center mb-8">
+              <div className="p-4 rounded-xl bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 backdrop-blur-md w-full max-w-[500px]">
+                <CpuArchitecture 
+                  text="AI"
+                  showCpuConnections={true}
+                  animateText={true}
+                  animateLines={true}
+                  animateMarkers={true}
+                  lineMarkerSize={18}
+                  width="100%"
+                  height="350px"
+                />
+              </div>
+            </div>
+            
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-tight">
               {subtitle.regular}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-orange-200">
