@@ -13,13 +13,12 @@ import {
   Star,
   CheckCircle,
   Globe,
-  LinkedIn,
+  Linkedin,
   Mail,
   Calendar,
   Code
 } from "lucide-react";
 import sachinCtoImage from "@/assets/sachin-cto.gif";
-import chetanImage from "@/assets/chetan-profile.png";
 
 const teamMembers = [
   {
@@ -38,23 +37,6 @@ const teamMembers = [
     accentColor: "blue",
     metrics: { projects: "5+", teams: "2+", systems: "10+" }
   },
-  {
-    id: 2,
-    name: "Chetan Suthar",
-    role: "Developer",
-    title: "Full Stack Developer",
-    avatar: "CS",
-    expertise: ["Full Stack Development", "React & Node.js", "Modern Web Technologies"],
-    experience: "5+ years",
-    icon: Code,
-    achievements: ["React Expert", "Node.js Specialist", "UI/UX Design Excellence"],
-    background: "Specialized in building scalable web applications using React, Node.js, and modern frontend frameworks. Expert in creating responsive, user-friendly interfaces and robust backend systems.",
-    specialization: "Full Stack Web Development",
-    gradient: "from-purple-500 to-pink-600",
-    accentColor: "purple",
-    metrics: { projects: "20+", technologies: "15+", apps: "10+" },
-    image: chetanImage
-  }
 ];
 
 
@@ -99,12 +81,6 @@ export default function TeamSection() {
                             src={sachinCtoImage} 
                             alt={`${member.name} - ${member.role}`} 
                             className="w-full h-full object-cover"
-                          />
-                        ) : member.image ? (
-                          <img 
-                            src={member.image} 
-                            alt={`${member.name} - ${member.role}`} 
-                            className="w-full h-full object-cover object-top"
                           />
                         ) : (
                           member.avatar
