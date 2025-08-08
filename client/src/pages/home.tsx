@@ -225,10 +225,10 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-background ">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation />
       {/* Navigation Spacer */}
-      <div className="h-20 sm:h-24 lg:h-32"></div>
+      <div className="h-16 xs:h-18 sm:h-20 md:h-24 lg:h-32"></div>
 
       {/* SEO Content for Crawlers */}
       {seoContent}
@@ -239,33 +239,33 @@ export default function Home() {
       <AIAssistantInterface />
 
       {/* Technology Stack Cloud */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+      <section className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
-          <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 xs:top-16 sm:top-20 right-5 xs:right-10 sm:right-20 w-32 xs:w-48 sm:w-72 h-32 xs:h-48 sm:h-72 bg-blue-500/10 rounded-full blur-2xl xs:blur-3xl"></div>
+          <div className="absolute bottom-10 xs:bottom-16 sm:bottom-20 left-5 xs:left-10 sm:left-20 w-40 xs:w-64 sm:w-96 h-40 xs:h-64 sm:h-96 bg-purple-500/10 rounded-full blur-2xl xs:blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full mb-6 border border-slate-200/60">
-              <Sparkles className="w-4 h-4 text-blue-600" />
-              <span className="text-sm font-medium text-slate-700">
+        <div className="relative max-w-7xl mx-auto px-3 xs:px-4 sm:px-6">
+          <div className="text-center mb-6 xs:mb-8 sm:mb-12 lg:mb-16">
+            <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/60 backdrop-blur-sm rounded-full mb-4 xs:mb-6 border border-slate-200/60">
+              <Sparkles className="w-3 xs:w-4 h-3 xs:h-4 text-blue-600" />
+              <span className="text-xs xs:text-sm font-medium text-slate-700">
                 Technology Excellence
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-              <span className="bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 xs:mb-4 sm:mb-6 px-2 xs:px-4 sm:px-0">
+              <span className="bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent leading-tight">
                 Our Technology Stack
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto px-4 sm:px-0">
+            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-slate-600 max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-2xl mx-auto px-4 xs:px-6 sm:px-4 lg:px-0 leading-relaxed">
               We leverage cutting-edge technologies to build scalable, secure, and innovative solutions for your business
             </p>
           </div>
 
           {/* Interactive Icon Cloud */}
-          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full flex items-center justify-center">
+          <div className="relative h-[200px] xs:h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] w-full flex items-center justify-center px-2 xs:px-4 sm:px-0">
             <IconCloud iconSlugs={[
               "react",
               "nodejs",
@@ -325,34 +325,34 @@ export default function Home() {
       <FeaturedOPPBProject />
 
       {/* Enhanced Interactive Dashboard Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+      <section className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
-          <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 xs:top-16 sm:top-20 right-5 xs:right-10 sm:right-20 w-32 xs:w-48 sm:w-72 h-32 xs:h-48 sm:h-72 bg-blue-500/10 rounded-full blur-2xl xs:blur-3xl"></div>
+          <div className="absolute bottom-10 xs:bottom-16 sm:bottom-20 left-5 xs:left-10 sm:left-20 w-40 xs:w-64 sm:w-96 h-40 xs:h-64 sm:h-96 bg-purple-500/10 rounded-full blur-2xl xs:blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full mb-6 border border-slate-200/60">
-              <TrendingUp className="w-4 h-4 text-blue-600" />
-              <span className="text-sm font-medium text-slate-700">
+        <div className="relative max-w-7xl mx-auto px-3 xs:px-4 sm:px-6">
+          <div className="text-center mb-6 xs:mb-8 sm:mb-12 lg:mb-16">
+            <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/60 backdrop-blur-sm rounded-full mb-4 xs:mb-6 border border-slate-200/60">
+              <TrendingUp className="w-3 xs:w-4 h-3 xs:h-4 text-blue-600" />
+              <span className="text-xs xs:text-sm font-medium text-slate-700">
                 Real-Time Analytics
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
+            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 xs:mb-4 sm:mb-6 px-2 xs:px-4 sm:px-0 leading-tight">
               <span className="bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
                 Live Project Dashboard
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto px-4 sm:px-0">
+            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-slate-600 max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-2xl mx-auto px-4 xs:px-6 sm:px-4 lg:px-0 leading-relaxed">
               Experience transparency like never before with our comprehensive
               analytics dashboard
             </p>
           </div>
 
           {/* Enhanced Live Metrics Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6 lg:gap-8 mb-6 xs:mb-8 sm:mb-12 lg:mb-16 px-2 xs:px-0">
             <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="pb-2 relative z-10">

@@ -117,8 +117,8 @@ export default function HeroSection({
             </div>
             
             {/* CPU Architecture Component */}
-            <div className="flex flex-col items-center justify-center mb-8">
-              <div className="p-4 rounded-xl bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 backdrop-blur-md w-full max-w-[500px]">
+            <div className="flex flex-col items-center justify-center mb-6 sm:mb-8">
+              <div className="p-2 xs:p-3 sm:p-4 rounded-xl bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 backdrop-blur-md w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[400px] md:max-w-[500px]">
                 <CpuArchitecture 
                   text="AI"
                   showCpuConnections={true}
@@ -127,30 +127,32 @@ export default function HeroSection({
                   animateMarkers={true}
                   lineMarkerSize={18}
                   width="100%"
-                  height="350px"
+                  height="200px"
+                  className="xs:h-[250px] sm:h-[300px] md:h-[350px]"
                 />
               </div>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-tight">
-              {subtitle.regular}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-orange-200">
+            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-tight px-2 sm:px-4 lg:px-0">
+              <span className="block mb-1 sm:mb-2">{subtitle.regular}</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-orange-200 min-h-[1.2em]">
                 {typewriterText}
                 <span className="animate-pulse text-purple-500 dark:text-purple-300 ml-0.5 sm:ml-1">|</span>
               </span>
             </h2>
-            <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-sm sm:text-base px-4 sm:px-0 leading-relaxed">
+            <p className="max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-xs xs:text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-0 leading-relaxed">
               {description}
             </p>
-            <div className="items-center justify-center gap-x-2 sm:gap-x-3 space-y-3 sm:flex sm:space-y-0 px-4 sm:px-0">
-              <span className="relative inline-block overflow-hidden rounded-full p-[1.5px]">
+            <div className="flex items-center justify-center gap-x-2 sm:gap-x-3 px-4 sm:px-0">
+              <span className="relative inline-block overflow-hidden rounded-full p-[1.5px] w-full max-w-[250px] xs:max-w-[280px] sm:max-w-none sm:w-auto">
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
                 <div className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white dark:bg-gray-950 text-xs font-medium backdrop-blur-3xl">
                   <a
                     href={ctaHref}
-                    className="inline-flex rounded-full text-center group items-center w-full justify-center bg-gradient-to-tr from-zinc-300/20 via-purple-400/30 to-transparent dark:from-zinc-300/5 dark:via-purple-400/20 text-gray-900 dark:text-white border-input border-[1px] hover:bg-gradient-to-tr hover:from-zinc-300/30 hover:via-purple-400/40 hover:to-transparent dark:hover:from-zinc-300/10 dark:hover:via-purple-400/30 transition-all sm:w-auto py-3 sm:py-4 px-6 sm:px-10 text-sm sm:text-base"
+                    className="inline-flex rounded-full text-center group items-center w-full justify-center bg-gradient-to-tr from-zinc-300/20 via-purple-400/30 to-transparent dark:from-zinc-300/5 dark:via-purple-400/20 text-gray-900 dark:text-white border-input border-[1px] hover:bg-gradient-to-tr hover:from-zinc-300/30 hover:via-purple-400/40 hover:to-transparent dark:hover:from-zinc-300/10 dark:hover:via-purple-400/30 transition-all py-2.5 xs:py-3 sm:py-4 px-4 xs:px-6 sm:px-10 text-xs xs:text-sm sm:text-base font-medium"
                   >
-                    {ctaText}
+                    <span className="truncate">{ctaText}</span>
+                    <ChevronRight className="ml-1 xs:ml-2 h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
                   </a>
                 </div>
               </span>

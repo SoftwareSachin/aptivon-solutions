@@ -82,7 +82,7 @@ export function AIAssistantInterface() {
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+    <section className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
       {/* Flickering Grid Background */}
       <div className="absolute inset-0 opacity-40">
         <FlickeringGrid
@@ -97,33 +97,33 @@ export function AIAssistantInterface() {
       
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full opacity-30">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 xs:top-16 sm:top-20 right-5 xs:right-10 sm:right-20 w-32 xs:w-48 sm:w-72 h-32 xs:h-48 sm:h-72 bg-blue-500/10 rounded-full blur-2xl xs:blur-3xl"></div>
+        <div className="absolute bottom-10 xs:bottom-16 sm:bottom-20 left-5 xs:left-10 sm:left-20 w-40 xs:w-64 sm:w-96 h-40 xs:h-64 sm:h-96 bg-purple-500/10 rounded-full blur-2xl xs:blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 xs:w-48 sm:w-80 h-32 xs:h-48 sm:h-80 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-2xl xs:blur-3xl"></div>
       </div>
       
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-xl rounded-full mb-8 border border-slate-200/60 shadow-lg">
-            <Sparkles className="w-5 h-5 text-blue-600" />
-            <span className="text-sm font-semibold text-slate-700">
+      <div className="relative max-w-6xl mx-auto px-3 xs:px-4 sm:px-6">
+        <div className="text-center mb-6 xs:mb-8 sm:mb-12 lg:mb-16">
+          <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 sm:px-6 py-2 xs:py-2.5 sm:py-3 bg-white/80 backdrop-blur-xl rounded-full mb-4 xs:mb-6 sm:mb-8 border border-slate-200/60 shadow-lg">
+            <Sparkles className="w-3 xs:w-4 sm:w-5 h-3 xs:h-4 sm:h-5 text-blue-600" />
+            <span className="text-xs xs:text-sm font-semibold text-slate-700">
               AI Assistant
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+          <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 xs:mb-4 sm:mb-6 px-2 xs:px-4 sm:px-0 leading-tight">
             <span className="bg-gradient-to-r from-slate-900 via-blue-600 to-purple-600 bg-clip-text text-transparent">
               Try Our AI Assistant
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-sm xs:text-base sm:text-lg md:text-xl text-slate-600 max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 xs:px-6 sm:px-4 lg:px-0">
             Experience intelligent assistance with advanced search, deep research, and reasoning capabilities
           </p>
         </div>
         
         {/* Main AI Assistant Card */}
-        <div className="w-full max-w-4xl mx-auto">
-          <div className="bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 overflow-hidden">
-            <div className="p-4 sm:p-6 md:p-8 lg:p-12">
+        <div className="w-full max-w-4xl mx-auto px-2 xs:px-4 sm:px-0">
+          <div className="bg-white/90 backdrop-blur-xl rounded-xl xs:rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 overflow-hidden">
+            <div className="p-3 xs:p-4 sm:p-6 md:p-8 lg:p-12">
               <div className="flex flex-col items-center">
                 {/* Logo with animated gradient */}
                 <div className="mb-6 sm:mb-8 lg:mb-10 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 relative">

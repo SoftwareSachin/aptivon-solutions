@@ -63,6 +63,41 @@
   transition-duration: 0.3s;
 }
 
+/* Mobile-first responsive design utilities */
+@media (max-width: 374px) {
+  .mobile-text-xs { font-size: 0.75rem; line-height: 1rem; }
+  .mobile-p-2 { padding: 0.5rem; }
+  .mobile-gap-2 { gap: 0.5rem; }
+  .mobile-space-y-2 > * + * { margin-top: 0.5rem; }
+}
+
+/* Extra small devices (phones, 375px and up) */
+@media (min-width: 375px) and (max-width: 474px) {
+  .xs-text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+  .xs-p-3 { padding: 0.75rem; }
+  .xs-gap-3 { gap: 0.75rem; }
+  .xs-space-y-3 > * + * { margin-top: 0.75rem; }
+}
+
+/* Improved mobile touch targets */
+@media (max-width: 640px) {
+  button, a[role="button"], .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text readability on mobile */
+  .mobile-readable {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  /* Prevent zoom on inputs */
+  input, select, textarea {
+    font-size: 16px;
+  }
+}
+
 :root {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(222, 84%, 4.9%);

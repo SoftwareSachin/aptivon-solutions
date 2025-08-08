@@ -60,7 +60,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
     const imageOrderClass = reverseLayout ? "md:col-start-1" : "";
 
     return (
-        <section className="relative py-16 sm:py-20 lg:py-32 overflow-hidden">
+        <section className="relative py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 xl:py-32 overflow-hidden">
             {/* Squares Background - Same as Star Project */}
             <div className="absolute inset-0 w-full h-full">
                 <Squares 
@@ -76,9 +76,9 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
             {/* Light gradient overlay for text readability - Same as Star Project */}
             <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-blue-900/30 to-purple-900/20"></div>
 
-            <div className="container max-w-[1220px] w-full px-6 md:px-10 relative z-10 mx-auto">
+            <div className="container max-w-[1220px] w-full px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 relative z-10 mx-auto">
                 <motion.div
-                     className={`grid grid-cols-1 gap-16 md:gap-8 w-full items-center ${layoutClasses}`}
+                     className={`grid grid-cols-1 gap-8 xs:gap-10 sm:gap-12 md:gap-16 lg:gap-8 w-full items-center ${layoutClasses}`}
                      variants={containerVariants}
                      initial="hidden"
                      whileInView="visible"
@@ -86,27 +86,27 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
                 >
                     {/* Text Content */}
                     <motion.div
-                        className={`flex flex-col items-start gap-4 mt-10 md:mt-0 max-w-[546px] mx-auto md:mx-0 ${textOrderClass}`}
+                        className={`flex flex-col items-start gap-3 xs:gap-4 mt-6 xs:mt-8 sm:mt-10 md:mt-0 max-w-[546px] mx-auto md:mx-0 px-2 xs:px-4 sm:px-0 ${textOrderClass}`}
                         variants={itemVariants}
                     >
-                         <div className="space-y-2 md:space-y-1">
-                            <h2 className="text-white text-3xl md:text-[40px] font-semibold leading-tight md:leading-[53px]">
+                         <div className="space-y-1.5 xs:space-y-2 md:space-y-1">
+                            <h2 className="text-white text-xl xs:text-2xl sm:text-3xl md:text-[40px] font-semibold leading-tight md:leading-[53px] text-center sm:text-left">
                                 {title}
                             </h2>
                         </div>
 
-                        <p className="text-[#868f97] text-sm md:text-[15px] leading-6">
+                        <p className="text-[#868f97] text-xs xs:text-sm md:text-[15px] leading-5 xs:leading-6 text-center sm:text-left">
                             {description}
                         </p>
                     </motion.div>
 
                     {/* Video/Image Content */}
                     <motion.div
-                        className={`relative mt-10 md:mt-0 mx-auto ${imageOrderClass} w-full max-w-[400px]`}
+                        className={`relative mt-6 xs:mt-8 sm:mt-10 md:mt-0 mx-auto ${imageOrderClass} w-full max-w-[320px] xs:max-w-[360px] sm:max-w-[400px] px-2 xs:px-4 sm:px-0`}
                         variants={itemVariants}
                     >
                         {showVideo && youtubeUrl ? (
-                            <div className="relative w-full h-[250px] sm:h-[300px] mx-auto">
+                            <div className="relative w-full h-[180px] xs:h-[200px] sm:h-[250px] md:h-[300px] mx-auto">
                                 <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-2xl overflow-hidden">
                                     {!showEmbedded ? (
                                         <>
