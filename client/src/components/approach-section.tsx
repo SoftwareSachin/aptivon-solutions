@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Meteors } from "@/components/ui/meteors";
 import { 
   TrendingUp, 
   Database, 
@@ -132,10 +133,11 @@ export default function ApproachSection() {
         {/* Approach Steps */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {approaches.map((approach, index) => (
-            <Card key={approach.number} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden group h-full">
+            <Card key={approach.number} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden group h-full relative">
+              <Meteors number={20} />
               <CardContent className="p-0">
                 <div className="h-1 bg-slate-900"></div>
-                <div className="p-8 h-full flex flex-col">
+                <div className="p-8 h-full flex flex-col relative z-10">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center gap-4">
