@@ -10,6 +10,7 @@ import ApproachSection from "@/components/approach-section";
 import TeamSection from "@/components/team-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import { Connect } from "@/components/connect";
 import { IconCloud } from "@/components/icon-cloud";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
@@ -443,6 +444,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* UI/UX Design Section */}
+      <Connect />
 
       {/* Enhanced Quick Actions Section */}
       <section className="py-12 sm:py-16 lg:py-24 bg-white">
