@@ -12,6 +12,7 @@ import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import { Connect } from "@/components/connect";
 import { IconCloud } from "@/components/icon-cloud";
+import { CompareDemo } from "@/components/compare-demo";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -891,6 +892,9 @@ export default function Home() {
       <AdvancedCapabilities />
       <ApproachSection />
       <TeamSection />
+      
+      {/* Before vs After Comparison */}
+      <CompareDemo />
 
       <div id="contact">
         <ContactSection />
