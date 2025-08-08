@@ -122,8 +122,8 @@ const DatabaseWithRestApi = ({
               y="12"
               fill="white"
               stroke="none"
-              fontSize="5"
-              fontWeight="500"
+              fontSize="6"
+              fontWeight="600"
             >
               {badgeTexts?.first || "GET"}
             </text>
@@ -144,8 +144,8 @@ const DatabaseWithRestApi = ({
               y="12"
               fill="white"
               stroke="none"
-              fontSize="5"
-              fontWeight="500"
+              fontSize="6"
+              fontWeight="600"
             >
               {badgeTexts?.second || "POST"}
             </text>
@@ -166,8 +166,8 @@ const DatabaseWithRestApi = ({
               y="12"
               fill="white"
               stroke="none"
-              fontSize="5"
-              fontWeight="500"
+              fontSize="6"
+              fontWeight="600"
             >
               {badgeTexts?.third || "PUT"}
             </text>
@@ -188,8 +188,8 @@ const DatabaseWithRestApi = ({
               y="12"
               fill="white"
               stroke="none"
-              fontSize="5"
-              fontWeight="500"
+              fontSize="6"
+              fontWeight="600"
             >
               {badgeTexts?.fourth || "DELETE"}
             </text>
@@ -240,26 +240,26 @@ const DatabaseWithRestApi = ({
         {/* bottom shadow */}
         <div className="absolute -bottom-4 h-[100px] w-[62%] rounded-lg bg-accent/30" />
         {/* box title */}
-        <div className="absolute -top-3 z-20 flex items-center justify-center rounded-lg border bg-[#101112] px-2 py-1 sm:-top-4 sm:py-1.5">
-          <SparklesIcon className="size-3" />
-          <span className="ml-2 text-[10px]">
+        <div className="absolute -top-3 z-20 flex items-center justify-center rounded-lg border bg-[#101112] px-3 py-2 sm:-top-4 sm:py-2">
+          <SparklesIcon className="size-4 text-white" />
+          <span className="ml-2 text-sm font-semibold text-white">
             {title ? title : "Data exchange using a customized REST API"}
           </span>
         </div>
         {/* box outter circle */}
-        <div className="absolute -bottom-8 z-30 grid h-[60px] w-[60px] place-items-center rounded-full border-t bg-[#141516] font-semibold text-xs">
+        <div className="absolute -bottom-8 z-30 grid h-[60px] w-[60px] place-items-center rounded-full border-t bg-[#141516] font-bold text-lg text-white">
           {circleText ? circleText : "SVG"}
         </div>
         {/* box content */}
         <div className="relative z-10 flex h-[150px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background shadow-md">
           {/* Badges */}
-          <div className="absolute bottom-8 left-12 z-10 h-7 rounded-full bg-[#101112] px-3 text-xs border flex items-center gap-2 ">
-            <HeartHandshakeIcon className="size-4" />
-            <span>{buttonTexts?.first || "LegionDev"}</span>
+          <div className="absolute bottom-8 left-12 z-10 h-8 rounded-full bg-[#101112] px-4 text-sm border flex items-center gap-2 ">
+            <HeartHandshakeIcon className="size-4 text-blue-400" />
+            <span className="text-white font-medium">{buttonTexts?.first || "LegionDev"}</span>
           </div>
-          <div className="absolute right-16 z-10 hidden h-7 rounded-full bg-[#101112] px-3 text-xs sm:flex border items-center gap-2">
-            <Folder className="size-4" />
-            <span>{buttonTexts?.second || "v2_updates"}</span>
+          <div className="absolute right-16 z-10 hidden h-8 rounded-full bg-[#101112] px-4 text-sm sm:flex border items-center gap-2">
+            <Folder className="size-4 text-green-400" />
+            <span className="text-white font-medium">{buttonTexts?.second || "v2_updates"}</span>
           </div>
           {/* Circles */}
           <motion.div
