@@ -50,8 +50,8 @@ export function FeaturedOPPBProject() {
         <SectionWithMockup
             title={oppbProjectData.title}
             description={oppbProjectData.description}
-            primaryImageSrc={oppbProjectData.primaryImageSrc}
-            secondaryImageSrc={oppbProjectData.secondaryImageSrc}
+            youtubeUrl="https://www.youtube.com/embed/l-z64oz_sa8"
+            showVideo={true}
             reverseLayout={false}
         />
     );
