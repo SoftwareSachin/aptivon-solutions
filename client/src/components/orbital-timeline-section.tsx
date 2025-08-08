@@ -72,10 +72,6 @@ export function RadialOrbitalTimelineDemo() {
 export default function OrbitalTimelineSection() {
   return (
     <section id="orbital-timeline" className="h-screen bg-black relative w-full overflow-hidden">
-      {/* Debug header to make sure section is visible */}
-      <div className="absolute top-4 left-4 z-50 text-white bg-red-600 px-4 py-2 rounded">
-        ORBITAL TIMELINE SECTION
-      </div>
       <RadialOrbitalTimelineDemo />
     </section>
   );

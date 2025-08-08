@@ -88,10 +88,10 @@ export default function RadialOrbitalTimeline({
     if (autoRotate && viewMode === "orbital") {
       rotationTimer = setInterval(() => {
         setRotationAngle((prev) => {
-          const newAngle = (prev + 0.3) % 360;
-          return Number(newAngle.toFixed(3));
+          const newAngle = (prev + 1.5) % 360; // Increased rotation speed
+          return Number(newAngle.toFixed(1));
         });
-      }, 50);
+      }, 100); // Increased interval for smoother animation
     }
 
     return () => {
@@ -113,7 +113,7 @@ export default function RadialOrbitalTimeline({
 
   const calculateNodePosition = (index: number, total: number) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
-    const radius = 200;
+    const radius = 180; // Slightly smaller radius for better visibility
     const radian = (angle * Math.PI) / 180;
 
     const x = radius * Math.cos(radian) + centerOffset.x;
@@ -121,8 +121,8 @@ export default function RadialOrbitalTimeline({
 
     const zIndex = Math.round(100 + 50 * Math.cos(radian));
     const opacity = Math.max(
-      0.4,
-      Math.min(1, 0.4 + 0.6 * ((1 + Math.sin(radian)) / 2))
+      0.6, // Increased minimum opacity for better visibility
+      Math.min(1, 0.6 + 0.4 * ((1 + Math.sin(radian)) / 2))
     );
 
     return { x, y, angle, zIndex, opacity };
@@ -195,7 +195,7 @@ export default function RadialOrbitalTimeline({
               <div
                 key={item.id}
                 ref={(el) => (nodeRefs.current[item.id] = el)}
-                className="absolute transition-all duration-700 cursor-pointer"
+                className="absolute transition-all duration-300 cursor-pointer"
                 style={nodeStyle}
                 onClick={(e) => {
                   e.stopPropagation();
