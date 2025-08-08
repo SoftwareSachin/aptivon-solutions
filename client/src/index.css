@@ -40,6 +40,11 @@
   --color-5: 90 100% 63%;
 }
 
+/* Custom Ali background class */
+.bg-ali {
+  background-color: #ef4444; /* red-500 */
+}
+
 .dark {
   --background: hsl(222, 84%, 4.9%);
   --foreground: hsl(210, 40%, 98%);

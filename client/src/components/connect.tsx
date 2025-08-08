@@ -2,73 +2,57 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { Mail, Phone, MessageCircle, Sparkles } from "lucide-react";
+import { Mail, MessageCircle, Sparkles } from "lucide-react";
+import { useAnimate } from "framer-motion";
 
 import { Button, buttonVariants } from "@/components/ui/button";
 
 import { HighlighterItem, HighlightGroup, Particles } from "@/components/ui/highlighter";
 
 export function Connect() {
-  const [scope, setScope] = React.useState<HTMLDivElement | null>(null);
+  const [scope, animate] = useAnimate();
 
   React.useEffect(() => {
-    if (!scope) return;
-
-    const animatePointer = () => {
-      const pointer = scope.querySelector("#pointer");
-      const javascript = scope.querySelector("#javascript");
-      const reactJs = scope.querySelector("#react-js");
-      const typescript = scope.querySelector("#typescript");
-      const nextJs = scope.querySelector("#next-js");
-
-      if (!pointer || !javascript || !reactJs || !typescript || !nextJs) return;
-
-      const sequence = [
-        () => {
-          (pointer as HTMLElement).style.left = '200px';
-          (pointer as HTMLElement).style.top = '60px';
-          (javascript as HTMLElement).style.opacity = '1';
-        },
-        () => {
-          (pointer as HTMLElement).style.left = '50px';
-          (pointer as HTMLElement).style.top = '102px';
-          (javascript as HTMLElement).style.opacity = '0.4';
-          (reactJs as HTMLElement).style.opacity = '1';
-        },
-        () => {
-          (pointer as HTMLElement).style.left = '224px';
-          (pointer as HTMLElement).style.top = '170px';
-          (reactJs as HTMLElement).style.opacity = '0.4';
-          (typescript as HTMLElement).style.opacity = '1';
-        },
-        () => {
-          (pointer as HTMLElement).style.left = '88px';
-          (pointer as HTMLElement).style.top = '198px';
-          (typescript as HTMLElement).style.opacity = '0.4';
-          (nextJs as HTMLElement).style.opacity = '1';
-        },
-        () => {
-          (pointer as HTMLElement).style.left = '200px';
-          (pointer as HTMLElement).style.top = '60px';
-          (nextJs as HTMLElement).style.opacity = '0.5';
-        }
-      ];
-
-      let currentStep = 0;
-      const runAnimation = () => {
-        sequence[currentStep]();
-        currentStep = (currentStep + 1) % sequence.length;
-        setTimeout(runAnimation, 1000);
-      };
-
-      runAnimation();
-    };
-
-    animatePointer();
-  }, [scope]);
+    animate(
+      [
+        ["#pointer", { left: 200, top: 60 }, { duration: 0 }],
+        ["#javascript", { opacity: 1 }, { duration: 0.3 }],
+        [
+          "#pointer",
+          { left: 50, top: 102 },
+          { at: "+0.5", duration: 0.5, ease: "easeInOut" },
+        ],
+        ["#javascript", { opacity: 0.4 }, { at: "-0.3", duration: 0.1 }],
+        ["#react-js", { opacity: 1 }, { duration: 0.3 }],
+        [
+          "#pointer",
+          { left: 224, top: 170 },
+          { at: "+0.5", duration: 0.5, ease: "easeInOut" },
+        ],
+        ["#react-js", { opacity: 0.4 }, { at: "-0.3", duration: 0.1 }],
+        ["#typescript", { opacity: 1 }, { duration: 0.3 }],
+        [
+          "#pointer",
+          { left: 88, top: 198 },
+          { at: "+0.5", duration: 0.5, ease: "easeInOut" },
+        ],
+        ["#typescript", { opacity: 0.4 }, { at: "-0.3", duration: 0.1 }],
+        ["#next-js", { opacity: 1 }, { duration: 0.3 }],
+        [
+          "#pointer",
+          { left: 200, top: 60 },
+          { at: "+0.5", duration: 0.5, ease: "easeInOut" },
+        ],
+        ["#next-js", { opacity: 0.5 }, { at: "-0.3", duration: 0.1 }],
+      ],
+      {
+        repeat: Number.POSITIVE_INFINITY,
+      },
+    );
+  }, [animate]);
 
   return (
-    <section className="relative mx-auto mb-20 mt-6 max-w-5xl">
+    <section className="relative mx-auto mb-20 mt-6 max-w-5xl  ">
       <HighlightGroup className="group h-full">
         <div
           className="group/item h-full md:col-span-6 lg:col-span-12"
@@ -86,7 +70,7 @@ export function Connect() {
                 <div className="flex h-full flex-col justify-center gap-10 p-4 md:h-[300px] md:flex-row">
                   <div
                     className="relative mx-auto h-[270px] w-[300px] md:h-[270px] md:w-[300px]"
-                    ref={(el) => el && setScope(el)}
+                    ref={scope}
                   >
                     <Sparkles className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2" />
                     <div
@@ -114,7 +98,7 @@ export function Connect() {
                       Branding
                     </div>
 
-                    <div id="pointer" className="absolute transition-all duration-500 ease-in-out">
+                    <div id="pointer" className="absolute">
                       <svg
                         width="16.8"
                         height="18.2"
@@ -130,7 +114,7 @@ export function Connect() {
                           d="M12 5.50676L0 0L2.83818 13L6.30623 7.86537L12 5.50676V5.50676Z"
                         />
                       </svg>
-                      <span className="relative -top-1 left-3 rounded-3xl bg-red-500 px-2 py-1 text-xs text-white">
+                      <span className="bg-ali relative -top-1 left-3 rounded-3xl px-2 py-1 text-xs text-white">
                         Ali
                       </span>
                     </div>
@@ -138,7 +122,7 @@ export function Connect() {
 
                   <div className="-mt-20 flex h-full flex-col justify-center p-2 md:-mt-4 md:ml-10 md:w-[400px]">
                     <div className="flex flex-col items-center">
-                      <h3 className="mt-6 pb-1 font-bold">
+                      <h3 className="mt-6   pb-1 font-bold ">
                         <span className="text-2xl md:text-4xl">
                           Any questions about Design?
                         </span>
@@ -149,7 +133,7 @@ export function Connect() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <a
-                        href="https://cal.com/aliimam/designali"
+                        href={"https://cal.com/aliimam/designali"}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -198,4 +182,4 @@ export function Connect() {
       </HighlightGroup>
     </section>
   );
-}
+};
