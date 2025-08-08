@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import { AIAssistantInterface } from "@/components/ai-assistant-interface";
 import StarProjectSection from "@/components/star-project-section";
+import FeaturedOPPBProject from "@/components/featured-oppb-project";
 import ServicesSection from "@/components/services-section";
 import TechnologySection from "@/components/technology-section";
 import IndustriesSection from "@/components/industries-section";
@@ -323,6 +324,9 @@ export default function Home() {
 
       {/* Star Project Section */}
       <StarProjectSection />
+
+      {/* Featured OPPB Project Section */}
+      <FeaturedOPPBProject />
 
       {/* Enhanced Interactive Dashboard Section */}
       <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
