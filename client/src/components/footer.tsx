@@ -2,6 +2,7 @@ import { Linkedin, Twitter, Github, Mail, Phone, MapPin, Clock, Award, TrendingU
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import logoGif from "../assets/new-logo.gif";
+import { FloatingPathsBackground } from "@/components/ui/background-paths";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -45,13 +46,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-repeat" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-      </div>
+    <footer className="relative bg-slate-900 text-white overflow-hidden">
+      {/* Background Paths */}
+      <FloatingPathsBackground />
 
       {/* CTA Section with Advanced Design */}
       <section className="relative mobile-padding-lg bg-slate-800 border-b border-slate-700/50">
@@ -61,7 +58,7 @@ export default function Footer() {
             <span className="text-xs sm:text-sm font-medium text-blue-300">Ready to Transform Your Business?</span>
           </div>
           
-          <h2 className="mobile-text-5xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-relaxed">
+          <h2 className="mobile-text-5xl font-bold mb-6 sm:mb-8 text-white leading-relaxed">
             Let's Build Something Amazing Together
           </h2>
           <p className="mobile-text-xl text-slate-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -113,7 +110,7 @@ export default function Footer() {
                   />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="mobile-text-2xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <h3 className="mobile-text-2xl font-bold text-white">
                     Aptivon Solutions
                   </h3>
                   <p className="text-xs sm:text-sm text-blue-400 font-medium">Enterprise Technology Partner</p>
@@ -166,7 +163,7 @@ export default function Footer() {
 
             {/* Services - Enhanced */}
             <div className="lg:col-span-3">
-              <h4 className="text-xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              <h4 className="text-xl font-bold mb-6 text-white">
                 Our Services
               </h4>
               <ul className="space-y-4">
@@ -190,7 +187,7 @@ export default function Footer() {
 
             {/* Company Links - Enhanced */}
             <div className="lg:col-span-4">
-              <h4 className="text-xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              <h4 className="text-xl font-bold mb-6 text-white">
                 Company
               </h4>
               <div className="grid grid-cols-2 gap-3 mb-8">
@@ -206,7 +203,7 @@ export default function Footer() {
               </div>
               
               {/* Newsletter Signup */}
-              <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 p-6 rounded-2xl border border-blue-500/20 backdrop-blur-sm">
+              <div className="bg-slate-800/50 p-6 rounded-2xl border border-blue-500/20 backdrop-blur-sm">
                 <h5 className="text-lg font-bold text-white mb-3">Stay Updated</h5>
                 <p className="text-slate-300 text-sm mb-4">Get the latest insights and updates delivered to your inbox.</p>
                 <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
