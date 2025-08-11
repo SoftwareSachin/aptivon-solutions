@@ -1598,6 +1598,13 @@ This application was submitted through the Aptivon Solutions careers page.
     res.sendFile(logoPath);
   });
 
+  app.get('/new-logo.gif', (req, res) => {
+    const logoPath = path.join(process.cwd(), 'public', 'new-logo.gif');
+    res.setHeader('Content-Type', 'image/gif');
+    res.setHeader('Cache-Control', 'public, max-age=31536000');
+    res.sendFile(logoPath);
+  });
+
   app.get('/favicon.png', (req, res) => {
     const faviconPath = path.join(process.cwd(), 'public', 'favicon.png');
     res.setHeader('Content-Type', 'image/png');

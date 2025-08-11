@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, Info, Settings, Briefcase, Code, BookOpen, FileText, Users, Phone, Folder, Building, GraduationCap, FileSearch, HelpCircle, UserCheck } from "lucide-react";
-import logoGif from "../assets/new-logo.gif";
+import logoGif from "@assets/fetchpik.com-iconscout-uF5IrzRZx4_1754923363460.gif";
 import { cn } from "@/lib/utils";
 
 export default function Navigation() {

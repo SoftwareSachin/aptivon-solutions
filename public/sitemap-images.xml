@@ -5,7 +5,7 @@
   <url>
     <loc>https://aptivonsolin.vercel.app/</loc>
     <image:image>
-      <image:loc>https://aptivonsolin.vercel.app/logo.gif</image:loc>
+      <image:loc>https://aptivonsolin.vercel.app/new-logo.gif</image:loc>
       <image:title>Aptivon Solutions - Enterprise IT Services Logo</image:title>
       <image:caption>Aptivon Solutions company logo for IT consulting and technology services</image:caption>
       <image:geo_location>India</image:geo_location>
@@ -26,7 +26,7 @@
   <url>
     <loc>https://aptivonsolin.vercel.app/services</loc>
     <image:image>
-      <image:loc>https://aptivonsolin.vercel.app/logo.gif</image:loc>
+      <image:loc>https://aptivonsolin.vercel.app/new-logo.gif</image:loc>
       <image:title>Cloud Migration Services</image:title>
       <image:caption>Enterprise cloud migration and infrastructure modernization services</image:caption>
     </image:image>
@@ -35,7 +35,7 @@
   <url>
     <loc>https://aptivonsolin.vercel.app/portfolio</loc>
     <image:image>
-      <image:loc>https://aptivonsolin.vercel.app/logo.gif</image:loc>
+      <image:loc>https://aptivonsolin.vercel.app/new-logo.gif</image:loc>
       <image:title>Portfolio Projects</image:title>
       <image:caption>Showcase of completed IT projects and technology implementations</image:caption>
     </image:image>
@@ -44,7 +44,7 @@
   <url>
     <loc>https://aptivonsolin.vercel.app/about</loc>
     <image:image>
-      <image:loc>https://aptivonsolin.vercel.app/logo.gif</image:loc>
+      <image:loc>https://aptivonsolin.vercel.app/new-logo.gif</image:loc>
       <image:title>About Aptivon Solutions</image:title>
       <image:caption>Company information and team expertise in enterprise IT services</image:caption>
     </image:image>

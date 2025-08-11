@@ -1,7 +1,7 @@
 import { Linkedin, Twitter, Github, Mail, Phone, MapPin, Clock, Award, TrendingUp, ArrowRight, Send, CheckCircle, Star, Cloud, Settings, Cpu, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import logoGif from "../assets/new-logo.gif";
+import logoGif from "@assets/fetchpik.com-iconscout-uF5IrzRZx4_1754923363460.gif";
 import { FloatingPathsBackground } from "@/components/ui/background-paths";
 
 export default function Footer() {
