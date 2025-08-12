@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import ContactSection from "@/components/contact-section";
+import backgroundVideo from "@assets/small_1754997710903.mp4";
 import { MapPin, Phone, Mail, Clock, Globe, Users, MessageCircle, Copy, ExternalLink, Calendar, Video, Zap, FileText, User, Building, BookOpen, HelpCircle, CheckCircle, X, Send, Paperclip, Mic, MicOff, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -435,20 +436,26 @@ export default function Contact() {
             muted 
             loop 
             playsInline
-            className="w-full h-full object-cover opacity-20"
-            style={{ filter: 'blur(0.5px) grayscale(80%)' }}
+            className="w-full h-full object-cover opacity-30"
+            style={{ filter: 'blur(1px) grayscale(60%)' }}
+            onError={(e) => console.log('Video load error:', e)}
+            onLoadStart={() => console.log('Video loading started')}
           >
-            <source src="/attached_assets/small_1754997710903.mp4" type="video/mp4" />
-            <div className="absolute inset-0 bg-slate-50/30">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `
-                  radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.1) 1px, transparent 0),
-                  radial-gradient(circle at 20px 20px, rgba(148, 163, 184, 0.05) 1px, transparent 0)
-                `,
-                backgroundSize: '40px 40px, 80px 80px'
-              }}></div>
-            </div>
+            <source src={backgroundVideo} type="video/mp4" />
           </video>
+          
+          {/* Fallback pattern if video doesn't load */}
+          <div className="absolute inset-0 bg-slate-50/30" style={{ 
+            display: 'none' 
+          }} id="video-fallback">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `
+                radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.1) 1px, transparent 0),
+                radial-gradient(circle at 20px 20px, rgba(148, 163, 184, 0.05) 1px, transparent 0)
+              `,
+              backgroundSize: '40px 40px, 80px 80px'
+            }}></div>
+          </div>
         </div>
         
         {/* Overlay */}
