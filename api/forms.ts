@@ -13,15 +13,14 @@ const contactSchema = z.object({
 });
 
 const jobApplicationSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
+  fullName: z.string().min(1, 'Full name is required'),
   email: z.string().email('Invalid email format'),
   phone: z.string().min(1, 'Phone number is required'),
   position: z.string().min(1, 'Position is required'),
+  department: z.string().optional(),
+  location: z.string().optional(),
   experience: z.string().optional(),
-  skills: z.string().min(1, 'Skills are required'),
-  portfolio: z.string().optional(),
-  motivation: z.string().min(1, 'Motivation is required'),
-  availability: z.string().min(1, 'Availability is required')
+  coverLetter: z.string().optional()
 });
 
 const supportTicketSchema = z.object({
@@ -127,10 +126,19 @@ async function handlePost(req: VercelRequest, res: VercelResponse) {
           updatedAt: new Date()
         };
         jobApplications.push(application);
-        return res.status(201).json(application);
+        
+        // Return success response that matches frontend expectations
+        return res.status(201).json({
+          success: true,
+          message: `Thank you for applying! We've received your application for the ${applicationData.position} position and will review it shortly. Our team will contact you within 2-3 business days.`,
+          application: application
+        });
       } catch (error) {
         if (error instanceof z.ZodError) {
-          return res.status(400).json({ error: fromZodError(error).toString() });
+          return res.status(400).json({ 
+            success: false,
+            error: fromZodError(error).toString() 
+          });
         }
         throw error;
       }
