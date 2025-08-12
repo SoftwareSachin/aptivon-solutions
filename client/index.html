@@ -585,6 +585,17 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   </head>
   <body>
+    <script>
+      // Hide SEO content immediately when page loads to prevent flash
+      document.addEventListener('DOMContentLoaded', function() {
+        const seoElements = document.querySelectorAll('body > h1, body > h2, body > h3, body > p, body > ul, body > nav');
+        seoElements.forEach(function(el) {
+          if (el.parentElement === document.body && el.id !== 'root') {
+            el.style.display = 'none';
+          }
+        });
+      });
+    </script>
     <!-- SEO Content visible to search crawlers -->
     <h1>Enterprise IT Services & Technology Consulting</h1>
     <h2>Leading IT Consulting Firm with Cloud Migration, AI/ML Implementation, DevOps Automation</h2>
