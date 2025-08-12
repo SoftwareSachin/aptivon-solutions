@@ -12,7 +12,14 @@ export default function Contact() {
   
   // Live Chat State
   const [showLiveChat, setShowLiveChat] = useState(false);
-  const [chatMessages, setChatMessages] = useState(() => {
+  const [chatMessages, setChatMessages] = useState<Array<{
+    id: number;
+    sender: string;
+    message: string;
+    timestamp: string;
+    status: string;
+    sessionId?: string;
+  }>>(() => {
     const savedMessages = localStorage.getItem('aptivon_chat_messages');
     return savedMessages ? JSON.parse(savedMessages) : [
       { id: 1, sender: 'agent', message: 'Hello! How can I help you today?', timestamp: new Date().toISOString(), status: 'delivered' },
@@ -28,8 +35,8 @@ export default function Contact() {
   const [chatSession, setChatSession] = useState(() => {
     return localStorage.getItem('aptivon_chat_session') || `session_${Date.now()}`;
   });
-  const [messageStatus, setMessageStatus] = useState({});
-  const chatMessagesRef = useRef(null);
+  const [messageStatus, setMessageStatus] = useState<Record<number, string>>({});
+  const chatMessagesRef = useRef<HTMLDivElement>(null);
   
   // Quick Actions State
   const [showScheduler, setShowScheduler] = useState(false);
@@ -137,7 +144,7 @@ export default function Contact() {
     
     // Update message status to sent
     setTimeout(() => {
-      setChatMessages(prev => prev.map(msg => 
+      setChatMessages((prev) => prev.map((msg) => 
         msg.id === messageId ? { ...msg, status: 'sent' } : msg
       ));
     }, 500);
@@ -158,7 +165,7 @@ export default function Contact() {
         sessionId: chatSession
       };
       
-      setChatMessages(prev => {
+      setChatMessages((prev) => {
         const updated = [...prev, agentResponse];
         localStorage.setItem('aptivon_chat_messages', JSON.stringify(updated));
         return updated;
@@ -758,10 +765,7 @@ export default function Contact() {
                           msg.sender === 'user' ? 'text-slate-300' : 'text-slate-400'
                         }`}>
                           <span className="text-xs">
-                            {typeof msg.timestamp === 'string' 
-                              ? new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-                              : msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-                            }
+                            {new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                           </span>
                           {msg.sender === 'user' && (
                             <div className="flex items-center gap-1">
