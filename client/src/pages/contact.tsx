@@ -535,105 +535,185 @@ export default function Contact() {
       </section>
 
       {/* Quick Actions Bar */}
-      <section className="py-4 sm:py-6 lg:py-8 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4">
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900 relative text-xs sm:text-sm"
-              onClick={handleOpenChat}
-            >
-              <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-              <span className="hidden xs:inline">Live Chat</span>
-              <span className="xs:hidden">Chat</span>
-              {unreadCount > 0 && (
-                <span className="ml-1 sm:ml-2 bg-red-500 text-white text-xs px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full animate-pulse">
-                  {unreadCount}
-                </span>
-              )}
-              <span className="ml-1 sm:ml-2 text-xs opacity-75 hidden sm:inline">(Ctrl+K)</span>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900 text-xs sm:text-sm"
-              onClick={() => setShowScheduler(true)}
-            >
-              <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-              <span className="hidden xs:inline">Schedule Meeting</span>
-              <span className="xs:hidden">Schedule</span>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900 text-xs sm:text-sm"
-              onClick={() => window.open('tel:+917852099010', '_blank')}
-            >
-              <Phone className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-              <span className="hidden xs:inline">Call Now</span>
-              <span className="xs:hidden">Call</span>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900 text-xs sm:text-sm"
-              onClick={() => setShowKnowledgeBase(true)}
-            >
-              <BookOpen className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-              Knowledge Base
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-slate-900 text-xs sm:text-sm"
-              onClick={() => setShowFeedback(true)}
-            >
-              <Star className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-              <span className="hidden xs:inline">Feedback</span>
-              <span className="xs:hidden">Rate</span>
-            </Button>
+      <section className="relative py-8 sm:py-12 lg:py-16 bg-slate-900 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.1) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.1) 75%),
+              linear-gradient(-45deg, transparent 25%, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.1) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.1) 75%)
+            `,
+            backgroundSize: '32px 32px'
+          }}></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
+            Quick Actions
+          </h2>
+          <p className="text-slate-300 text-lg mb-8 sm:mb-12 max-w-2xl mx-auto">
+            Choose the best way to connect with our team
+          </p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+            <div className="group">
+              <Button 
+                size="lg"
+                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0"
+                onClick={handleOpenChat}
+              >
+                <div className="flex flex-col items-center space-y-3">
+                  <div className="relative">
+                    <MessageCircle className="w-8 h-8" />
+                    {unreadCount > 0 && (
+                      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
+                        {unreadCount}
+                      </span>
+                    )}
+                  </div>
+                  <div>
+                    <div className="font-semibold">Live Chat</div>
+                    <div className="text-xs text-slate-600 mt-1">(Ctrl+K)</div>
+                  </div>
+                </div>
+              </Button>
+            </div>
+
+            <div className="group">
+              <Button 
+                size="lg"
+                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0"
+                onClick={() => setShowScheduler(true)}
+              >
+                <div className="flex flex-col items-center space-y-3">
+                  <Calendar className="w-8 h-8" />
+                  <div>
+                    <div className="font-semibold">Schedule</div>
+                    <div className="text-xs text-slate-600 mt-1">Book Meeting</div>
+                  </div>
+                </div>
+              </Button>
+            </div>
+
+            <div className="group">
+              <Button 
+                size="lg"
+                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0"
+                onClick={() => window.open('tel:+917852099010', '_blank')}
+              >
+                <div className="flex flex-col items-center space-y-3">
+                  <Phone className="w-8 h-8" />
+                  <div>
+                    <div className="font-semibold">Call Now</div>
+                    <div className="text-xs text-slate-600 mt-1">Direct Line</div>
+                  </div>
+                </div>
+              </Button>
+            </div>
+
+            <div className="group">
+              <Button 
+                size="lg"
+                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0"
+                onClick={() => setShowKnowledgeBase(true)}
+              >
+                <div className="flex flex-col items-center space-y-3">
+                  <BookOpen className="w-8 h-8" />
+                  <div>
+                    <div className="font-semibold">Knowledge</div>
+                    <div className="text-xs text-slate-600 mt-1">Self Help</div>
+                  </div>
+                </div>
+              </Button>
+            </div>
+
+            <div className="group">
+              <Button 
+                size="lg"
+                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0"
+                onClick={() => setShowFeedback(true)}
+              >
+                <div className="flex flex-col items-center space-y-3">
+                  <Star className="w-8 h-8" />
+                  <div>
+                    <div className="font-semibold">Feedback</div>
+                    <div className="text-xs text-slate-600 mt-1">Rate Us</div>
+                  </div>
+                </div>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Support Channels */}
-      <section className="py-12 sm:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">How Can We Help?</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-2">
-              Multiple ways to connect with our team for support, partnerships, and business inquiries
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-white">
+        {/* Background Elements */}
+        <div className="absolute top-10 right-10 w-32 h-32 border border-slate-100 rounded-full opacity-50 hidden lg:block"></div>
+        <div className="absolute bottom-16 left-16 w-20 h-20 bg-slate-50 rounded-2xl opacity-60 hidden lg:block transform rotate-12"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <div className="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 text-sm rounded-full font-medium mb-6">
+              <Globe className="w-4 h-4 mr-2" />
+              Multiple Support Channels
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+              How Can We
+              <span className="block text-slate-700 font-light italic">Help You Today?</span>
+            </h2>
+            
+            <div className="w-24 h-1 bg-slate-900 mx-auto rounded-full mb-6"></div>
+            
+            <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Choose the perfect communication channel for your needs. Our expert team is ready to assist with support, partnerships, and business inquiries.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {supportChannels.map((channel, index) => (
-              <div key={index} className="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-900 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <channel.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2">{channel.title}</h3>
-                <p className="text-slate-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{channel.description}</p>
-                <div className="text-slate-900 font-medium text-xs sm:text-sm mb-1 sm:mb-2 break-all">{channel.contact}</div>
-                <div className="text-slate-500 text-xs mb-3 sm:mb-4">{channel.availability}</div>
-                <div className="flex gap-2 justify-center">
-                  <Button 
-                    size="sm" 
-                    className="bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm"
-                    onClick={() => handleContactAction(channel)}
-                  >
-                    {channel.action === "call" ? <Phone className="h-3 w-3 sm:h-4 sm:w-4 mr-1" /> : <Mail className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />}
-                    {channel.action === "call" ? "Call" : "Email"}
-                  </Button>
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    onClick={() => handleCopyContact(channel.contact)}
-                    className="text-xs sm:text-sm"
-                  >
-                    <Copy className="h-3 w-3 sm:h-4 sm:w-4" />
-                  </Button>
+              <div key={index} className="group relative">
+                <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 text-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:border-slate-300">
+                  {/* Icon Container */}
+                  <div className="relative mb-6">
+                    <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-slate-800 transition-colors duration-300">
+                      <channel.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="absolute -inset-4 bg-slate-900 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  </div>
+                  
+                  {/* Content */}
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">{channel.title}</h3>
+                  <p className="text-slate-600 text-sm sm:text-base mb-4 leading-relaxed min-h-[2.5rem]">{channel.description}</p>
+                  
+                  {/* Contact Info */}
+                  <div className="mb-4">
+                    <div className="text-slate-900 font-semibold text-sm sm:text-base mb-2 font-mono bg-slate-50 px-3 py-2 rounded-lg break-all">
+                      {channel.contact}
+                    </div>
+                    <div className="text-slate-500 text-xs sm:text-sm font-medium px-3 py-1 bg-slate-100 rounded-full inline-block">
+                      {channel.availability}
+                    </div>
+                  </div>
+                  
+                  {/* Action Buttons */}
+                  <div className="flex gap-3 justify-center">
+                    <Button 
+                      className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                      onClick={() => handleContactAction(channel)}
+                    >
+                      {channel.action === "call" ? <Phone className="w-4 h-4 mr-2" /> : <Mail className="w-4 h-4 mr-2" />}
+                      {channel.action === "call" ? "Call" : "Email"}
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      className="border-2 border-slate-300 hover:border-slate-400 px-4 py-3 rounded-xl transition-all duration-300"
+                      onClick={() => handleCopyContact(channel.contact)}
+                    >
+                      <Copy className="w-4 h-4" />
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -645,28 +725,64 @@ export default function Contact() {
       <ContactSection />
 
       {/* Office Location */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Our Office</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-2">
-              Visit us at our headquarters in Jaipur for in-person consultations and meetings
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-slate-50 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `
+              radial-gradient(circle at 2px 2px, rgba(148, 163, 184, 0.2) 2px, transparent 0)
+            `,
+            backgroundSize: '48px 48px'
+          }}></div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute top-20 left-8 w-28 h-28 border-2 border-slate-300 rounded-full opacity-20 hidden lg:block"></div>
+        <div className="absolute bottom-24 right-12 w-20 h-20 bg-slate-200 rounded-2xl opacity-30 hidden lg:block transform -rotate-12"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <div className="inline-flex items-center px-4 py-2 bg-slate-900 text-white text-sm rounded-full font-medium mb-6">
+              <MapPin className="w-4 h-4 mr-2" />
+              Physical Location
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+              Visit Our
+              <span className="block text-slate-700 font-light italic">Modern Office</span>
+            </h2>
+            
+            <div className="w-24 h-1 bg-slate-900 mx-auto rounded-full mb-6"></div>
+            
+            <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Experience our innovative workspace in Jaipur, designed for collaboration and in-person consultations with our expert team.
             </p>
           </div>
           
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg border border-slate-200 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 sm:mb-6 text-center">{office.city}</h3>
-              <div className="space-y-3 sm:space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3">
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-slate-500 mt-0.5 flex-shrink-0" />
-                  <div className="flex-1 min-w-0">
-                    <span className="text-slate-600 text-sm sm:text-base break-words">{office.address}</span>
-                    <div className="mt-2">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white p-8 sm:p-12 lg:p-16 rounded-3xl border border-slate-200 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
+              {/* Office Header */}
+              <div className="text-center mb-8 sm:mb-12">
+                <div className="w-20 h-20 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Building className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">{office.city}</h3>
+                <div className="w-16 h-1 bg-slate-300 mx-auto rounded-full"></div>
+              </div>
+
+              {/* Office Details */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+                {/* Address Section */}
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-slate-700" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold text-slate-900 mb-2">Address</h4>
+                      <p className="text-slate-600 leading-relaxed">{office.address}</p>
                       <Button 
-                        size="sm" 
-                        variant="outline" 
-                        className="text-xs sm:text-sm"
+                        className="mt-4 bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300"
                         onClick={() => {
                           window.open(`https://maps.google.com/?q=${encodeURIComponent(office.address)}`, '_blank');
                           toast({
@@ -675,53 +791,107 @@ export default function Contact() {
                           });
                         }}
                       >
-                        <ExternalLink className="h-3 w-3 mr-1" />
-                        Map
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View on Maps
                       </Button>
                     </div>
                   </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-slate-700" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold text-slate-900 mb-2">Office Hours</h4>
+                      <p className="text-slate-600">{office.hours}</p>
+                      <div className="mt-2 inline-flex items-center px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">
+                        <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                        Open Now
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-slate-500 flex-shrink-0" />
-                  <span className="text-slate-600 flex-1 text-sm sm:text-base break-all">{office.phone}</span>
-                  <Button 
-                    size="sm" 
-                    className="bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm self-start sm:self-auto"
-                    onClick={() => {
-                      window.open(`tel:${office.phone}`, '_blank');
-                      toast({
-                        title: "Opening Phone Dialer",
-                        description: `Calling ${office.phone}`,
-                      });
-                    }}
-                  >
-                    <Phone className="h-3 w-3 mr-1" />
-                    Call
-                  </Button>
+
+                {/* Contact Section */}
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-slate-700" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold text-slate-900 mb-2">Phone</h4>
+                      <p className="text-slate-600 font-mono text-lg mb-4">{office.phone}</p>
+                      <div className="flex gap-3">
+                        <Button 
+                          className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                          onClick={() => {
+                            window.open(`tel:${office.phone}`, '_blank');
+                            toast({
+                              title: "Opening Phone Dialer",
+                              description: `Calling ${office.phone}`,
+                            });
+                          }}
+                        >
+                          <Phone className="w-4 h-4 mr-2" />
+                          Call Now
+                        </Button>
+                        <Button 
+                          variant="outline"
+                          className="border-2 border-slate-300 hover:border-slate-400 px-4 py-3 rounded-xl transition-all duration-300"
+                          onClick={() => handleCopyContact(office.phone)}
+                        >
+                          <Copy className="w-4 h-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-slate-700" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold text-slate-900 mb-2">Email</h4>
+                      <p className="text-slate-600 font-mono mb-4 break-all">{office.email}</p>
+                      <div className="flex gap-3">
+                        <Button 
+                          className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                          onClick={() => {
+                            window.open(`mailto:${office.email}?subject=Office Visit Inquiry`, '_blank');
+                            toast({
+                              title: "Opening Email Client",
+                              description: `Composing email to ${office.email}`,
+                            });
+                          }}
+                        >
+                          <Mail className="w-4 h-4 mr-2" />
+                          Send Email
+                        </Button>
+                        <Button 
+                          variant="outline"
+                          className="border-2 border-slate-300 hover:border-slate-400 px-4 py-3 rounded-xl transition-all duration-300"
+                          onClick={() => handleCopyContact(office.email)}
+                        >
+                          <Copy className="w-4 h-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-slate-500 flex-shrink-0" />
-                  <span className="text-slate-600 flex-1 text-sm sm:text-base break-all">{office.email}</span>
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    className="text-xs sm:text-sm self-start sm:self-auto"
-                    onClick={() => {
-                      window.open(`mailto:${office.email}?subject=Meeting Request`, '_blank');
-                      toast({
-                        title: "Opening Email Client",
-                        description: `Composing email to ${office.email}`,
-                      });
-                    }}
-                  >
-                    <Mail className="h-3 w-3 mr-1" />
-                    Email
-                  </Button>
-                </div>
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-slate-500 flex-shrink-0" />
-                  <span className="text-slate-600 text-sm sm:text-base">{office.hours}</span>
-                </div>
+              </div>
+
+              {/* CTA Section */}
+              <div className="mt-12 pt-8 border-t border-slate-200 text-center">
+                <h4 className="text-xl font-semibold text-slate-900 mb-4">Ready to visit?</h4>
+                <p className="text-slate-600 mb-6">Schedule an appointment for a personalized consultation</p>
+                <Button 
+                  size="lg"
+                  className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  onClick={() => setShowScheduler(true)}
+                >
+                  <Calendar className="w-5 h-5 mr-3" />
+                  Schedule Visit
+                </Button>
               </div>
             </div>
           </div>
