@@ -289,7 +289,7 @@ export default function Careers() {
           <div className="mb-16">
             <div className="bg-white rounded-3xl p-2 shadow-sm max-w-4xl mx-auto">
               <img 
-                src="/attached_assets/image_1755017151417.png"
+                src="/image_1755017151417.png"
                 alt="Team collaboration at Aptivon Solutions - diverse professionals working together in a modern office environment"
                 className="w-full h-auto rounded-2xl object-cover"
               />
