@@ -256,7 +256,7 @@ export default function Careers() {
               Launch your career with comprehensive training, mentorship from industry leaders, 
               and unlimited growth opportunities in enterprise technology solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button 
                 onClick={scrollToPositions}
                 className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3 text-base font-medium rounded-md transition-all duration-200 hover:shadow-lg"
@@ -270,6 +270,28 @@ export default function Careers() {
               >
                 Our Company Culture
               </Button>
+            </div>
+            
+            {/* Professional Video Showcase */}
+            <div className="max-w-5xl mx-auto">
+              <div className="bg-slate-50 rounded-3xl p-4">
+                <video 
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls={false}
+                >
+                  <source src="/team-collaboration-video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="text-center mt-6">
+                <p className="text-slate-600 text-sm italic max-w-2xl mx-auto">
+                  Experience the dynamic, collaborative environment where innovation meets opportunity at Aptivon Solutions
+                </p>
+              </div>
             </div>
           </div>
         </div>
