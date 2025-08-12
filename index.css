@@ -71,6 +71,53 @@
   .mobile-space-y-2 > * + * { margin-top: 0.5rem; }
 }
 
+/* Contact page mobile optimizations */
+@media (max-width: 640px) {
+  /* Override default spacing for mobile contact page */
+  .contact-mobile-spacing {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Ensure text doesn't overflow on small screens */
+  .break-anywhere {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  
+  /* Mobile-friendly button spacing */
+  .mobile-btn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  /* Chat modal mobile adjustments */
+  .chat-mobile-full {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Ensure proper touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Ultra small screens (320px and below) */
+@media (max-width: 320px) {
+  .ultra-small-text {
+    font-size: 0.7rem !important;
+  }
+  
+  .ultra-small-padding {
+    padding: 0.25rem !important;
+  }
+}
+
 /* Extra small devices (phones, 375px and up) */
 @media (min-width: 375px) and (max-width: 474px) {
   .xs-text-sm { font-size: 0.875rem; line-height: 1.25rem; }
