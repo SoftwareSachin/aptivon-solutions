@@ -235,61 +235,80 @@ export default function Careers() {
   ];
 
   return (
-    <div className="min-h-screen bg-white ">
+    <div className="min-h-screen bg-white">
       <Navigation />
       {/* Navigation Spacer */}
       <div className="h-20 sm:h-24 lg:h-32"></div>
       
       {/* Hero Section */}
-      <section className="pt-32 pb-24 bg-white border-b border-slate-100">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="pt-32 pb-32 bg-gradient-to-b from-white to-slate-50/30 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-40">
+          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+            <defs>
+              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                <circle cx="5" cy="5" r="0.5" fill="#e2e8f0" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 relative">
           <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium mb-8">
-              <Briefcase className="w-4 h-4 mr-2" />
-              Now Hiring - Join Our Team
+            <div className="inline-flex items-center px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-full text-sm font-medium mb-8 shadow-sm hover:shadow-md transition-shadow">
+              <Briefcase className="w-4 h-4 mr-2 text-slate-500" />
+              <span className="font-semibold">Now Hiring</span>
+              <span className="mx-2 text-slate-400">•</span>
+              <span>Multiple Positions Available</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Build Your Career in 
-              <span className="block text-slate-700">Technology Sales</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
+              Shape the Future of
+              <span className="block bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Enterprise Technology</span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
-              Launch your career with comprehensive training, mentorship from industry leaders, 
-              and unlimited growth opportunities in enterprise technology solutions.
+            <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-16 font-light">
+              Join a dynamic team where innovation meets opportunity. Build your career with comprehensive training, 
+              industry-leading mentorship, and unlimited growth potential in cutting-edge technology solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
               <Button 
                 onClick={scrollToPositions}
-                className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3 text-base font-medium rounded-md transition-all duration-200 hover:shadow-lg"
+                className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-slate-900/25 transform hover:-translate-y-1"
               >
-                Explore Open Roles
+                <Briefcase className="w-5 h-5 mr-2" />
+                Explore Career Opportunities
               </Button>
               <Button 
                 variant="outline" 
-                className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-3 text-base font-medium rounded-md transition-all duration-200"
+                className="border-2 border-slate-200 text-slate-700 hover:bg-slate-900 hover:text-white hover:border-slate-900 px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1"
                 onClick={() => document.getElementById('company-culture')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Our Company Culture
+                <Users className="w-5 h-5 mr-2" />
+                Discover Our Culture
               </Button>
             </div>
             
             {/* Professional Video Showcase */}
-            <div className="max-w-5xl mx-auto">
-              <div className="bg-slate-50 rounded-3xl p-4">
-                <video 
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls={false}
-                >
-                  <source src="/team-collaboration-video.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+            <div className="max-w-6xl mx-auto">
+              <div className="relative bg-white rounded-3xl p-6 shadow-2xl shadow-slate-900/10 border border-slate-100">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-transparent rounded-3xl"></div>
+                <div className="relative">
+                  <video 
+                    className="w-full h-auto rounded-2xl shadow-2xl"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls={false}
+                  >
+                    <source src="/team-collaboration-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-slate-900/20 via-transparent to-transparent"></div>
+                </div>
               </div>
-              <div className="text-center mt-6">
-                <p className="text-slate-600 text-sm italic max-w-2xl mx-auto">
-                  Experience the dynamic, collaborative environment where innovation meets opportunity at Aptivon Solutions
+              <div className="text-center mt-8">
+                <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
+                  Experience the dynamic, collaborative environment where innovation meets opportunity. 
+                  At Aptivon Solutions, every day brings new challenges and growth opportunities.
                 </p>
               </div>
             </div>
@@ -298,12 +317,21 @@ export default function Careers() {
       </section>
 
       {/* Company Culture */}
-      <section id="company-culture" className="py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Why Choose Aptivon Solutions</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Join a team of professionals dedicated to innovation, growth, and making a meaningful impact in enterprise technology
+      <section id="company-culture" className="py-32 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-transparent to-transparent"></div>
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium mb-6">
+              <Star className="w-4 h-4 mr-2" />
+              Company Culture
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
+              Why Top Talent Chooses
+              <span className="block bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Aptivon Solutions</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
+              Join a community of exceptional professionals dedicated to innovation, continuous growth, 
+              and making a meaningful impact in the future of enterprise technology solutions.
             </p>
           </div>
           
@@ -323,31 +351,34 @@ export default function Careers() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="border-0 shadow-sm bg-white hover:shadow-md transition-shadow duration-200">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6">
-                    <benefit.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3">{benefit.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{benefit.description}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-300 hover:-translate-y-2 border border-slate-100">
+                <div className="w-16 h-16 bg-gradient-to-br from-slate-900 to-slate-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <benefit.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-slate-700 transition-colors">{benefit.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-lg">{benefit.description}</p>
+              </div>
             ))}
           </div>
 
           {/* Company Values */}
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-12">Our Core Values</h3>
+          <div className="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-12 md:p-16 shadow-xl border border-slate-100">
+            <div className="text-center mb-16">
+              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Core Values</h3>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                The principles that guide our work, relationships, and commitment to excellence
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {companyValues.map((value, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <div className="w-3 h-3 bg-slate-900 rounded-full"></div>
+                <div key={index} className="text-center group">
+                  <div className="w-20 h-20 bg-white shadow-lg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 border border-slate-100">
+                    <div className="w-4 h-4 bg-gradient-to-br from-slate-900 to-slate-700 rounded-full"></div>
                   </div>
-                  <h4 className="text-lg font-semibold text-slate-900 mb-3">{value.title}</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">{value.description}</p>
+                  <h4 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-slate-700 transition-colors">{value.title}</h4>
+                  <p className="text-slate-600 leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
@@ -356,26 +387,44 @@ export default function Careers() {
       </section>
 
       {/* Open Positions */}
-      <section id="open-positions" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Current Opportunities</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Start your career journey with comprehensive training, competitive compensation, and unlimited growth potential
+      <section id="open-positions" className="py-32 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+            <defs>
+              <pattern id="positions-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="10" cy="10" r="1" fill="#e2e8f0" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#positions-grid)" />
+          </svg>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-full text-sm font-medium mb-6 shadow-sm">
+              <Briefcase className="w-4 h-4 mr-2" />
+              Open Positions
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
+              Your Next Career
+              <span className="block bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Opportunity Awaits</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
+              Start your career journey with comprehensive training, industry-leading mentorship, 
+              competitive compensation, and unlimited growth potential in cutting-edge technology.
             </p>
           </div>
 
           {/* Search and Filter Controls */}
-          <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 mb-12">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="md:col-span-2">
                 <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+                  <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-slate-400 w-6 h-6" />
                   <Input
                     placeholder="Search positions, departments, or skills..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-12 h-12 bg-white border-slate-200 rounded-xl focus:ring-2 focus:ring-slate-900 focus:border-transparent"
+                    className="pl-14 h-14 bg-slate-50 border-slate-200 rounded-2xl focus:ring-2 focus:ring-slate-900 focus:border-transparent text-lg font-medium transition-all duration-200"
                   />
                 </div>
               </div>
@@ -728,26 +777,46 @@ export default function Careers() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-slate-50 rounded-3xl p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Start Your Career Journey</h2>
-            <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Ready to join a team where your growth matters? Apply now and take the first step toward building a successful career in technology sales.
+      <section className="py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+            <defs>
+              <pattern id="cta-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                <circle cx="15" cy="15" r="1.5" fill="#ffffff" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#cta-grid)" />
+          </svg>
+        </div>
+        <div className="max-w-6xl mx-auto px-6 relative">
+          <div className="text-center">
+            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full text-sm font-medium mb-8">
+              <Star className="w-4 h-4 mr-2" />
+              Ready to Get Started?
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-tight">
+              Begin Your Journey to
+              <span className="block bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">Professional Excellence</span>
+            </h2>
+            <p className="text-xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+              Join a team where innovation meets opportunity, growth is unlimited, and your contributions 
+              shape the future of enterprise technology. Your career transformation starts here.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
                 onClick={scrollToPositions}
-                className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3 text-base font-medium rounded-xl transition-all duration-200 hover:shadow-lg"
+                className="bg-white text-slate-900 hover:bg-slate-100 px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1"
               >
-                View Open Positions
+                <Briefcase className="w-5 h-5 mr-2" />
+                Explore Career Opportunities
               </Button>
               <Button 
                 variant="outline" 
-                className="border-slate-300 text-slate-700 hover:bg-white px-8 py-3 text-base font-medium rounded-xl transition-all duration-200"
+                className="border-2 border-white/30 text-white hover:bg-white hover:text-slate-900 hover:border-white px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1 backdrop-blur-sm"
                 onClick={() => window.open('mailto:careers@aptivonsolutions.com', '_blank')}
               >
-                Contact Our Team
+                <Users className="w-5 h-5 mr-2" />
+                Connect with Our Team
               </Button>
             </div>
           </div>
