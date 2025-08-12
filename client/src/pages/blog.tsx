@@ -22,8 +22,26 @@ export default function Blog() {
   const { toast } = useToast();
 
   // Fetch blog posts from API
-  const { data: allPosts = [], isLoading } = useQuery<BlogPost[]>({
-    queryKey: ['/api/blog?action=posts']
+  const { data: allPosts = [], isLoading, error } = useQuery<BlogPost[]>({
+    queryKey: ['/api/blog', 'posts'],
+    queryFn: async () => {
+      console.log('Fetching blog posts...');
+      const response = await fetch('/api/blog?action=posts');
+      console.log('Response status:', response.status);
+      
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('API Error:', response.status, errorText);
+        throw new Error(`Failed to fetch posts: ${response.status} - ${errorText}`);
+      }
+      
+      const data = await response.json();
+      console.log('Received data:', data);
+      console.log('Data is array?', Array.isArray(data));
+      console.log('Data length:', data?.length);
+      
+      return Array.isArray(data) ? data : [];
+    }
   });
 
   // Newsletter subscription mutation
@@ -89,7 +107,12 @@ export default function Blog() {
 
   // Get unique categories
   const categories = useMemo(() => {
+    console.log('Computing categories for posts:', allPosts?.length);
+    if (!allPosts || allPosts.length === 0) {
+      return ["All Posts"];
+    }
     const uniqueCategories = Array.from(new Set(allPosts.map(post => post.category)));
+    console.log('Categories:', uniqueCategories);
     return ["All Posts", ...uniqueCategories];
   }, [allPosts]);
 
@@ -108,6 +131,26 @@ export default function Blog() {
                   <div key={i} className="h-96 bg-slate-200 rounded"></div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navigation />
+        <div className="h-20 sm:h-24 lg:h-32"></div>
+        <div className="pt-32 pb-20">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <div className="bg-red-50 border border-red-200 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-red-900 mb-4">Unable to Load Articles</h2>
+              <p className="text-red-700 mb-4">There was an error loading the blog articles. Please try again later.</p>
+              <Button onClick={() => window.location.reload()} className="bg-red-600 hover:bg-red-700 text-white">
+                Retry
+              </Button>
             </div>
           </div>
         </div>

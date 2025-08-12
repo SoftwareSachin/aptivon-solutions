@@ -251,6 +251,16 @@ let blogComments: any[] = [];
 let blogSubscribers: any[] = [];
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // Add CORS headers for production
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   const { method } = req;
   const { action } = req.query;
 
@@ -274,7 +284,9 @@ async function handleGet(req: VercelRequest, res: VercelResponse) {
 
   switch (action) {
     case 'posts':
-      return res.json(getStaticBlogPosts());
+      const posts = getStaticBlogPosts();
+      console.log('Returning posts:', posts.length);
+      return res.status(200).json(posts);
     
     case 'post':
       if (!slug) {
@@ -284,14 +296,14 @@ async function handleGet(req: VercelRequest, res: VercelResponse) {
       if (!post) {
         return res.status(404).json({ error: 'Post not found' });
       }
-      return res.json(post);
+      return res.status(200).json(post);
     
     case 'comments':
       if (!postId) {
         return res.status(400).json({ error: 'Post ID is required' });
       }
       const comments = blogComments.filter(c => c.postId === parseInt(postId as string));
-      return res.json(comments);
+      return res.status(200).json(comments);
     
     default:
       return res.status(400).json({ error: 'Invalid action' });
