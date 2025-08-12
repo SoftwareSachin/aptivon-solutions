@@ -360,6 +360,8 @@ Ready to start your cloud migration journey? Our team has the experience and exp
       createdAt: new Date(),
       updatedAt: new Date(),
       tags: insertPost.tags || [],
+      published: insertPost.published ?? true,
+      featured: insertPost.featured ?? false,
     };
     this.blogPosts.set(id, post);
     return post;
@@ -639,6 +641,10 @@ Ready to start your cloud migration journey? Our team has the experience and exp
       ...insertProject,
       id,
       image: insertProject.image || null,
+      published: insertProject.published ?? true,
+      featured: insertProject.featured ?? false,
+      views: insertProject.views ?? 0,
+      likes: insertProject.likes ?? 0,
       createdAt: new Date(),
       updatedAt: new Date()
     };

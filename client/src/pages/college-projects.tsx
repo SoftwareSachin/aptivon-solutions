@@ -100,8 +100,8 @@ export default function CollegeProjects() {
   const filteredProjects = projects || [];
 
   // Get unique industries and technologies for filters (only from Azure project)
-  const industries = [...new Set(filteredProjects?.map(p => p.industry) || [])];
-  const technologies = [...new Set(filteredProjects?.flatMap(p => p.technologies) || [])];
+  const industries = Array.from(new Set(filteredProjects?.map(p => p.industry) || []));
+  const technologies = Array.from(new Set(filteredProjects?.flatMap(p => p.technologies) || []));
 
   return (
     <div className="min-h-screen bg-white ">
