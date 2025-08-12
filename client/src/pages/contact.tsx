@@ -428,24 +428,39 @@ export default function Contact() {
       
       {/* Hero Section */}
       <section className="relative pt-20 sm:pt-28 lg:pt-36 pb-16 sm:pb-20 lg:pb-24 bg-white overflow-hidden">
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 bg-slate-50/30">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.1) 1px, transparent 0),
-              radial-gradient(circle at 20px 20px, rgba(148, 163, 184, 0.05) 1px, transparent 0)
-            `,
-            backgroundSize: '40px 40px, 80px 80px'
-          }}></div>
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-full object-cover opacity-20"
+            style={{ filter: 'blur(0.5px) grayscale(80%)' }}
+          >
+            <source src="/attached_assets/small_1754997710903.mp4" type="video/mp4" />
+            <div className="absolute inset-0 bg-slate-50/30">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `
+                  radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.1) 1px, transparent 0),
+                  radial-gradient(circle at 20px 20px, rgba(148, 163, 184, 0.05) 1px, transparent 0)
+                `,
+                backgroundSize: '40px 40px, 80px 80px'
+              }}></div>
+            </div>
+          </video>
         </div>
         
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-white/60 z-10"></div>
+        
         {/* Decorative Elements */}
-        <div className="absolute top-20 left-10 w-24 h-24 border border-slate-200 rounded-full opacity-30 hidden lg:block"></div>
-        <div className="absolute top-32 right-16 w-16 h-16 border-2 border-slate-300 rounded-lg opacity-20 hidden lg:block transform rotate-12"></div>
-        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-slate-900 rounded-full opacity-10 hidden lg:block"></div>
-        <div className="absolute top-1/2 right-8 w-8 h-32 bg-slate-200 rounded-full opacity-15 hidden lg:block"></div>
+        <div className="absolute top-20 left-10 w-24 h-24 border border-slate-200 rounded-full opacity-30 hidden lg:block z-20"></div>
+        <div className="absolute top-32 right-16 w-16 h-16 border-2 border-slate-300 rounded-lg opacity-20 hidden lg:block transform rotate-12 z-20"></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-slate-900 rounded-full opacity-10 hidden lg:block z-20"></div>
+        <div className="absolute top-1/2 right-8 w-8 h-32 bg-slate-200 rounded-full opacity-15 hidden lg:block z-20"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 z-30">
           <div className="text-center">
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-slate-900 text-white text-sm rounded-full font-medium mb-6 sm:mb-8">
