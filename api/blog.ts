@@ -37,6 +37,74 @@ const staticBlogPosts = [
     likes: 67,
     createdAt: new Date("2025-01-12"),
     updatedAt: new Date("2025-01-12")
+  },
+  {
+    id: 3,
+    title: "Cybersecurity Best Practices for Remote Work Environments",
+    slug: "cybersecurity-best-practices-remote-work",
+    excerpt: "Essential cybersecurity measures and protocols for organizations operating in hybrid and remote work environments, protecting against modern threats.",
+    content: "# Cybersecurity Best Practices for Remote Work Environments\n\nThe shift to remote and hybrid work models has fundamentally changed the cybersecurity landscape. Organizations must now protect distributed workforces while maintaining productivity and collaboration.\n\n## Core Security Challenges in Remote Work\n\n### Network Security\n- Unsecured home networks\n- Public Wi-Fi vulnerabilities\n- Lack of enterprise-grade firewalls\n\n### Device Management\n- Personal devices accessing corporate data\n- Inconsistent security updates\n- Physical device security\n\n### Human Factor\n- Social engineering attacks\n- Phishing targeting remote workers\n- Reduced IT support visibility\n\n## Essential Security Measures\n\n### 1. Zero Trust Architecture\nImplement a zero-trust model where no user or device is automatically trusted, regardless of location.\n\n### 2. Multi-Factor Authentication (MFA)\nMandatory MFA for all corporate applications and services.\n\n### 3. VPN and Secure Connections\nEnterprise-grade VPN solutions for secure remote access to corporate resources.\n\n### 4. Endpoint Detection and Response (EDR)\nAdvanced endpoint protection across all devices accessing corporate data.\n\n### 5. Regular Security Training\nContinuous cybersecurity awareness training tailored for remote work scenarios.\n\nSecuring remote work environments requires a holistic approach combining technology, processes, and people. Organizations that invest in comprehensive remote work security strategies will be better positioned to protect their assets and maintain business continuity.",
+    author: "David Thompson",
+    category: "Cybersecurity",
+    tags: ["Cybersecurity", "Remote Work", "Zero Trust", "MFA", "VPN"],
+    readTime: "7 min read",
+    published: true,
+    featured: false,
+    views: 756,
+    likes: 54,
+    createdAt: new Date("2025-01-10"),
+    updatedAt: new Date("2025-01-10")
+  },
+  {
+    id: 4,
+    title: "Digital Transformation Roadmap for Healthcare Organizations",
+    slug: "digital-transformation-healthcare-organizations",
+    excerpt: "A strategic approach to healthcare digital transformation, covering patient care systems, compliance requirements, and technology integration.",
+    content: "# Digital Transformation Roadmap for Healthcare Organizations\n\nHealthcare organizations face unique challenges in their digital transformation journeys, balancing patient care improvements with strict regulatory requirements and data security concerns.\n\n## Key Drivers of Healthcare Digital Transformation\n\n### Patient Experience Enhancement\n- Telemedicine and remote monitoring\n- Patient portals and mobile applications\n- Streamlined appointment scheduling and billing\n\n### Operational Efficiency\n- Electronic Health Records (EHR) optimization\n- Automated clinical workflows\n- Predictive analytics for resource planning\n\n### Regulatory Compliance\n- HIPAA compliance automation\n- Audit trail management\n- Data governance frameworks\n\n## Core Technology Components\n\n### 1. Cloud-First Infrastructure\n**Benefits**: Scalability, cost optimization, and enhanced security\n**Considerations**: Data residency requirements and compliance certifications\n\n### 2. Interoperability Solutions\n**Focus**: FHIR standards implementation and API-first architecture\n**Impact**: Seamless data exchange between systems and providers\n\n### 3. Advanced Analytics and AI\n**Applications**: Clinical decision support, fraud detection, and population health management\n**Requirements**: High-quality data and robust governance frameworks\n\n### 4. Cybersecurity Framework\n**Essential**: Multi-layered security approach with endpoint protection\n**Critical**: Regular security assessments and incident response planning\n\nSuccessful healthcare digital transformation requires a patient-centric approach, robust technology foundation, and unwavering commitment to data security and regulatory compliance.",
+    author: "Dr. Jennifer Martinez",
+    category: "Healthcare Technology",
+    tags: ["Healthcare", "Digital Transformation", "EHR", "Telemedicine", "HIPAA"],
+    readTime: "9 min read",
+    published: true,
+    featured: false,
+    views: 623,
+    likes: 41,
+    createdAt: new Date("2025-01-08"),
+    updatedAt: new Date("2025-01-08")
+  },
+  {
+    id: 5,
+    title: "DevOps Culture Transformation: From Traditional IT to Agile Operations",
+    slug: "devops-culture-transformation-agile-operations",
+    excerpt: "Guide to successfully transforming organizational culture from traditional IT operations to modern DevOps practices, focusing on collaboration and automation.",
+    content: "# DevOps Culture Transformation: From Traditional IT to Agile Operations\n\nTransforming from traditional IT operations to a DevOps culture requires more than just implementing new tools—it demands a fundamental shift in mindset, processes, and organizational structure.\n\n## Understanding DevOps Culture\n\nDevOps is not merely a set of tools or practices; it's a cultural philosophy that emphasizes collaboration, shared responsibility, and continuous improvement across development and operations teams.\n\n### Core DevOps Principles\n\n1. **Collaboration Over Silos**: Breaking down barriers between development and operations teams\n2. **Automation First**: Automating repetitive tasks to reduce errors and increase efficiency\n3. **Continuous Learning**: Embracing failure as a learning opportunity and continuously improving processes\n4. **Customer Focus**: Aligning all activities with customer value delivery\n5. **Measurement and Feedback**: Data-driven decision making and continuous monitoring\n\n## Best Practices for Success\n\n**Start Small**: Begin with pilot projects to demonstrate value and build momentum\n\n**Invest in People**: Provide comprehensive training and support for team members\n\n**Measure Everything**: Establish baseline metrics and track progress continuously\n\n**Celebrate Wins**: Recognize and celebrate both small and large successes\n\n**Learn from Failures**: Treat failures as learning opportunities without blame\n\nDevOps transformation is a journey, not a destination. Success requires sustained commitment, continuous learning, and a willingness to adapt as the organization evolves.",
+    author: "Michael Chen",
+    category: "DevOps",
+    tags: ["DevOps", "Culture Transformation", "Agile", "CI/CD", "Automation"],
+    readTime: "10 min read",
+    published: true,
+    featured: false,
+    views: 934,
+    likes: 72,
+    createdAt: new Date("2025-01-05"),
+    updatedAt: new Date("2025-01-05")
+  },
+  {
+    id: 6,
+    title: "Blockchain Technology in Supply Chain Management",
+    slug: "blockchain-technology-supply-chain-management",
+    excerpt: "Exploring the practical applications of blockchain technology in supply chain management, including transparency, traceability, and fraud prevention.",
+    content: "# Blockchain Technology in Supply Chain Management\n\nBlockchain technology offers unprecedented opportunities for supply chain transparency, traceability, and security. This comprehensive analysis explores practical implementations and real-world benefits.\n\n## Supply Chain Challenges\n\n### Lack of Transparency\n- Limited visibility into multi-tier supply chains\n- Difficulty tracking products from origin to consumer\n- Challenges in verifying authenticity and quality\n\n### Fraud and Counterfeiting\n- Counterfeit products entering legitimate supply chains\n- Document forgery and false certifications\n- Grey market and unauthorized distribution\n\n### Compliance and Regulation\n- Complex regulatory requirements across jurisdictions\n- Difficulty proving compliance with environmental standards\n- Challenges in managing product recalls\n\n## Blockchain Solutions\n\n### Immutable Record Keeping\n**Benefit**: Permanent, tamper-proof records of all supply chain transactions\n**Implementation**: Digital certificates and provenance tracking\n\n### Smart Contracts\n**Benefit**: Automated execution of agreements based on predefined conditions\n**Applications**: Automatic payments, compliance verification, quality assurance\n\n### Decentralized Verification\n**Benefit**: Multiple parties can verify transactions without central authority\n**Impact**: Reduced need for intermediaries and faster dispute resolution\n\nBlockchain technology represents a transformative opportunity for supply chain management. Organizations that strategically implement blockchain solutions will gain competitive advantages through enhanced transparency, reduced costs, and improved customer trust.",
+    author: "Lisa Wang",
+    category: "Blockchain",
+    tags: ["Blockchain", "Supply Chain", "Transparency", "Smart Contracts", "Traceability"],
+    readTime: "11 min read",
+    published: true,
+    featured: false,
+    views: 567,
+    likes: 38,
+    createdAt: new Date("2025-01-03"),
+    updatedAt: new Date("2025-01-03")
   }
 ];
 
@@ -172,7 +240,7 @@ async function handlePost(req: VercelRequest, res: VercelResponse) {
     case 'like':
       try {
         const { postId } = req.body;
-        const post = blogPosts.find(p => p.id === parseInt(postId));
+        const post = staticBlogPosts.find(p => p.id === parseInt(postId));
         if (!post) {
           return res.status(404).json({ error: 'Post not found' });
         }
