@@ -285,6 +285,22 @@ export default function Careers() {
             </p>
           </div>
           
+          {/* Team Collaboration Image */}
+          <div className="mb-16">
+            <div className="bg-white rounded-3xl p-2 shadow-sm max-w-4xl mx-auto">
+              <img 
+                src="/attached_assets/image_1755017151417.png"
+                alt="Team collaboration at Aptivon Solutions - diverse professionals working together in a modern office environment"
+                className="w-full h-auto rounded-2xl object-cover"
+              />
+            </div>
+            <div className="text-center mt-6">
+              <p className="text-slate-600 text-sm italic max-w-2xl mx-auto">
+                Our collaborative work environment fosters innovation and professional growth, where every team member contributes to our shared success
+              </p>
+            </div>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {benefits.map((benefit, index) => (
               <Card key={index} className="border-0 shadow-sm bg-white hover:shadow-md transition-shadow duration-200">
