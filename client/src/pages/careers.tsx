@@ -340,12 +340,17 @@ export default function Careers() {
                 Explore Career Opportunities
               </Button>
               <Button 
-                variant="outline" 
-                className="border-2 border-slate-900 text-slate-900 bg-white hover:bg-slate-900 hover:text-white hover:border-slate-900 px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1"
+                style={{ 
+                  color: '#0f172a', 
+                  backgroundColor: '#ffffff', 
+                  borderColor: '#0f172a',
+                  borderWidth: '2px'
+                }}
+                className="hover:bg-slate-800 hover:text-white hover:border-slate-800 px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1"
                 onClick={() => document.getElementById('company-culture')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <Users className="w-5 h-5 mr-2 text-slate-900" />
-                Connect with Our Team
+                <Users style={{ color: '#0f172a' }} className="w-5 h-5 mr-2" />
+                <span style={{ color: '#0f172a' }}>Connect with Our Team</span>
               </Button>
             </div>
             
