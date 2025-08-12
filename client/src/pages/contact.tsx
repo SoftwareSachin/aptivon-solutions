@@ -436,8 +436,8 @@ export default function Contact() {
             muted 
             loop 
             playsInline
-            className="w-full h-full object-cover opacity-30"
-            style={{ filter: 'blur(1px) grayscale(60%)' }}
+            className="w-full h-full object-cover opacity-50"
+            style={{ filter: 'blur(0.5px) grayscale(40%)' }}
             onError={(e) => console.log('Video load error:', e)}
             onLoadStart={() => console.log('Video loading started')}
           >
