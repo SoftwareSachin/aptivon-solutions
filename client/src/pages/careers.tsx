@@ -341,15 +341,6 @@ export default function Careers() {
                 <Briefcase className="w-5 h-5 mr-2" />
                 Explore Career Opportunities
               </Button>
-              <Button 
-                variant="outline"
-                className="border-2 border-slate-900 text-slate-900 bg-white hover:bg-slate-800 hover:text-white hover:border-slate-800 px-6 sm:px-10 py-4 text-base sm:text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1 min-w-[280px] sm:min-w-auto"
-                onClick={() => document.getElementById('company-culture')?.scrollIntoView({ behavior: 'smooth' })}
-                style={{ color: '#0f172a !important' }}
-              >
-                <Users className="w-5 h-5 mr-2" style={{ color: '#0f172a' }} />
-                <span style={{ color: '#0f172a' }}>Connect with Our Team</span>
-              </Button>
             </div>
             
             {/* Professional Video Showcase */}
@@ -899,15 +890,6 @@ export default function Careers() {
               >
                 <Briefcase className="w-5 h-5 mr-2" />
                 Explore Career Opportunities
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-slate-900 hover:border-white px-6 sm:px-10 py-4 text-base sm:text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1 backdrop-blur-sm min-w-[280px] sm:min-w-auto"
-                onClick={() => window.open('mailto:careers@aptivonsolutions.com', '_blank')}
-                style={{ color: 'white !important', borderColor: 'white' }}
-              >
-                <Users className="w-5 h-5 mr-2" style={{ color: 'white' }} />
-                <span style={{ color: 'white' }}>Connect with Our Team</span>
               </Button>
             </div>
           </div>
