@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Careers() {
@@ -26,6 +26,13 @@ export default function Careers() {
     coverLetter: "",
     resume: null as File | null
   });
+  
+  // Animation states
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  
   const { toast } = useToast();
 
   const openPositions = [
@@ -182,6 +189,48 @@ export default function Careers() {
     document.getElementById('open-positions')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Animation and scroll detection
+  const setElementRef = useCallback((element: HTMLElement | null, sectionId: string) => {
+    sectionRefs.current[sectionId] = element;
+  }, []);
+
+  useEffect(() => {
+    // Simulate loading progress for dynamic feel
+    const timer = setInterval(() => {
+      setLoadingProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(timer);
+          return 100;
+        }
+        return prev + Math.random() * 15;
+      });
+    }, 150);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    // Intersection Observer for scroll-triggered animations
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
+            setVisibleSections(prev => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: [0.1, 0.3, 0.5], rootMargin: '-50px 0px' }
+    );
+
+    Object.values(sectionRefs.current).forEach(element => {
+      if (element) observerRef.current?.observe(element);
+    });
+
+    return () => observerRef.current?.disconnect();
+  }, []);
+
+  const isVisible = (sectionId: string) => visibleSections.has(sectionId);
+
   const benefits = [
     {
       icon: Heart,
@@ -236,12 +285,26 @@ export default function Careers() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Dynamic Loading Progress Bar */}
+      {loadingProgress < 100 && (
+        <div className="fixed top-0 left-0 w-full h-1 bg-slate-100 z-50">
+          <div 
+            className="h-full bg-gradient-to-r from-slate-900 via-slate-600 to-slate-900 transition-all duration-300"
+            style={{ width: `${loadingProgress}%` }}
+          />
+        </div>
+      )}
+      
       <Navigation />
       {/* Navigation Spacer */}
       <div className="h-20 sm:h-24 lg:h-32"></div>
       
       {/* Hero Section */}
-      <section className="pt-32 pb-32 bg-gradient-to-b from-white to-slate-50/30 relative overflow-hidden">
+      <section 
+        id="hero-section"
+        ref={(el) => setElementRef(el, 'hero-section')}
+        className="pt-32 pb-32 bg-gradient-to-b from-white to-slate-50/30 relative overflow-hidden animate-fadeInUp"
+      >
         <div className="absolute inset-0 opacity-40">
           <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
             <defs>
@@ -260,15 +323,15 @@ export default function Careers() {
               <span className="mx-2 text-slate-400">•</span>
               <span>Multiple Positions Available</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-tight tracking-tight animate-fadeInUp animation-delay-200">
               Shape the Future of
-              <span className="block bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Enterprise Technology</span>
+              <span className="block bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent animate-shimmer">Enterprise Technology</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-16 font-light">
+            <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-16 font-light animate-fadeInUp animation-delay-400">
               Join a dynamic team where innovation meets opportunity. Build your career with comprehensive training, 
               industry-leading mentorship, and unlimited growth potential in cutting-edge technology solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20 animate-fadeInUp animation-delay-600">
               <Button 
                 onClick={scrollToPositions}
                 className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-slate-900/25 transform hover:-translate-y-1"
@@ -317,7 +380,13 @@ export default function Careers() {
       </section>
 
       {/* Company Culture */}
-      <section id="company-culture" className="py-32 bg-white relative overflow-hidden">
+      <section 
+        id="company-culture" 
+        ref={(el) => setElementRef(el, 'company-culture')}
+        className={`py-32 bg-white relative overflow-hidden transition-all duration-1000 transform ${
+          isVisible('company-culture') ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+        }`}
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-transparent to-transparent"></div>
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="text-center mb-20">
@@ -353,7 +422,17 @@ export default function Careers() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {benefits.map((benefit, index) => (
-              <div key={index} className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-300 hover:-translate-y-2 border border-slate-100">
+              <div 
+                key={index} 
+                className={`group bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500 hover:-translate-y-2 border border-slate-100 transform ${
+                  isVisible('company-culture') 
+                    ? 'translate-y-0 opacity-100' 
+                    : 'translate-y-8 opacity-0'
+                }`}
+                style={{ 
+                  transitionDelay: isVisible('company-culture') ? `${index * 150}ms` : '0ms' 
+                }}
+              >
                 <div className="w-16 h-16 bg-gradient-to-br from-slate-900 to-slate-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
@@ -387,7 +466,13 @@ export default function Careers() {
       </section>
 
       {/* Open Positions */}
-      <section id="open-positions" className="py-32 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      <section 
+        id="open-positions" 
+        ref={(el) => setElementRef(el, 'open-positions')}
+        className={`py-32 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden transition-all duration-1000 transform ${
+          isVisible('open-positions') ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
+        }`}
+      >
         <div className="absolute inset-0 opacity-20">
           <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
             <defs>
@@ -415,7 +500,9 @@ export default function Careers() {
           </div>
 
           {/* Search and Filter Controls */}
-          <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 mb-16">
+          <div className={`bg-white p-8 rounded-3xl shadow-xl border border-slate-100 mb-16 transition-all duration-700 transform ${
+            isVisible('open-positions') ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="md:col-span-2">
                 <div className="relative">
