@@ -11,6 +11,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { useToast } from "@/hooks/use-toast";
+import teamCollaborationVideo from "@/assets/team-collaboration-video.mp4";
+import teamImage from "@/assets/image_1755017151417.png";
 
 export default function Careers() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -367,7 +369,7 @@ export default function Careers() {
                     playsInline
                     controls={false}
                   >
-                    <source src="/team-collaboration-video.mp4" type="video/mp4" />
+                    <source src={teamCollaborationVideo} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-slate-900/20 via-transparent to-transparent"></div>
@@ -413,7 +415,7 @@ export default function Careers() {
           <div className="mb-16">
             <div className="bg-white rounded-3xl p-2 shadow-sm max-w-4xl mx-auto">
               <img 
-                src="/image_1755017151417.png"
+                src={teamImage}
                 alt="Team collaboration at Aptivon Solutions - diverse professionals working together in a modern office environment"
                 className="w-full h-auto rounded-2xl object-cover"
               />
