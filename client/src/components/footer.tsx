@@ -22,7 +22,6 @@ export default function Footer() {
     { name: "Industries", href: "/industries" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Resources", href: "/resources" },
-    { name: "Support", href: "/support" },
     { name: "Careers", href: "/careers" }
   ];
 

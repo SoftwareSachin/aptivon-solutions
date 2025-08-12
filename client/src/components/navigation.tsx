@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, Info, Settings, Briefcase, Code, BookOpen, FileText, Users, Phone, Folder, Building, GraduationCap, FileSearch, HelpCircle, UserCheck } from "lucide-react";
+import { Menu, X, Home, Info, Settings, Briefcase, Code, BookOpen, FileText, Users, Phone, Folder, Building, GraduationCap, FileSearch, UserCheck } from "lucide-react";
 import logoGif from "@assets/fetchpik.com-iconscout-uF5IrzRZx4_1754923363460.gif";
 import { cn } from "@/lib/utils";
 
@@ -22,7 +22,7 @@ export default function Navigation() {
     { name: "Case Studies", url: "/case-studies", icon: FileSearch },
     { name: "Resources", url: "/resources", icon: BookOpen },
     { name: "Blog", url: "/blog", icon: BookOpen },
-    { name: "Support", url: "/support", icon: HelpCircle },
+
     { name: "Careers", url: "/careers", icon: UserCheck },
     { name: "Contact", url: "/contact", icon: Phone }
   ];

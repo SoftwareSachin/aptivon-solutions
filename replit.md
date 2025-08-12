@@ -43,6 +43,7 @@ Design preferences: Professional, clean designs without gradients or emojis. Foc
 - **Branding**: Consistent use of animated company logo across navigation, footer, and promotional elements. Professional icon usage (Lucide React icons).
 - **Security**: Robust security practices, email obfuscation, and compliance with industry standards.
 - **Dynamic Content**: Promotional ad sections with configurable offers (e.g., discounts, referral programs).
+- **Navigation**: Streamlined navigation without support page to focus on core business offerings.
 
 ## External Dependencies
 

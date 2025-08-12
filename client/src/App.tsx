@@ -18,7 +18,7 @@ const Solutions = lazy(() => import("@/pages/solutions"));
 const Industries = lazy(() => import("@/pages/industries"));
 const CaseStudies = lazy(() => import("@/pages/case-studies"));
 const Resources = lazy(() => import("@/pages/resources"));
-const Support = lazy(() => import("@/pages/support"));
+
 const Portfolio = lazy(() => import("@/pages/portfolio"));
 const PortfolioProject = lazy(() => import("@/pages/portfolio-project"));
 const Careers = lazy(() => import("@/pages/careers"));
@@ -88,11 +88,7 @@ function Router() {
           <Resources />
         </Suspense>
       </Route>
-      <Route path="/support">
-        <Suspense fallback={<Loading />}>
-          <Support />
-        </Suspense>
-      </Route>
+
       <Route path="/portfolio">
         <Suspense fallback={<Loading />}>
           <Portfolio />
