@@ -7,6 +7,7 @@ This is a modern, responsive company website for Aptivon Solutions Pvt. Ltd., an
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Design preferences: Professional, clean designs without gradients or emojis. Focus on modern, business-appropriate aesthetics.
 
 ## System Architecture
 

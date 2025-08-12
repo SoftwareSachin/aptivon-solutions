@@ -241,29 +241,34 @@ export default function Careers() {
       <div className="h-20 sm:h-24 lg:h-32"></div>
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="pt-32 pb-24 bg-white border-b border-slate-100">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              Drive Business Growth
+            <div className="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium mb-8">
+              <Briefcase className="w-4 h-4 mr-2" />
+              Now Hiring - Join Our Team
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+              Build Your Career in 
+              <span className="block text-slate-700">Technology Sales</span>
             </h1>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8">
-              Join our client acquisition team and help connect enterprise organizations with 
-              transformative technology solutions that drive real business value.
+            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
+              Launch your career with comprehensive training, mentorship from industry leaders, 
+              and unlimited growth opportunities in enterprise technology solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 onClick={scrollToPositions}
-                className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 text-lg font-semibold rounded-lg"
+                className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3 text-base font-medium rounded-md transition-all duration-200 hover:shadow-lg"
               >
-                View Open Positions
+                Explore Open Roles
               </Button>
               <Button 
                 variant="outline" 
-                className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-4 text-lg font-semibold rounded-lg"
+                className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-3 text-base font-medium rounded-md transition-all duration-200"
                 onClick={() => document.getElementById('company-culture')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Learn About Our Culture
+                Our Company Culture
               </Button>
             </div>
           </div>
@@ -271,69 +276,76 @@ export default function Careers() {
       </section>
 
       {/* Company Culture */}
-      <section id="company-culture" className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="company-culture" className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">Why Aptivon Solutions?</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              More than just a workplace - we're a community of innovators shaping the future of technology
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Why Choose Aptivon Solutions</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Join a team of professionals dedicated to innovation, growth, and making a meaningful impact in enterprise technology
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="border border-slate-200">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mb-4">
-                    <benefit.icon className="w-6 h-6 text-white" />
+              <Card key={index} className="border-0 shadow-sm bg-white hover:shadow-md transition-shadow duration-200">
+                <CardContent className="p-8">
+                  <div className="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6">
+                    <benefit.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{benefit.title}</h3>
-                  <p className="text-slate-600 text-sm">{benefit.description}</p>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">{benefit.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {companyValues.map((value, index) => (
-              <div key={index} className="text-center">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{value.title}</h3>
-                <p className="text-slate-600 text-sm">{value.description}</p>
-              </div>
-            ))}
+          {/* Company Values */}
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-12">Our Core Values</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {companyValues.map((value, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-3 h-3 bg-slate-900 rounded-full"></div>
+                  </div>
+                  <h4 className="text-lg font-semibold text-slate-900 mb-3">{value.title}</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">{value.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Open Positions */}
-      <section id="open-positions" className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="open-positions" className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">Join Our Sales Team</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Launch your sales career with comprehensive training, competitive compensation, and unlimited growth potential
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Current Opportunities</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Start your career journey with comprehensive training, competitive compensation, and unlimited growth potential
             </p>
           </div>
 
           {/* Search and Filter Controls */}
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
+          <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 mb-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="md:col-span-2">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
                   <Input
                     placeholder="Search positions, departments, or skills..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10"
+                    className="pl-12 h-12 bg-white border-slate-200 rounded-xl focus:ring-2 focus:ring-slate-900 focus:border-transparent"
                   />
                 </div>
               </div>
               
               <div>
                 <Select value={departmentFilter} onValueChange={setDepartmentFilter}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Department" />
+                  <SelectTrigger className="h-12 bg-white border-slate-200 rounded-xl">
+                    <SelectValue placeholder="All Departments" />
                   </SelectTrigger>
                   <SelectContent>
                     {departments.map(dept => (
@@ -347,8 +359,8 @@ export default function Careers() {
               
               <div>
                 <Select value={locationFilter} onValueChange={setLocationFilter}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Location" />
+                  <SelectTrigger className="h-12 bg-white border-slate-200 rounded-xl">
+                    <SelectValue placeholder="All Locations" />
                   </SelectTrigger>
                   <SelectContent>
                     {locations.map(loc => (
@@ -362,9 +374,9 @@ export default function Careers() {
             </div>
             
             {(searchTerm || departmentFilter !== "all" || locationFilter !== "all") && (
-              <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-200">
-                <p className="text-sm text-slate-600">
-                  Showing {filteredPositions.length} of {openPositions.length} positions
+              <div className="flex items-center justify-between mt-6 pt-6 border-t border-slate-200">
+                <p className="text-sm text-slate-600 font-medium">
+                  {filteredPositions.length} of {openPositions.length} positions match your criteria
                 </p>
                 <Button
                   variant="ghost"
@@ -374,61 +386,87 @@ export default function Careers() {
                     setDepartmentFilter("all");
                     setLocationFilter("all");
                   }}
-                  className="text-slate-600 hover:text-slate-900"
+                  className="text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg"
                 >
-                  <X className="w-4 h-4 mr-1" />
-                  Clear Filters
+                  <X className="w-4 h-4 mr-2" />
+                  Clear All Filters
                 </Button>
               </div>
             )}
           </div>
           
           {filteredPositions.length === 0 ? (
-            <div className="text-center py-12">
-              <Briefcase className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">No positions found</h3>
-              <p className="text-slate-600">Try adjusting your search or filters to find more opportunities.</p>
+            <div className="text-center py-16 bg-slate-50 rounded-2xl">
+              <div className="w-20 h-20 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Briefcase className="w-10 h-10 text-slate-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">No matching positions</h3>
+              <p className="text-slate-600 max-w-md mx-auto">Try adjusting your search criteria or check back later for new opportunities.</p>
             </div>
           ) : (
-            <div className="space-y-6">
+            <div className="space-y-8">
               {filteredPositions.map((position, index) => (
-                <Card key={index} className="bg-white border border-slate-200 hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-8">
-                    <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6">
-                      <div>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-2">{position.title}</h3>
-                        <div className="flex flex-wrap gap-4 text-sm text-slate-600">
-                          <div className="flex items-center gap-1">
-                            <Briefcase className="w-4 h-4" />
-                            {position.department}
+                <Card key={index} className="bg-white border-0 shadow-sm hover:shadow-lg transition-all duration-300 rounded-2xl overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="p-8 border-b border-slate-100">
+                      <div className="flex flex-col lg:flex-row lg:items-start justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center">
+                              <Briefcase className="w-6 h-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="text-2xl font-bold text-slate-900">{position.title}</h3>
+                              <Badge variant="secondary" className="mt-1 bg-slate-100 text-slate-700 hover:bg-slate-100">
+                                {position.department}
+                              </Badge>
+                            </div>
                           </div>
-                          <div className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            {position.location}
+                          
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                            <div className="flex items-center gap-2 text-slate-600">
+                              <MapPin className="w-4 h-4 text-slate-400" />
+                              <span className="text-sm font-medium">{position.location}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-slate-600">
+                              <Clock className="w-4 h-4 text-slate-400" />
+                              <span className="text-sm font-medium">{position.type}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-slate-600">
+                              <Users className="w-4 h-4 text-slate-400" />
+                              <span className="text-sm font-medium">{position.experience}</span>
+                            </div>
                           </div>
-                          <div className="flex items-center gap-1">
-                            <Clock className="w-4 h-4" />
-                            {position.type}
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Users className="w-4 h-4" />
-                            {position.experience}
+                          
+                          <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">{position.description}</p>
+                          
+                          <div className="flex flex-wrap gap-2">
+                            {position.skills.slice(0, 4).map((skill, skillIndex) => (
+                              <Badge key={skillIndex} variant="outline" className="text-xs border-slate-200 text-slate-600">
+                                {skill}
+                              </Badge>
+                            ))}
+                            {position.skills.length > 4 && (
+                              <Badge variant="outline" className="text-xs border-slate-200 text-slate-600">
+                                +{position.skills.length - 4} more
+                              </Badge>
+                            )}
                           </div>
                         </div>
-                      </div>
-                      <div className="mt-4 lg:mt-0">
-                        <Dialog open={isDialogOpen && selectedJob?.title === position.title} onOpenChange={setIsDialogOpen}>
-                          <DialogTrigger asChild>
-                            <Button 
-                              onClick={() => {
-                                setSelectedJob(position);
-                                setIsDialogOpen(true);
-                              }}
-                              className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2 rounded-lg"
-                            >
-                              Apply Now
-                            </Button>
-                          </DialogTrigger>
+                        
+                        <div className="mt-6 lg:mt-0 lg:ml-6 lg:flex-shrink-0">
+                          <Dialog open={isDialogOpen && selectedJob?.title === position.title} onOpenChange={setIsDialogOpen}>
+                            <DialogTrigger asChild>
+                              <Button 
+                                onClick={() => {
+                                  setSelectedJob(position);
+                                  setIsDialogOpen(true);
+                                }}
+                                className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 hover:shadow-md"
+                              >
+                                Apply Now
+                              </Button>
+                            </DialogTrigger>
                           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                             <DialogHeader>
                               <DialogTitle className="text-2xl">Apply for {position.title}</DialogTitle>
@@ -531,72 +569,74 @@ export default function Careers() {
                             </form>
                           </DialogContent>
                         </Dialog>
+                        </div>
                       </div>
                     </div>
                     
-                    <p className="text-slate-600 mb-6">{position.description}</p>
-                    
-                    <div className="space-y-8">
-                      {/* Responsibilities Section */}
-                      {position.responsibilities && (
-                        <div>
-                          <h4 className="font-semibold text-slate-900 mb-3">Key Responsibilities:</h4>
-                          <ul className="space-y-2">
-                            {position.responsibilities.map((resp, idx) => (
-                              <li key={idx} className="flex items-start">
-                                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                <span className="text-slate-600 text-sm">{resp}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
+                    {/* Job Details Section */}
+                    <div className="p-8">
+                      <div className="space-y-8">
+                        {/* Responsibilities Section */}
+                        {position.responsibilities && (
+                          <div>
+                            <h4 className="text-lg font-semibold text-slate-900 mb-4">Key Responsibilities</h4>
+                            <ul className="space-y-3">
+                              {position.responsibilities.map((resp, idx) => (
+                                <li key={idx} className="flex items-start">
+                                  <div className="w-2 h-2 bg-slate-900 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                  <span className="text-slate-600 leading-relaxed">{resp}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
 
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div>
-                          <h4 className="font-semibold text-slate-900 mb-3">Requirements:</h4>
-                          <ul className="space-y-2">
-                            {position.requirements.map((req, idx) => (
-                              <li key={idx} className="flex items-start">
-                                <div className="w-1.5 h-1.5 bg-slate-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                <span className="text-slate-600 text-sm">{req}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        <div>
-                          <h4 className="font-semibold text-slate-900 mb-3">Key Skills:</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {position.skills.map((skill, idx) => (
-                              <Badge key={idx} variant="secondary" className="bg-slate-100 text-slate-700">
-                                {skill}
-                              </Badge>
-                            ))}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                          <div>
+                            <h4 className="text-lg font-semibold text-slate-900 mb-4">Requirements</h4>
+                            <ul className="space-y-3">
+                              {position.requirements.map((req, idx) => (
+                                <li key={idx} className="flex items-start">
+                                  <div className="w-2 h-2 bg-slate-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                  <span className="text-slate-600 leading-relaxed">{req}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <div>
+                            <h4 className="text-lg font-semibold text-slate-900 mb-4">Key Skills</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {position.skills.map((skill, idx) => (
+                                <Badge key={idx} variant="outline" className="border-slate-300 text-slate-700 bg-white">
+                                  {skill}
+                                </Badge>
+                              ))}
+                            </div>
                           </div>
                         </div>
+
+                        {/* Compensation Section */}
+                        {position.compensation && (
+                          <div className="bg-slate-50 p-6 rounded-xl">
+                            <h4 className="text-lg font-semibold text-slate-900 mb-4">Compensation Package</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                              <div className="bg-white p-4 rounded-lg border border-slate-200">
+                                <div className="text-sm text-slate-600 mb-2">Base Salary</div>
+                                <div className="font-semibold text-slate-900">{position.compensation.base}</div>
+                              </div>
+                              <div className="bg-white p-4 rounded-lg border border-slate-200">
+                                <div className="text-sm text-slate-600 mb-2">Project Commission</div>
+                                <div className="font-semibold text-slate-900">{position.compensation.commission}</div>
+                              </div>
+                              <div className="bg-white p-4 rounded-lg border border-slate-200">
+                                <div className="text-sm text-slate-600 mb-2">Performance Bonus</div>
+                                <div className="font-semibold text-slate-900">{position.compensation.bonus}</div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
-
-                      {/* Compensation Section */}
-                      {position.compensation && (
-                        <div>
-                          <h4 className="font-semibold text-slate-900 mb-3">Compensation Structure:</h4>
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div className="bg-slate-50 p-4 rounded-lg">
-                              <div className="text-sm text-slate-600 mb-1">Base Salary</div>
-                              <div className="font-semibold text-slate-900">{position.compensation.base}</div>
-                            </div>
-                            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                              <div className="text-sm text-blue-600 mb-1">Project Commission</div>
-                              <div className="font-semibold text-blue-700">{position.compensation.commission}</div>
-                            </div>
-                            <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                              <div className="text-sm text-green-600 mb-1">Performance Bonus</div>
-                              <div className="font-semibold text-green-700">{position.compensation.bonus}</div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -607,69 +647,69 @@ export default function Careers() {
       </section>
 
       {/* Application Process */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">Application Process</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Our streamlined hiring process is designed to find the best fit for both you and our team
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Hiring Process</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              We've designed a straightforward, transparent process to help you understand what to expect and showcase your potential
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center bg-white p-6 rounded-2xl shadow-sm">
+              <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">1</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Application Review</h3>
-              <p className="text-slate-600 text-sm">Submit your application and we'll review your qualifications and experience</p>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">Application Review</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">Submit your application and we'll review your qualifications and experience within 2-3 business days</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-white p-6 rounded-2xl shadow-sm">
+              <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">2</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Initial Screen</h3>
-              <p className="text-slate-600 text-sm">Brief phone or video call to discuss your background and the role</p>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">Initial Screening</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">30-minute conversation to discuss your background, interests, and learn about the role</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-white p-6 rounded-2xl shadow-sm">
+              <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">3</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Technical Interview</h3>
-              <p className="text-slate-600 text-sm">In-depth discussion about technical skills and problem-solving approach</p>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">Skills Assessment</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">Practical discussion about your approach to sales, client relationships, and problem-solving</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-white p-6 rounded-2xl shadow-sm">
+              <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">4</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Team Meet</h3>
-              <p className="text-slate-600 text-sm">Meet the team and learn more about our culture and working style</p>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">Final Interview</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">Meet with the leadership team to discuss company culture, goals, and your career aspirations</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">Ready to Drive Sales Success?</h2>
-            <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-              Join our client acquisition team and play a key role in connecting businesses with game-changing technology solutions.
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="bg-slate-50 rounded-3xl p-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Start Your Career Journey</h2>
+            <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Ready to join a team where your growth matters? Apply now and take the first step toward building a successful career in technology sales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 onClick={scrollToPositions}
-                className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 text-lg font-semibold rounded-lg"
+                className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3 text-base font-medium rounded-xl transition-all duration-200 hover:shadow-lg"
               >
-                Browse Open Positions
+                View Open Positions
               </Button>
               <Button 
                 variant="outline" 
-                className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-4 text-lg font-semibold rounded-lg"
+                className="border-slate-300 text-slate-700 hover:bg-white px-8 py-3 text-base font-medium rounded-xl transition-all duration-200"
                 onClick={() => window.open('mailto:careers@aptivonsolutions.com', '_blank')}
               >
-                Contact HR Team
+                Contact Our Team
               </Button>
             </div>
           </div>
