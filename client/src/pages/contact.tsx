@@ -555,25 +555,25 @@ export default function Contact() {
             Choose the best way to connect with our team
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 max-w-6xl mx-auto">
             <div className="group">
               <Button 
                 size="lg"
-                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0"
+                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 min-h-[120px] sm:min-h-[140px]"
                 onClick={handleOpenChat}
               >
-                <div className="flex flex-col items-center space-y-3">
+                <div className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 h-full">
                   <div className="relative">
-                    <MessageCircle className="w-8 h-8" />
+                    <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8" />
                     {unreadCount > 0 && (
-                      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
+                      <span className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 bg-red-500 text-white text-xs px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full animate-pulse">
                         {unreadCount}
                       </span>
                     )}
                   </div>
-                  <div>
-                    <div className="font-semibold">Live Chat</div>
-                    <div className="text-xs text-slate-600 mt-1">(Ctrl+K)</div>
+                  <div className="text-center">
+                    <div className="font-semibold text-sm sm:text-base">Live Chat</div>
+                    <div className="text-xs text-slate-600 mt-1 hidden sm:block">(Ctrl+K)</div>
                   </div>
                 </div>
               </Button>
@@ -582,13 +582,13 @@ export default function Contact() {
             <div className="group">
               <Button 
                 size="lg"
-                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0"
+                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 min-h-[120px] sm:min-h-[140px]"
                 onClick={() => setShowScheduler(true)}
               >
-                <div className="flex flex-col items-center space-y-3">
-                  <Calendar className="w-8 h-8" />
-                  <div>
-                    <div className="font-semibold">Schedule</div>
+                <div className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 h-full">
+                  <Calendar className="w-6 h-6 sm:w-8 sm:h-8" />
+                  <div className="text-center">
+                    <div className="font-semibold text-sm sm:text-base">Schedule</div>
                     <div className="text-xs text-slate-600 mt-1">Book Meeting</div>
                   </div>
                 </div>
@@ -598,13 +598,13 @@ export default function Contact() {
             <div className="group">
               <Button 
                 size="lg"
-                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0"
+                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 min-h-[120px] sm:min-h-[140px]"
                 onClick={() => window.open('tel:+917852099010', '_blank')}
               >
-                <div className="flex flex-col items-center space-y-3">
-                  <Phone className="w-8 h-8" />
-                  <div>
-                    <div className="font-semibold">Call Now</div>
+                <div className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 h-full">
+                  <Phone className="w-6 h-6 sm:w-8 sm:h-8" />
+                  <div className="text-center">
+                    <div className="font-semibold text-sm sm:text-base">Call Now</div>
                     <div className="text-xs text-slate-600 mt-1">Direct Line</div>
                   </div>
                 </div>
@@ -614,29 +614,29 @@ export default function Contact() {
             <div className="group">
               <Button 
                 size="lg"
-                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0"
+                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 min-h-[120px] sm:min-h-[140px]"
                 onClick={() => setShowKnowledgeBase(true)}
               >
-                <div className="flex flex-col items-center space-y-3">
-                  <BookOpen className="w-8 h-8" />
-                  <div>
-                    <div className="font-semibold">Knowledge</div>
+                <div className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 h-full">
+                  <BookOpen className="w-6 h-6 sm:w-8 sm:h-8" />
+                  <div className="text-center">
+                    <div className="font-semibold text-sm sm:text-base">Knowledge</div>
                     <div className="text-xs text-slate-600 mt-1">Self Help</div>
                   </div>
                 </div>
               </Button>
             </div>
 
-            <div className="group">
+            <div className="group col-span-2 sm:col-span-1">
               <Button 
                 size="lg"
-                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0"
+                className="w-full bg-white text-slate-900 hover:bg-slate-100 p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 min-h-[120px] sm:min-h-[140px]"
                 onClick={() => setShowFeedback(true)}
               >
-                <div className="flex flex-col items-center space-y-3">
-                  <Star className="w-8 h-8" />
-                  <div>
-                    <div className="font-semibold">Feedback</div>
+                <div className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 h-full">
+                  <Star className="w-6 h-6 sm:w-8 sm:h-8" />
+                  <div className="text-center">
+                    <div className="font-semibold text-sm sm:text-base">Feedback</div>
                     <div className="text-xs text-slate-600 mt-1">Rate Us</div>
                   </div>
                 </div>
