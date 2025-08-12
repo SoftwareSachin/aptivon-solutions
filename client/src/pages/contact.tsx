@@ -427,33 +427,107 @@ export default function Contact() {
       <div className="h-20 sm:h-24 lg:h-32"></div>
       
       {/* Hero Section */}
-      <section className="pt-16 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="relative pt-20 sm:pt-28 lg:pt-36 pb-16 sm:pb-20 lg:pb-24 bg-white overflow-hidden">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 bg-slate-50/30">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.1) 1px, transparent 0),
+              radial-gradient(circle at 20px 20px, rgba(148, 163, 184, 0.05) 1px, transparent 0)
+            `,
+            backgroundSize: '40px 40px, 80px 80px'
+          }}></div>
+        </div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-20 left-10 w-24 h-24 border border-slate-200 rounded-full opacity-30 hidden lg:block"></div>
+        <div className="absolute top-32 right-16 w-16 h-16 border-2 border-slate-300 rounded-lg opacity-20 hidden lg:block transform rotate-12"></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-slate-900 rounded-full opacity-10 hidden lg:block"></div>
+        <div className="absolute top-1/2 right-8 w-8 h-32 bg-slate-200 rounded-full opacity-15 hidden lg:block"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
-              Contact Us
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8 px-2">
-              Ready to transform your business with innovative technology solutions? 
-              Our expert team is here to help you achieve your digital transformation goals.
-            </p>
+            {/* Badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-slate-900 text-white text-sm rounded-full font-medium mb-6 sm:mb-8">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-3"></div>
+              Available for consultation
+            </div>
             
-            {/* Real-time Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto">
-              <div className="bg-white p-3 sm:p-4 rounded-lg border border-slate-200">
-                <div className="text-xl sm:text-2xl font-bold text-slate-900">{responseTime}</div>
-                <div className="text-xs sm:text-sm text-slate-600">Average Response Time</div>
-              </div>
-              <div className="bg-white p-3 sm:p-4 rounded-lg border border-slate-200">
-                <div className="text-xl sm:text-2xl font-bold text-slate-900">{satisfactionScore}/5</div>
-                <div className="text-xs sm:text-sm text-slate-600">Customer Satisfaction</div>
-              </div>
-              <div className="bg-white p-3 sm:p-4 rounded-lg border border-slate-200">
-                <div className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center justify-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  Online
+            {/* Main Headline */}
+            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-none tracking-tight">
+                Let's Build
+                <span className="block text-slate-700 font-light italic">
+                  Something Amazing
+                </span>
+              </h1>
+              
+              <div className="w-24 h-1 bg-slate-900 mx-auto rounded-full"></div>
+              
+              <p className="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
+                Transform your vision into reality with our expert technology solutions. 
+                <br className="hidden sm:block" />
+                We're here to guide your digital transformation journey.
+              </p>
+            </div>
+            
+            {/* Contact CTA */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-16">
+              <Button 
+                size="lg"
+                className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                onClick={handleOpenChat}
+              >
+                <MessageCircle className="w-5 h-5 mr-3" />
+                Start Conversation
+              </Button>
+              
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white px-8 py-4 text-lg font-medium rounded-xl transition-all duration-300"
+                onClick={() => setShowScheduler(true)}
+              >
+                <Calendar className="w-5 h-5 mr-3" />
+                Schedule Meeting
+              </Button>
+            </div>
+            
+            {/* Enhanced Stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+              <div className="group">
+                <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                  <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2 font-mono">{responseTime}</div>
+                  <div className="text-sm sm:text-base text-slate-600 font-medium">Average Response Time</div>
+                  <div className="mt-3 w-full bg-slate-100 rounded-full h-2">
+                    <div className="bg-slate-900 h-2 rounded-full" style={{ width: '95%' }}></div>
+                  </div>
                 </div>
-                <div className="text-xs sm:text-sm text-slate-600">Support Team Status</div>
+              </div>
+              
+              <div className="group">
+                <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                  <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2 font-mono">{satisfactionScore}/5</div>
+                  <div className="text-sm sm:text-base text-slate-600 font-medium">Customer Satisfaction</div>
+                  <div className="flex gap-1 mt-3 justify-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className={`w-4 h-4 ${i < Math.floor(satisfactionScore) ? 'text-yellow-400 fill-yellow-400' : 'text-slate-300'}`} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="group">
+                <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                  <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2 flex items-center justify-center gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    Online
+                  </div>
+                  <div className="text-sm sm:text-base text-slate-600 font-medium">Support Team Status</div>
+                  <div className="mt-3 text-xs text-green-600 font-medium px-3 py-1 bg-green-50 rounded-full inline-block">
+                    Ready to assist
+                  </div>
+                </div>
               </div>
             </div>
           </div>
