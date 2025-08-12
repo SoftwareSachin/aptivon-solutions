@@ -2,19 +2,6 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-// Hide SEO content immediately before React loads to prevent flash
-const hideSeoContent = () => {
-  const seoElements = document.querySelectorAll('body > h1, body > h2, body > h3, body > p, body > ul, body > nav');
-  seoElements.forEach(el => {
-    if (el.parentElement === document.body && el.id !== 'root') {
-      (el as HTMLElement).style.display = 'none';
-    }
-  });
-};
-
-// Hide SEO content immediately
-hideSeoContent();
-
 createRoot(document.getElementById("root")!).render(<App />);
 
 // Email obfuscation

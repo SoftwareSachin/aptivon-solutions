@@ -585,50 +585,6 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   </head>
   <body>
-    <script>
-      // Hide SEO content immediately when page loads to prevent flash
-      document.addEventListener('DOMContentLoaded', function() {
-        const seoElements = document.querySelectorAll('body > h1, body > h2, body > h3, body > p, body > ul, body > nav');
-        seoElements.forEach(function(el) {
-          if (el.parentElement === document.body && el.id !== 'root') {
-            el.style.display = 'none';
-          }
-        });
-      });
-    </script>
-    <!-- SEO Content visible to search crawlers -->
-    <h1>Enterprise IT Services & Technology Consulting</h1>
-    <h2>Leading IT Consulting Firm with Cloud Migration, AI/ML Implementation, DevOps Automation</h2>
-    <p><strong>Aptivon Solutions</strong> is a leading enterprise technology consulting firm specializing in <strong>cloud migration</strong>, <strong>AI/ML implementation</strong>, <strong>DevOps automation</strong>, and <strong>custom software development</strong>. We deliver proven technology solutions that transform operations and drive business growth.</p>
-    <p>Our comprehensive services include cloud infrastructure migration, artificial intelligence and machine learning implementation, DevOps pipeline automation, custom web and mobile application development, cybersecurity solutions, and data analytics. With over 5 successful projects delivered and a 98% client satisfaction rate, we have consistently delivered enterprise-grade solutions that drive business growth and operational efficiency.</p>
-    <p>We follow agile development methodologies with sprint-based development, continuous integration, and iterative delivery to ensure rapid time-to-market and flexible adaptation to changing requirements. Our quality assurance processes include comprehensive testing strategies such as unit testing, integration testing, performance testing, and security audits to ensure robust, scalable, and secure enterprise solutions.</p>
-    
-    <h3>Our Services</h3>
-    <ul>
-      <li><strong>Cloud Migration Services</strong> - Enterprise cloud migration and infrastructure modernization</li>
-      <li><strong>AI/ML Implementation</strong> - Artificial intelligence and machine learning solution development</li>
-      <li><strong>DevOps Automation</strong> - CI/CD pipeline automation and deployment optimization</li>
-      <li><strong>Custom Software Development</strong> - Web and mobile application development</li>
-      <li><strong>Cybersecurity Solutions</strong> - Enterprise security and compliance</li>
-      <li><strong>Data Analytics</strong> - Business intelligence and data visualization</li>
-    </ul>
-    
-    <h3>Technology Stack</h3>
-    <p>We work with cutting-edge technologies including React, Node.js, Python, AWS, Azure, Google Cloud, Docker, Kubernetes, TensorFlow, and PyTorch to deliver enterprise-grade solutions.</p>
-    
-    <h3>Contact Information</h3>
-    <p>Email: <span data-email="singhal3.sachin7" data-domain="gmail.com"></span> | Phone: +91 7852099010</p>
-    
-    <!-- Internal Navigation Links -->
-    <nav>
-      <a href="/about">About Us</a> |
-      <a href="/services">Our Services</a> |
-      <a href="/portfolio">Portfolio</a> |
-      <a href="/contact">Contact</a> |
-      <a href="/careers">Careers</a> |
-      <a href="/blog">Blog</a>
-    </nav>
-    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
