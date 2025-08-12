@@ -317,42 +317,37 @@ export default function Careers() {
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
         </div>
-        <div className="max-w-7xl mx-auto px-6 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
           <div className="text-center">
-            <div className="inline-flex items-center px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-full text-sm font-medium mb-8 shadow-sm hover:shadow-md transition-shadow">
+            <div className="inline-flex items-center px-4 sm:px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-full text-xs sm:text-sm font-medium mb-8 shadow-sm hover:shadow-md transition-shadow">
               <Briefcase className="w-4 h-4 mr-2 text-slate-500" />
               <span className="font-semibold">Now Hiring</span>
               <span className="mx-2 text-slate-400">•</span>
               <span>Multiple Positions Available</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-tight tracking-tight animate-fadeInUp animation-delay-200">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-tight tracking-tight animate-fadeInUp animation-delay-200 px-4">
               Shape the Future of
               <span className="block bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent animate-shimmer">Enterprise Technology</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-16 font-light animate-fadeInUp animation-delay-400">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-16 font-light animate-fadeInUp animation-delay-400 px-4">
               Join a dynamic team where innovation meets opportunity. Build your career with comprehensive training, 
               industry-leading mentorship, and unlimited growth potential in cutting-edge technology solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20 animate-fadeInUp animation-delay-600">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-20 animate-fadeInUp animation-delay-600 px-4">
               <Button 
                 onClick={scrollToPositions}
-                className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-slate-900/25 transform hover:-translate-y-1"
+                className="bg-slate-900 hover:bg-slate-800 text-white px-6 sm:px-10 py-4 text-base sm:text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-slate-900/25 transform hover:-translate-y-1 min-w-[280px] sm:min-w-auto"
               >
                 <Briefcase className="w-5 h-5 mr-2" />
                 Explore Career Opportunities
               </Button>
               <Button 
-                style={{ 
-                  color: '#0f172a', 
-                  backgroundColor: '#ffffff', 
-                  borderColor: '#0f172a',
-                  borderWidth: '2px'
-                }}
-                className="hover:bg-slate-800 hover:text-white hover:border-slate-800 px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1"
+                variant="outline"
+                className="border-2 border-slate-900 text-slate-900 bg-white hover:bg-slate-800 hover:text-white hover:border-slate-800 px-6 sm:px-10 py-4 text-base sm:text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1 min-w-[280px] sm:min-w-auto"
                 onClick={() => document.getElementById('company-culture')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <Users style={{ color: '#0f172a' }} className="w-5 h-5 mr-2" />
-                <span style={{ color: '#0f172a' }}>Connect with Our Team</span>
+                <Users className="w-5 h-5 mr-2 text-slate-900" />
+                <span className="text-slate-900">Connect with Our Team</span>
               </Button>
             </div>
             
@@ -829,21 +824,21 @@ export default function Careers() {
 
       {/* Application Process */}
       <section className="py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Hiring Process</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 px-4">Our Hiring Process</h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed px-4">
               We've designed a straightforward, transparent process to help you understand what to expect and showcase your potential
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center bg-white p-6 rounded-2xl shadow-sm">
-              <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">1</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="text-center bg-white p-4 sm:p-6 rounded-2xl shadow-sm">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-lg sm:text-xl">1</span>
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">Application Review</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">Submit your application and we'll review your qualifications and experience within 2-3 business days</p>
+              <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-3">Application Review</h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">Submit your application and we'll review your qualifications and experience within 2-3 business days</p>
             </div>
             <div className="text-center bg-white p-6 rounded-2xl shadow-sm">
               <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -888,15 +883,15 @@ export default function Careers() {
               <Star className="w-4 h-4 mr-2" />
               Ready to Get Started?
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-tight px-4">
               Begin Your Journey to
               <span className="block bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">Professional Excellence</span>
             </h2>
-            <p className="text-xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light px-4">
               Join a team where innovation meets opportunity, growth is unlimited, and your contributions 
               shape the future of enterprise technology. Your career transformation starts here.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
               <Button 
                 onClick={scrollToPositions}
                 className="bg-white text-slate-900 hover:bg-slate-100 px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1"
@@ -906,11 +901,11 @@ export default function Careers() {
               </Button>
               <Button 
                 variant="outline" 
-                className="border-2 border-white/30 text-white hover:bg-white hover:text-slate-900 hover:border-white px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1 backdrop-blur-sm"
+                className="border-2 border-white/30 text-white hover:bg-white hover:text-slate-900 hover:border-white px-6 sm:px-10 py-4 text-base sm:text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1 backdrop-blur-sm min-w-[280px] sm:min-w-auto"
                 onClick={() => window.open('mailto:careers@aptivonsolutions.com', '_blank')}
               >
-                <Users className="w-5 h-5 mr-2" />
-                Connect with Our Team
+                <Users className="w-5 h-5 mr-2 text-white" />
+                <span className="text-white">Connect with Our Team</span>
               </Button>
             </div>
           </div>
