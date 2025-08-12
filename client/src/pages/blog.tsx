@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Calendar, User, ArrowRight, Tag, Search, BookOpen, Mail, TrendingUp, Clock, Eye, Heart } from "lucide-react";
+import backgroundVideo from "@assets/3130284-uhd_3840_2160_30fps_1755023125702.mp4";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -121,21 +122,36 @@ export default function Blog() {
       {/* Navigation Spacer */}
       <div className="h-20 sm:h-24 lg:h-32"></div>
 
-      {/* Hero Section */}
-      <section className="relative bg-slate-50 py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Hero Section with Video Background */}
+      <section className="relative bg-slate-50 py-20 overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={backgroundVideo} type="video/mp4" />
+          </video>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-slate-900/60"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-slate-900 mb-6">
+            <h1 className="text-5xl font-bold text-white mb-6">
               Technology Insights & Expertise
             </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-100 max-w-3xl mx-auto leading-relaxed">
               Discover the latest trends, best practices, and strategic insights in enterprise technology, 
               digital transformation, and innovative solutions.
             </p>
           </div>
 
           {/* Search and Filter Section */}
-          <div className="bg-white rounded-xl shadow-sm border p-8 mb-12">
+          <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border p-8 mb-12">
             <div className="flex flex-col lg:flex-row gap-6 items-center">
               <div className="flex-1 relative">
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
@@ -144,7 +160,7 @@ export default function Blog() {
                   placeholder="Search articles, topics, technologies..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-12 h-12 text-lg border-slate-200 focus:border-blue-500"
+                  className="pl-12 h-12 text-lg border-slate-200 focus:border-blue-500 bg-white"
                 />
               </div>
               <div className="flex flex-wrap gap-2">
@@ -155,7 +171,7 @@ export default function Blog() {
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       selectedCategory === category
                         ? "bg-blue-600 text-white shadow-md"
-                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                        : "bg-white/80 text-slate-600 hover:bg-white"
                     }`}
                   >
                     {category}
